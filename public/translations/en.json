@@ -1,0 +1,99 @@
+{
+  "header": {
+    "hospitalName": "Sadhcare Hospital",
+    "menu": {
+      "aboutUs": "About Us",
+      "specialities": "Specialities",
+      "services": "Services",
+      "outreachProgrammes": "Outreach Programmes",
+      "gallery": "Gallery",
+      "donations": "Donations",
+      "contactUs": "Contact Us"
+    },
+    "menuToggle": "Toggle menu",
+    "openMainMenu": "Open main menu"
+  },
+  "hero": {
+    "welcome": "Welcome to Sadhcare Hospital",
+    "subtext": "Your health is our priority. We provide quality healthcare services.",
+    "mission": "Care · Compassion · Empathy",
+    "bookAppointment": "Book an Appointment"
+  },
+  "services": {
+    "title": "Our Services",
+    "emergency": {
+      "title": "Emergency Care",
+      "description": "24/7 emergency services with state-of-the-art facilities and expert medical staff."
+    },
+    "specialized": {
+      "title": "Specialized Treatments",
+      "description": "Specialized medical treatments from experienced doctors across various disciplines."
+    },
+    "pharmacy": {
+      "title": "Pharmacy Services",
+      "description": "Fully stocked pharmacy providing prescription medicines and healthcare products."
+    }
+  },
+  "gallery": {
+    "title": "Gallery",
+    "imageLabel": "Hospital Image {number}"
+  },
+  "aboutUs": {
+    "carousel": {
+      "title": "About Sadhcare Hospital"
+    },
+    "ourStory": {
+      "title": "Our Story",
+      "paragraph1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.",
+      "paragraph2": "Suspendisse in orci enim. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse in orci enim.",
+      "paragraph3": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+    },
+    "management": {
+      "title": "Our Management Team",
+      "staffName": "{name}",
+      "staffRole": "{role}",
+      "staffBio": "{bio}"
+    }
+  },
+  "specialities": {
+    "hero": {
+      "title": "Our Specialities",
+      "description": "Our hospital offers comprehensive medical care across a wide range of specialties. Our team of experienced specialists is committed to providing the highest quality healthcare services."
+    },
+    "section": {
+      "title": "Medical Specialties"
+    },
+    "specialty": {
+      "name": "{name}",
+      "description": "{description}"
+    },
+    "cta": {
+      "title": "Need Medical Consultation?",
+      "description": "Our specialists are available for consultations. Contact us to schedule an appointment with the appropriate department.",
+      "bookButton": "Book an Appointment",
+      "contactButton": "Contact Us"
+    }
+  },
+  "footer": {
+    "quickLinks": {
+      "title": "Quick Links",
+      "aboutUs": "About Us",
+      "ourDoctors": "Our Doctors",
+      "departments": "Departments",
+      "careers": "Careers"
+    },
+    "contactUs": {
+      "title": "Contact Us",
+      "address": "123 Hospital Street, City, Country",
+      "email": "Email: info@hospital.com",
+      "phone": "Phone: (123) 456-7890"
+    },
+    "workingHours": {
+      "title": "Working Hours",
+      "weekdays": "Monday - Friday: 8am - 8pm",
+      "emergency": "Emergency: 24/7"
+    },
+    "copyright": "© {year} Sadhcare Hospital. All rights reserved.",
+    "trustedPartner": "Your trusted healthcare partner providing quality medical services since [year]."
+  }
+} 
