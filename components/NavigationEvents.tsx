@@ -2,8 +2,10 @@
 
 import { useEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
-export default function NavigationEvents({ 
+// Create a component that actually uses the hooks and wrap it in Suspense
+function NavigationEventsContent({ 
   setIsNavigating 
 }: { 
   setIsNavigating: (value: boolean) => void 
@@ -19,4 +21,17 @@ export default function NavigationEvents({
   }, [pathname, searchParams, setIsNavigating]);
 
   return null;
+}
+
+// Main component that uses Suspense
+export default function NavigationEvents({ 
+  setIsNavigating 
+}: { 
+  setIsNavigating: (value: boolean) => void 
+}) {
+  return (
+    <Suspense fallback={null}>
+      <NavigationEventsContent setIsNavigating={setIsNavigating} />
+    </Suspense>
+  );
 } 

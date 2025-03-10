@@ -168,7 +168,7 @@ export default function AboutUs() {
               </div>
               <h3 className="text-xl font-semibold mb-3 text-slate-900 dark:text-white">Care</h3>
               <p className="text-slate-600 dark:text-slate-300">
-                We provide personalized, compassionate care to every patient who walks through our doors, recognizing each person's unique needs.
+                We provide personalized, compassionate care to every patient who walks through our doors, recognizing each person&apos;s unique needs.
               </p>
             </div>
             <div className="bg-white dark:bg-gray-800/70 p-6 rounded-lg shadow-sm border">

@@ -15,7 +15,7 @@ export default function LanguageSwitcher() {
       setCurrentLocale(storedLanguage);
     } else {
       // Default to browser language detection
-      const browserLang = navigator.language || (navigator as any).userLanguage;
+      const browserLang = navigator.language || (navigator as { userLanguage?: string }).userLanguage || '';
       const detectedLocale = browserLang.includes('hi') ? 'hi' : 'en';
       setCurrentLocale(detectedLocale);
       localStorage.setItem('preferredLanguage', detectedLocale);

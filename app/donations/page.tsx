@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { X, Copy, CheckCircle } from "lucide-react";
@@ -381,7 +381,7 @@ export default function Donations() {
                 <CardContent className="text-center pb-2">
                   <p className="text-blue-600 dark:text-blue-400 font-semibold mb-1">{donor.amount}</p>
                   <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">{donor.date}</p>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 italic">"{donor.message}"</p>
+                  <p className="text-sm text-slate-600 dark:text-slate-300 italic">&quot;{donor.message}&quot;</p>
                 </CardContent>
               </Card>
             ))}
