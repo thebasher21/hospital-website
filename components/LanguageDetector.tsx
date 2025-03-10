@@ -1,28 +1,20 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 export default function LanguageDetector() {
-  const [hasMounted, setHasMounted] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState<string | null>(null);
-  
   useEffect(() => {
     // Only run on client-side
     if (typeof window !== 'undefined') {
-      setHasMounted(true);
-      
       // Get browser language
-      const browserLang = navigator.language || (navigator as any).userLanguage;
+      const browserLang = navigator.language || (navigator as { userLanguage?: string }).userLanguage || '';
       
       // Set Hindi if detected, otherwise English
       const detectedLocale = browserLang.includes('hi') ? 'hi' : 'en';
       
-      // Store in local storage and set current state
+      // Store in local storage
       if (!localStorage.getItem('preferredLanguage')) {
         localStorage.setItem('preferredLanguage', detectedLocale);
-        setCurrentLanguage(detectedLocale);
-      } else {
-        setCurrentLanguage(localStorage.getItem('preferredLanguage'));
       }
       
       // Set HTML lang attribute

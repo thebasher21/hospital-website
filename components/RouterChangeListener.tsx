@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
 interface RouterChangeListenerProps {
   onRouteChangeStart: () => void;
@@ -12,7 +13,7 @@ interface RouterChangeListenerProps {
  * This component captures route changes in Next.js App Router
  * by using a combination of DOM events and navigation hooks
  */
-export default function RouterChangeListener({
+function RouterChangeListenerContent({
   onRouteChangeStart,
   onRouteChangeComplete,
 }: RouterChangeListenerProps) {
@@ -108,4 +109,13 @@ export default function RouterChangeListener({
   }, [onRouteChangeStart, onRouteChangeComplete]);
 
   return null;
+}
+
+// Main component that uses Suspense
+export default function RouterChangeListener(props: RouterChangeListenerProps) {
+  return (
+    <Suspense fallback={null}>
+      <RouterChangeListenerContent {...props} />
+    </Suspense>
+  );
 } 

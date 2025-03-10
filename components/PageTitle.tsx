@@ -18,7 +18,7 @@ export default function PageTitle({
   className = "" 
 }: PageTitleProps) {
   return (
-    <div className="bg-blue-900 dark:bg-blue-950 text-white py-20 transition-colors duration-200">
+    <div className={`bg-blue-900 dark:bg-blue-950 text-white py-20 transition-colors duration-200 ${className}`}>
       <div className="container mx-auto text-center">
         <h1 className="text-4xl font-bold mb-4 text-white">{title}</h1>
         {description && (

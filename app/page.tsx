@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import Link from "next/link";
 import PageTitle from '@/components/PageTitle';
 
 export default function Home() {
@@ -108,7 +107,7 @@ export default function Home() {
             {/* Testimonial 1 */}
             <Card className="shadow-md border bg-white dark:bg-gray-800/70">
               <CardContent className="pt-6">
-                <p className="italic text-slate-600 dark:text-slate-300 mb-4">"The care I received at Sadhcare Hospital was exceptional. The doctors were knowledgeable and compassionate, and the staff went above and beyond to ensure my comfort."</p>
+                <p className="italic text-slate-600 dark:text-slate-300 mb-4">&quot;The care I received at Sadhcare Hospital was exceptional. The doctors were knowledgeable and compassionate, and the staff went above and beyond to ensure my comfort.&quot;</p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 mr-3">
                     <span>👤</span>
@@ -124,7 +123,7 @@ export default function Home() {
             {/* Testimonial 2 */}
             <Card className="shadow-md border bg-white dark:bg-gray-800/70">
               <CardContent className="pt-6">
-                <p className="italic text-slate-600 dark:text-slate-300 mb-4">"I was impressed by the modern facilities and technology at Sadhcare Hospital. The entire process from admission to discharge was smooth and well-coordinated."</p>
+                <p className="italic text-slate-600 dark:text-slate-300 mb-4">&quot;I was impressed by the modern facilities and technology at Sadhcare Hospital. The entire process from admission to discharge was smooth and well-coordinated.&quot;</p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 mr-3">
                     <span>👤</span>
