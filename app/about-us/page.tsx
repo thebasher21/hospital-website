@@ -62,7 +62,7 @@ export default function AboutUs() {
   return (
     <>
       <PageTitle 
-        title="About Sadhcare Hospital" 
+        title="About SADH Care Hospital" 
         description="Learn about our history, mission, and the dedicated team that makes quality healthcare possible."
       />
 

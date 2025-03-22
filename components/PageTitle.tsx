@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 interface PageTitleProps {
-  title: string;
+  title: string | ReactNode;
   description?: string | ReactNode;
   className?: string;
 }
@@ -18,11 +18,13 @@ export default function PageTitle({
   className = "" 
 }: PageTitleProps) {
   return (
-    <div className={`bg-blue-900 dark:bg-blue-950 text-white py-20 transition-colors duration-200 ${className}`}>
-      <div className="container mx-auto text-center">
-        <h1 className="text-4xl font-bold mb-4 text-white">{title}</h1>
+    <div className={`${className} py-12 sm:py-16 md:py-20 transition-colors duration-200 ${!className.includes('bg-transparent') ? 'bg-blue-800 dark:bg-gray-900 text-white' : 'text-white'}`}>
+      <div className="container mx-auto text-center px-4 sm:px-6">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
+          {title}
+        </h1>
         {description && (
-          <div className="text-xl max-w-3xl mx-auto text-blue-100 dark:text-blue-50">
+          <div className="text-lg sm:text-xl max-w-3xl mx-auto text-blue-100 dark:text-gray-300">
             {description}
           </div>
         )}

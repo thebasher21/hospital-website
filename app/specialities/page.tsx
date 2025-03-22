@@ -148,12 +148,9 @@ export default function Specialities() {
             Need Medical Consultation?
           </h2>
           <p className="text-lg text-slate-700 dark:text-slate-300 mb-10 max-w-3xl mx-auto" data-i18n="specialities.cta.description">
-            Our specialists are available for consultations. Contact us to schedule an appointment with the appropriate department.
+            Our specialists are available for consultations. Contact us to schedule a consultation with the appropriate department.
           </p>
           <div className="flex justify-center gap-6 flex-wrap">
-            <Button variant="default" className="font-medium">
-              <span data-i18n="specialities.cta.bookButton">Book an Appointment</span>
-            </Button>
             <Button variant="outline" className="border-gray-400 text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800/60 font-medium">
               <span data-i18n="specialities.cta.contactButton">Contact Us</span>
             </Button>

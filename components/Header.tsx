@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import ThemeToggle from './ThemeToggle';
@@ -18,6 +19,11 @@ export default function Header() {
     }
   }, [pathname]);
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -30,6 +36,7 @@ export default function Header() {
 
   // Navigation links with their paths
   const navLinks = [
+    { name: "header.menu.home", path: "/", label: "Home" },
     { name: "header.menu.aboutUs", path: "/about-us", label: "About Us" },
     { name: "header.menu.specialities", path: "/specialities", label: "Specialities" },
     { name: "header.menu.services", path: "/services", label: "Services" },
@@ -40,15 +47,25 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-blue-900 dark:bg-blue-950 text-white p-4 shadow-md transition-colors duration-200">
-      <div className="container mx-auto">
+    <header className="bg-white dark:bg-gray-900 text-gray-800 dark:text-white p-5 sm:p-6 shadow-md transition-colors duration-200 sticky top-0 z-50">
+      <div className="container mx-auto px-1 sm:px-2">
         {/* Mobile header layout */}
-        <div className="flex md:hidden justify-between items-center">
-          <Link href="/" className="text-2xl font-bold text-white" data-i18n="header.hospitalName">Sadhcare Hospital</Link>
+        <div className="flex lg:hidden justify-between items-center">
+          <Link href="/" aria-label="SADH Care Hospital Home">
+            <div className="relative h-12 w-48 sm:h-14 sm:w-52">
+              <Image 
+                src="/images/logos/hospitalLogo.png" 
+                alt="SADH Care Hospital Logo" 
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+          </Link>
           <div className="flex items-center gap-2">
             <ThemeToggle />
             <button 
-              className="flex items-center justify-center p-2 rounded-md hover:bg-blue-800 dark:hover:bg-blue-800/70 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300"
+              className="flex items-center justify-center p-2 rounded-md text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
               onClick={handleMenuToggle}
               onKeyDown={handleKeyDown}
               aria-label="Toggle menu"
@@ -63,41 +80,58 @@ export default function Header() {
           </div>
         </div>
         
-        {/* Mobile navigation */}
-        <nav className={cn("md:hidden mt-4", isMenuOpen ? "block" : "hidden")}>
-          <ul className="flex flex-col gap-2">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.path || currentPath === link.path;
-              return (
-                <li key={link.path} className="h-10">
-                  <Link 
-                    href={link.path}
-                    className={cn(
-                      "block h-full w-full px-4 py-2 rounded-md text-sm font-medium transition-colors",
-                      isActive 
-                        ? "bg-blue-700 dark:bg-blue-700 text-white" 
-                        : "hover:bg-blue-800 dark:hover:bg-blue-800/70 text-blue-50"
-                    )}
-                    aria-current={isActive ? "page" : undefined}
-                  >
-                    <span data-i18n={link.name}>{link.label}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+        {/* Mobile navigation with smooth transition */}
+        <div 
+          className={cn(
+            "lg:hidden overflow-hidden transition-all duration-300 ease-in-out", 
+            isMenuOpen ? "max-h-[500px] opacity-100 mt-4" : "max-h-0 opacity-0 mt-0"
+          )}
+        >
+          <nav className="py-2">
+            <ul className="flex flex-col gap-3">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.path || currentPath === link.path;
+                return (
+                  <li key={link.path}>
+                    <Link 
+                      href={link.path}
+                      className={cn(
+                        "flex items-center justify-center px-4 py-1.5 rounded-md text-sm font-medium transition-colors",
+                        isActive 
+                          ? "bg-blue-600 text-white dark:bg-blue-700" 
+                          : "text-gray-700 hover:bg-gray-100 hover:text-blue-600 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-blue-400"
+                      )}
+                      aria-current={isActive ? "page" : undefined}
+                    >
+                      <span data-i18n={link.name}>{link.label}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+        </div>
         
-        {/* Desktop header layout */}
-        <div className="hidden md:flex justify-between items-center">
+        {/* Desktop header layout - adjusted for single line */}
+        <div className="hidden lg:flex justify-between items-center">
           {/* Logo on left */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold text-white" data-i18n="header.hospitalName">Sadhcare Hospital</Link>
+          <div className="flex-shrink-0 mr-2">
+            <Link href="/" aria-label="SADH Care Hospital Home">
+              <div className="relative h-16 w-48 sm:w-52">
+                <Image 
+                  src="/images/logos/hospitalLogo.png" 
+                  alt="SADH Care Hospital Logo" 
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </Link>
           </div>
           
-          {/* Navigation in center */}
-          <nav className="flex-1 flex justify-center px-4">
-            <ul className="flex flex-wrap justify-center gap-2">
+          {/* Navigation in center - adjusted to ensure single line */}
+          <nav className="flex-1 flex justify-center mx-1 sm:mx-2">
+            <ul className="flex items-center justify-center gap-1 xl:gap-2">
               {navLinks.map((link) => {
                 const isActive = pathname === link.path || currentPath === link.path;
                 return (
@@ -105,10 +139,10 @@ export default function Header() {
                     <Link 
                       href={link.path}
                       className={cn(
-                        "block h-full px-4 py-2 rounded-md text-base font-medium transition-colors",
+                        "flex items-center justify-center h-full px-1.5 xl:px-2 py-1 rounded-md text-xs sm:text-sm font-medium transition-colors whitespace-nowrap min-w-[60px] xl:min-w-[70px]",
                         isActive 
-                          ? "bg-blue-700 dark:bg-blue-700 text-white" 
-                          : "hover:bg-blue-800 dark:hover:bg-blue-800/70 text-blue-50"
+                          ? "bg-blue-600 text-white dark:bg-blue-700" 
+                          : "text-gray-700 hover:bg-gray-100 hover:text-blue-600 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-blue-400"
                       )}
                       aria-current={isActive ? "page" : undefined}
                     >
@@ -121,7 +155,7 @@ export default function Header() {
           </nav>
           
           {/* Theme toggle on right */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 ml-2">
             <ThemeToggle />
           </div>
         </div>

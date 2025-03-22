@@ -11,8 +11,7 @@ export default function ContactUs() {
     email: "info@sadhcarehospital.com",
     phones: [
       { label: "Reception", number: "+1 (555) 123-4567" },
-      { label: "Emergency", number: "+1 (555) 911-0000" },
-      { label: "Appointments", number: "+1 (555) 234-5678" }
+      { label: "Emergency", number: "+1 (555) 911-0000" }
     ],
     location: {
       address: "123 Healthcare Avenue, Medical District, New York, NY 10001",
@@ -24,7 +23,7 @@ export default function ContactUs() {
     <>
       <PageTitle 
         title="Contact Us" 
-        description="Get in touch with Sadhcare Hospital through any of our communication channels."
+        description="Get in touch with SADH Care Hospital through any of our communication channels."
       />
       
       <section className="bg-white dark:bg-gray-900/40 py-16">

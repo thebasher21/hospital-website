@@ -79,7 +79,7 @@ export default function OutreachProgrammes() {
     <>
       <PageTitle 
         title="Outreach Programmes" 
-        description="At Sadhcare Hospital, we are committed to extending healthcare beyond our facilities through various community outreach programmes. We believe that healthcare is a fundamental right and work tirelessly to reach underserved populations."
+        description="At SADH Care Hospital, we are committed to extending healthcare beyond our facilities through various community outreach programmes. We believe that healthcare is a fundamental right and work tirelessly to reach underserved populations."
       />
 
       {/* Types of Outreach Programmes - First content section (white) */}

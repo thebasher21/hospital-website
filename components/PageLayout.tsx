@@ -18,8 +18,8 @@ export default function PageLayout({ children }: PageLayoutProps) {
       {/* Header - visible on all pages */}
       <Header />
       
-      {/* Main content */}
-      <main className="flex-grow">
+      {/* Main content with improved responsive padding */}
+      <main className="flex-grow w-full overflow-x-hidden">
         {children}
       </main>
       
