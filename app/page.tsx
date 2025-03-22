@@ -1,9 +1,7 @@
 'use client';
 
-import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import PageTitle from '@/components/PageTitle';
 import { useEffect, useState } from 'react';
 import { type CarouselApi } from "@/components/ui/carousel";
 import { useTranslations } from './hooks/useTranslations';
@@ -413,7 +411,7 @@ export default function Home() {
                   <Card className="shadow-md border bg-white dark:bg-gray-800/70 h-full">
                     <CardContent className="pt-6 flex flex-col h-full">
                       <p className="italic text-slate-600 dark:text-slate-300 mb-4 flex-grow" data-i18n="testimonials.testimonial1.quote">
-                        {getTranslation('testimonials.testimonial1.quote') as string || "\"The care I received at SADH Care Hospital was exceptional. The doctors were knowledgeable and compassionate, and the staff went above and beyond to ensure my comfort.\""}
+                        {getTranslation('testimonials.testimonial1.quote') as string || "&ldquo;The care I received at SADH Care Hospital was exceptional. The doctors were knowledgeable and compassionate, and the staff went above and beyond to ensure my comfort.&rdquo;"}
                       </p>
                       <div className="flex items-center mt-auto">
                         <div className="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 mr-3">
@@ -437,7 +435,7 @@ export default function Home() {
                   <Card className="shadow-md border bg-white dark:bg-gray-800/70 h-full">
                     <CardContent className="pt-6 flex flex-col h-full">
                       <p className="italic text-slate-600 dark:text-slate-300 mb-4 flex-grow" data-i18n="testimonials.testimonial2.quote">
-                        {getTranslation('testimonials.testimonial2.quote') as string || "\"I was impressed by the modern facilities and technology at SADH Care Hospital. The entire process from admission to discharge was smooth and well-coordinated.\""}
+                        {getTranslation('testimonials.testimonial2.quote') as string || "&ldquo;I was impressed by the modern facilities and technology at SADH Care Hospital. The entire process from admission to discharge was smooth and well-coordinated.&rdquo;"}
                       </p>
                       <div className="flex items-center mt-auto">
                         <div className="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 mr-3">
@@ -461,7 +459,7 @@ export default function Home() {
                   <Card className="shadow-md border bg-white dark:bg-gray-800/70 h-full">
                     <CardContent className="pt-6 flex flex-col h-full">
                       <p className="italic text-slate-600 dark:text-slate-300 mb-4 flex-grow">
-                        "The staff at SADH Care Hospital treated my family with respect and dignity. The doctors explained everything clearly and made sure we understood our options."
+                        &ldquo;The staff at SADH Care Hospital treated my family with respect and dignity. The doctors explained everything clearly and made sure we understood our options.&rdquo;
                       </p>
                       <div className="flex items-center mt-auto">
                         <div className="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 mr-3">
@@ -485,7 +483,7 @@ export default function Home() {
                   <Card className="shadow-md border bg-white dark:bg-gray-800/70 h-full">
                     <CardContent className="pt-6 flex flex-col h-full">
                       <p className="italic text-slate-600 dark:text-slate-300 mb-4 flex-grow">
-                        "I've been visiting SADH Care Hospital for regular check-ups for years. The consistent quality of care and attention to detail makes me feel safe and valued as a patient."
+                        &ldquo;I&apos;ve been visiting SADH Care Hospital for regular check-ups for years. The consistent quality of care and attention to detail makes me feel safe and valued as a patient.&rdquo;
                       </p>
                       <div className="flex items-center mt-auto">
                         <div className="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 mr-3">

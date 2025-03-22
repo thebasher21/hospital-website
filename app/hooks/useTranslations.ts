@@ -2,15 +2,15 @@
 
 import { useState, useEffect } from 'react';
 
-export interface TranslationData {
-  [key: string]: any;
-}
+// Use unknown to avoid circular references
+export type TranslationData = Record<string, unknown>;
 
 export function useTranslations() {
   const [translations, setTranslations] = useState<TranslationData>({});
   const [language, setLanguage] = useState<string>('en');
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  // Fetch translations on initial load
   useEffect(() => {
     const fetchTranslations = async () => {
       setIsLoading(true);
@@ -40,8 +40,10 @@ export function useTranslations() {
     };
 
     fetchTranslations();
-    
-    // Set up listener for language changes
+  }, []);
+  
+  // Set up listener for language changes
+  useEffect(() => {
     const handleStorageChange = (e: StorageEvent) => {
       if (e.key === 'preferredLanguage' && e.newValue !== language) {
         window.location.reload();
@@ -50,17 +52,18 @@ export function useTranslations() {
     
     window.addEventListener('storage', handleStorageChange);
     return () => window.removeEventListener('storage', handleStorageChange);
-  }, []);
+  }, [language]);
 
-  const getTranslation = (key: string) => {
+  const getTranslation = (key: string): unknown => {
     if (!key) return '';
     
     const keys = key.split('.');
-    let current = translations;
+    let current: unknown = translations;
     
     for (const k of keys) {
-      if (!current || current[k] === undefined) return '';
-      current = current[k];
+      if (!current || typeof current !== 'object' || current === null) return '';
+      current = (current as Record<string, unknown>)[k];
+      if (current === undefined) return '';
     }
     
     return current;
