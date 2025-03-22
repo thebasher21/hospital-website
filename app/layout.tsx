@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sadhcare Hospital - Care Compassion Empathy",
-  description: "Sadhcare Hospital - Your trusted healthcare partner providing quality medical services with Care, Compassion, and Empathy",
+  title: "SADH Care Hospital - Care Compassion Empathy",
+  description: "SADH Care Hospital - Your trusted healthcare partner providing quality medical services with Care, Compassion, and Empathy",
 };
 
 export default function RootLayout({

@@ -26,7 +26,7 @@ const donors = [
     date: 'February 12, 2023',
     category: 'Diamond',
     image: 'https://placehold.co/150x150/00a2ed/ffffff.jpeg?text=PSF',
-    message: 'We believe in the vision of Sadhcare Hospital and are committed to supporting healthcare initiatives.',
+    message: 'We believe in the vision of SADH Care Hospital and are committed to supporting healthcare initiatives.',
   },
   {
     id: 3,
@@ -62,7 +62,7 @@ const donors = [
     date: 'October 15, 2022',
     category: 'Diamond',
     image: 'https://placehold.co/150x150/00a2ed/ffffff.jpeg?text=GC',
-    message: 'As part of our CSR initiative, we are proud to support Sadhcare Hospital\'s expansion project.',
+    message: 'As part of our CSR initiative, we are proud to support SADH Care Hospital\'s expansion project.',
   },
   {
     id: 7,
@@ -86,7 +86,7 @@ const donors = [
 
 // Hospital account details for donations
 const accountDetails = {
-  accountName: 'Sadhcare Hospital Trust',
+  accountName: 'SADH Care Hospital Trust',
   accountNumber: '1234567890123456',
   ifscCode: 'ABCD0123456',
   bankName: 'State Bank of India',

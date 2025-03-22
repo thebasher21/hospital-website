@@ -55,7 +55,7 @@ export default function ServicesPage() {
     <>
       <PageTitle 
         title="Our Services" 
-        description="At Sadhcare Hospital, we offer a comprehensive range of medical services 
+        description="At SADH Care Hospital, we offer a comprehensive range of medical services 
                    delivered by experienced healthcare professionals using state-of-the-art 
                    technology and facilities."
       />
@@ -129,9 +129,6 @@ export default function ServicesPage() {
             tailored to your specific health needs.
           </p>
           <div className="flex justify-center gap-6 flex-wrap">
-            <Button variant="default" className="font-medium">
-              Book an Appointment
-            </Button>
             <Button variant="outline" className="border-gray-400 text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800/60 font-medium">
               Contact Us
             </Button>
