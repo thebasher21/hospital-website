@@ -46,6 +46,14 @@ export default function Header() {
     { name: "header.menu.contactUs", path: "/contact-us", label: "Contact Us" },
   ];
 
+  // Function to handle direct navigation for GitHub Pages
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (process.env.NODE_ENV === 'production') {
+      e.preventDefault();
+      window.location.href = `https://thebasher21.github.io/hospital-website${path}`;
+    }
+  };
+
   return (
     <header className="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-200 dark:border-gray-800 sticky top-0 z-10 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 transition-colors">
       <div className="container mx-auto px-4 py-3">
@@ -113,6 +121,7 @@ export default function Header() {
                           : "text-gray-700 hover:bg-gray-100 hover:text-blue-600 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-blue-400"
                       )}
                       aria-current={isActive ? "page" : undefined}
+                      onClick={(e) => handleNavigation(e, link.path)}
                     >
                       <span data-i18n={link.name}>{link.label}</span>
                     </Link>
@@ -156,6 +165,7 @@ export default function Header() {
                           : "text-gray-700 hover:bg-gray-100 hover:text-blue-600 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-blue-400"
                       )}
                       aria-current={isActive ? "page" : undefined}
+                      onClick={(e) => handleNavigation(e, link.path)}
                     >
                       <span data-i18n={link.name}>{link.label}</span>
                     </Link>

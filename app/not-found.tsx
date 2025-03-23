@@ -6,6 +6,14 @@ import { getBasePath } from '@/lib/utils';
 
 // The main 404 component doesn't use useSearchParams
 export default function NotFound() {
+  // Function to handle direct navigation for GitHub Pages
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (process.env.NODE_ENV === 'production') {
+      e.preventDefault();
+      window.location.href = 'https://thebasher21.github.io/hospital-website/';
+    }
+  };
+
   return (
     <main className="min-h-[75vh] flex flex-col items-center justify-center text-center px-4">
       <div className="space-y-8 max-w-md">
@@ -17,7 +25,7 @@ export default function NotFound() {
           </p>
         </div>
         <div className="pt-4">
-          <Link href={getBasePath("/")} passHref>
+          <Link href={getBasePath("/")} passHref onClick={handleNavigation}>
             <Button size="lg">
               Return to Home
             </Button>
