@@ -47,12 +47,12 @@ export default function Header() {
   ];
 
   // Function to handle direct navigation for GitHub Pages
-  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
-    if (process.env.NODE_ENV === 'production') {
-      e.preventDefault();
-      window.location.href = `https://thebasher21.github.io${path}`;
-    }
-  };
+  // const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+  //   if (process.env.NODE_ENV === 'production') {
+  //     e.preventDefault();
+  //     window.location.href = `https://thebasher21.github.io${path}`;
+  //   }
+  // };
 
   return (
     <header className="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-200 dark:border-gray-800 sticky top-0 z-10 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 transition-colors">
@@ -121,7 +121,6 @@ export default function Header() {
                           : "text-gray-700 hover:bg-gray-100 hover:text-blue-600 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-blue-400"
                       )}
                       aria-current={isActive ? "page" : undefined}
-                      onClick={(e) => handleNavigation(e, link.path)}
                     >
                       <span data-i18n={link.name}>{link.label}</span>
                     </Link>
@@ -165,7 +164,6 @@ export default function Header() {
                           : "text-gray-700 hover:bg-gray-100 hover:text-blue-600 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-blue-400"
                       )}
                       aria-current={isActive ? "page" : undefined}
-                      onClick={(e) => handleNavigation(e, link.path)}
                     >
                       <span data-i18n={link.name}>{link.label}</span>
                     </Link>

@@ -11,12 +11,8 @@ export function cn(...inputs: ClassValue[]) {
 export function getBasePath(path: string): string {
   // In production (GitHub Pages), add the repository name prefix
   // In development, use the path as is
-  const basePath = process.env.NODE_ENV === 'production' ? '' : '';
   
-  // Ensure path starts with a slash
-  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
-  
-  return `${basePath}${normalizedPath}`;
+  return `https://thebasher21.github.io/hospital-website${path.startsWith('/') ? path : `/${path}`}`;
 }
 
 /**
@@ -26,7 +22,7 @@ export function getBasePath(path: string): string {
 export function navigateToPage(path: string): void {
   if (process.env.NODE_ENV === 'production') {
     // Use direct URL for GitHub Pages
-    window.location.href = `https://thebasher21.github.io${path.startsWith('/') ? path : `/${path}`}`;
+    window.location.href = `https://thebasher21.github.io/hospital-website${path.startsWith('/') ? path : `/${path}`}`;
   } else {
     // Let Next.js handle client-side routing in development
     // This is handled by Link components
