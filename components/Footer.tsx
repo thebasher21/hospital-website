@@ -2,16 +2,10 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { getBasePath } from '@/lib/utils';
+import { getBasePath, useNavigation } from '@/lib/utils';
 
 export default function Footer() {
-  // Function to handle direct navigation for GitHub Pages
-  // const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
-  //   if (process.env.NODE_ENV === 'production') {
-  //     e.preventDefault();
-  //     window.location.href = `https://thebasher21.github.io${path}`;
-  //   }
-  // };
+  const { handleNavigation } = useNavigation();
 
   return (
     <footer className="bg-blue-800 dark:bg-gray-900 text-white py-8 transition-colors duration-200">
@@ -38,6 +32,7 @@ export default function Footer() {
                 href={getBasePath("/about-us")} 
                 className="text-blue-100 hover:underline hover:text-white transition-colors dark:text-gray-300 dark:hover:text-white" 
                 data-i18n="footer.quickLinks.aboutUs"
+                onClick={(e) => handleNavigation(e, "/about-us")}
               >About Us</Link></li>
               <li><Link 
                 href={getBasePath("#")} 
