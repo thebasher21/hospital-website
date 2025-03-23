@@ -67,7 +67,8 @@ function RouterChangeListenerContent({
               
               // Manually update history (this helps with GitHub Pages routing)
               const newPath = getBasePath(path);
-              window.history.pushState({}, '', newPath);
+              window.location.href = newPath;
+              return;
             }
           }
           
@@ -78,6 +79,27 @@ function RouterChangeListenerContent({
               isNavigatingRef.current = false;
             }
           }, 3000); // 3 second timeout as a fallback
+        }
+      }
+    };
+
+    // Add handling for GitHub Pages links
+    const handleGitHubPagesLinks = (e: MouseEvent) => {
+      if (process.env.NODE_ENV === 'production') {
+        // Find the closest anchor tag
+        let el = e.target as HTMLElement;
+        while (el && el.tagName !== 'A') {
+          el = el.parentElement as HTMLElement;
+        }
+        
+        // If it's an anchor tag with href
+        if (el && el.tagName === 'A') {
+          const href = el.getAttribute('href');
+          // Only handle internal links
+          if (href && href.startsWith('/hospital-website') && !href.startsWith('http')) {
+            e.preventDefault();
+            window.location.href = `https://thebasher21.github.io${href}`;
+          }
         }
       }
     };
@@ -97,6 +119,7 @@ function RouterChangeListenerContent({
     };
 
     document.addEventListener('click', handleLinkClick);
+    document.addEventListener('click', handleGitHubPagesLinks);
     window.addEventListener('popstate', handlePopState);
 
     // Also handle initial page load
@@ -119,6 +142,7 @@ function RouterChangeListenerContent({
 
     return () => {
       document.removeEventListener('click', handleLinkClick);
+      document.removeEventListener('click', handleGitHubPagesLinks);
       window.removeEventListener('popstate', handlePopState);
       window.removeEventListener('load', onRouteChangeComplete);
       window.removeEventListener('click', handleUserInteraction);

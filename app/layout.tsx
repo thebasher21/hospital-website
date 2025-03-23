@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import Script from "next/script";
-import PageLayout from "@/components/PageLayout";
-import Providers from "./providers";
+import ClientScripts from "@/components/ClientScripts";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,83 +29,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <Script src="/js/translations.js" strategy="afterInteractive" />
         <meta name="color-scheme" content="light dark" />
-        {/* Prevent theme flickering script */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                // Check for dark mode preference
-                function getThemePreference() {
-                  if (typeof window !== 'undefined' && window.localStorage) {
-                    // Check if theme is stored in localStorage
-                    const storedTheme = window.localStorage.getItem('theme');
-                    if (storedTheme) {
-                      return storedTheme;
-                    }
-                    
-                    // Otherwise check system preference
-                    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                      return 'dark';
-                    }
-                  }
-                  return 'light'; // Default theme
-                }
-                
-                // Apply theme immediately to prevent flashing
-                const theme = getThemePreference();
-                document.documentElement.classList.toggle('dark', theme === 'dark');
-                
-                // Add a class to handle theme transition instead of using inline styles
-                document.documentElement.classList.add('theme-transition');
-                
-                // Remove the transition class after a delay to allow smooth transitions after initial load
-                window.addEventListener('load', function() {
-                  setTimeout(function() {
-                    document.documentElement.classList.remove('theme-transition');
-                  }, 300);
-                });
-              })();
-            `,
-          }}
-        />
-        {/* Add CSS to handle theme transition in a way that doesn't cause hydration mismatches */}
-        <style>
-          {`
-            .theme-transition { 
-              opacity: 0;
-            }
-            html:not(.theme-transition) { 
-              transition: opacity 0.3s ease-in; 
-              opacity: 1;
-            }
-          `}
-        </style>
-        {/* GitHub Pages redirect handling script */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                // Check if there's a redirect parameter in the URL
-                const urlParams = new URLSearchParams(window.location.search);
-                const redirectPath = urlParams.get('redirect');
-                
-                // If there is a redirect parameter and we're not already on that page
-                if (redirectPath && window.location.pathname.indexOf(redirectPath) === -1) {
-                  // Remove the redirect parameter from URL
-                  urlParams.delete('redirect');
-                  const newQueryString = urlParams.toString();
-                  const newPath = '/hospital-website' + redirectPath;
-                  
-                  // Replace the current state with the correct path without reloading
-                  const newUrl = newPath + (newQueryString ? '?' + newQueryString : '');
-                  window.history.replaceState(null, null, newUrl);
-                }
-              })();
-            `,
-          }}
-        />
+        <ClientScripts />
       </head>
       <body
         className={cn(
@@ -114,11 +39,13 @@ export default function RootLayout({
           geistMono.variable
         )}
       >
-        <Providers>
-          <PageLayout>
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <main className="flex-grow w-full overflow-x-hidden">
             {children}
-          </PageLayout>
-        </Providers>
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

@@ -1,7 +1,5 @@
-'use client'
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
-import { useRouter } from "next/navigation"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -9,46 +7,11 @@ export function cn(...inputs: ClassValue[]) {
 
 /**
  * Get the correct base path for routes and assets when deployed to GitHub Pages
+ * This can be used in both client and server components
  */
 export function getBasePath(path: string): string {
   // In production (GitHub Pages), add the repository name prefix
   // In development, use the path as is
   
   return `https://thebasher21.github.io/hospital-website${path.startsWith('/') ? path : `/${path}`}`;
-}
-
-/**
- * Navigate to a path using full GitHub Pages URL in production
- * or client-side routing in development
- */
-export function navigateToPage(path: string): void {
-  if (process.env.NODE_ENV === 'production') {
-    // Use direct URL for GitHub Pages
-    window.location.href = `https://thebasher21.github.io/hospital-website${path.startsWith('/') ? path : `/${path}`}`;
-  } else {
-    // Let Next.js handle client-side routing in development
-    // This is handled by Link components
-  }
-}
-
-/**
- * Custom hook for handling navigation with Next.js
- * Works with both production and development environments
- */
-export function useNavigation() {
-  const router = useRouter();
-  
-  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
-    if (process.env.NODE_ENV === 'production') {
-      e.preventDefault();
-      console.log("Production environment detected");
-      console.log('Path: ', path);
-      window.location.href = getBasePath(path);
-    } else {
-      e.preventDefault();
-      router.push(path);
-    }
-  };
-  
-  return { handleNavigation };
 }
