@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
+import { getBasePath } from '@/lib/utils';
 
 interface RouterChangeListenerProps {
   onRouteChangeStart: () => void;
@@ -53,6 +54,22 @@ function RouterChangeListenerContent({
             new URL(anchorElement.href).origin === window.location.origin) {
           onRouteChangeStart();
           isNavigatingRef.current = true;
+          
+          // For GitHub Pages compatibility - update URL manually if needed
+          if (process.env.NODE_ENV === 'production' && 
+              window.location.pathname.includes('/hospital-website')) {
+            
+            const path = new URL(anchorElement.href).pathname;
+            // Check if the path already contains the base path
+            if (!path.includes('/hospital-website/')) {
+              // Prevent default to handle our own navigation
+              e.preventDefault();
+              
+              // Manually update history (this helps with GitHub Pages routing)
+              const newPath = getBasePath(path);
+              window.history.pushState({}, '', newPath);
+            }
+          }
           
           // Safety timer to clear loading state if navigation doesn't complete
           setTimeout(() => {

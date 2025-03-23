@@ -3,6 +3,7 @@ const nextConfig = {
   output: 'export',
   basePath: process.env.NODE_ENV === 'production' ? '/hospital-website' : '',
   assetPrefix: process.env.NODE_ENV === 'production' ? '/hospital-website/' : '',
+  trailingSlash: true,
   images: {
     remotePatterns: [
       {

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SADH Care Hospital - Redirecting</title>
+  <script>
+    // GitHub Pages SPA redirect script
+    // This solves the issue with client-side routing in Single Page Applications
+    // deployed to GitHub Pages by handling the 404 redirections
+    
+    // Get the current path and query parameters
+    const segment = window.location.pathname.split('/hospital-website')[1] || '';
+    const queryParams = window.location.search;
+    
+    // Combine them as a new url with the base path
+    const url = '/hospital-website' + segment + queryParams;
+    
+    // Redirect to the index.html with the path appended as a url parameter
+    window.location.href = '/hospital-website?redirect=' + encodeURIComponent(segment + queryParams);
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html> 

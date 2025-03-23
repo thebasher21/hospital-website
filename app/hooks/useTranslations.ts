@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { getBasePath } from '@/lib/utils';
 
 // Use unknown to avoid circular references
 export type TranslationData = Record<string, unknown>;
@@ -27,13 +28,32 @@ export function useTranslations() {
         
         setLanguage(preferredLanguage);
         
-        // Load translations
-        const response = await fetch(`/translations/${preferredLanguage}.json`);
+        // Load translations with the correct base path for GitHub Pages
+        const response = await fetch(getBasePath(`/translations/${preferredLanguage}.json`));
         if (!response.ok) throw new Error('Failed to load translations');
         const data = await response.json();
         setTranslations(data);
       } catch (error) {
         console.error('Error loading translations:', error);
+        // Fallback to default slides if translations fail
+        setTranslations({
+          hero: {
+            carousel: {
+              slides: [
+                {
+                  title: "Your health is our priority",
+                  description: "Care · Compassion · Empathy",
+                  image: getBasePath("/images/infrastructure/hospitalBuilding.jpg")
+                },
+                {
+                  title: "24 x 7 Open",
+                  description: "Emergency services available round the clock",
+                  image: getBasePath("/images/services/24x7Open.jpg")
+                }
+              ]
+            }
+          }
+        });
       } finally {
         setIsLoading(false);
       }

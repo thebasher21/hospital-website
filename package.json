@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build"
+    "deploy": "next build && cp public/.nojekyll out/"
   },
   "dependencies": {
     "@radix-ui/react-navigation-menu": "^1.2.5",
