@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { getBasePath } from '@/lib/utils';
 
 // The main 404 component doesn't use useSearchParams
 export default function NotFound() {
@@ -16,7 +17,7 @@ export default function NotFound() {
           </p>
         </div>
         <div className="pt-4">
-          <Link href="/" passHref>
+          <Link href={getBasePath("/")} passHref>
             <Button size="lg">
               Return to Home
             </Button>

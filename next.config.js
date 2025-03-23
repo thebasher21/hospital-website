@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: process.env.NODE_ENV === 'production' ? '/hospital-website' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/hospital-website/' : '',
   images: {
     remotePatterns: [
       {
@@ -10,6 +13,7 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    unoptimized: true,
   },
 }
 

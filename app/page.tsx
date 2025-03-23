@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { type CarouselApi } from "@/components/ui/carousel";
 import { useTranslations } from './hooks/useTranslations';
 import Image from 'next/image';
+import { getBasePath } from '@/lib/utils';
 
 // Define the type for carousel slides
 interface CarouselSlide {
@@ -172,7 +173,7 @@ export default function Home() {
             {/* Right side - Image */}
             <div className="md:w-1/2 relative h-64 md:h-auto">
               <Image 
-                src="/images/services/freeOPD.jpg"
+                src={getBasePath("/images/services/freeOPD.jpg")}
                 alt="Free OPD Services"
                 fill
                 className="object-cover"

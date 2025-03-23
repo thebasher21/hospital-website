@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
+import { cn, getBasePath } from '@/lib/utils';
 import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
@@ -47,14 +47,14 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-white dark:bg-gray-900 text-gray-800 dark:text-white p-5 sm:p-6 shadow-md transition-colors duration-200 sticky top-0 z-50">
-      <div className="container mx-auto px-1 sm:px-2">
+    <header className="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-200 dark:border-gray-800 sticky top-0 z-10 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 transition-colors">
+      <div className="container mx-auto px-4 py-3">
         {/* Mobile header layout */}
-        <div className="flex lg:hidden justify-between items-center">
-          <Link href="/" aria-label="SADH Care Hospital Home">
-            <div className="relative h-12 w-48 sm:h-14 sm:w-52">
+        <div className="flex items-center justify-between lg:hidden">
+          <Link href={getBasePath("/")} aria-label="SADH Care Hospital Home" className="flex-shrink-0">
+            <div className="relative h-16 w-48">
               <Image 
-                src="/images/logos/hospitalLogo.png" 
+                src={getBasePath("/images/logos/hospitalLogo.png")} 
                 alt="SADH Care Hospital Logo" 
                 fill
                 className="object-contain"
@@ -62,25 +62,36 @@ export default function Header() {
               />
             </div>
           </Link>
-          <div className="flex items-center gap-2">
+          
+          <div className="flex items-center gap-4">
             <ThemeToggle />
-            <button 
-              className="flex items-center justify-center p-2 rounded-md text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+            
+            <button
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              className="p-2 text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
               onClick={handleMenuToggle}
               onKeyDown={handleKeyDown}
-              aria-label="Toggle menu"
-              aria-expanded={isMenuOpen}
               tabIndex={0}
             >
-              <span className="sr-only" data-i18n="header.openMainMenu">Open main menu</span>
-              <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
-              </svg>
+              <div className={cn("w-6 h-5 flex flex-col justify-between", isMenuOpen && "relative")}>
+                <span className={cn(
+                  "bg-current h-0.5 w-full transition-all", 
+                  isMenuOpen && "absolute top-2 rotate-45"
+                )}></span>
+                <span className={cn(
+                  "bg-current h-0.5 w-full transition-all", 
+                  isMenuOpen && "opacity-0"
+                )}></span>
+                <span className={cn(
+                  "bg-current h-0.5 w-full transition-all", 
+                  isMenuOpen && "absolute top-2 -rotate-45"
+                )}></span>
+              </div>
             </button>
           </div>
         </div>
         
-        {/* Mobile navigation with smooth transition */}
+        {/* Mobile navigation menu */}
         <div 
           className={cn(
             "lg:hidden overflow-hidden transition-all duration-300 ease-in-out", 
@@ -94,7 +105,7 @@ export default function Header() {
                 return (
                   <li key={link.path}>
                     <Link 
-                      href={link.path}
+                      href={getBasePath(link.path)}
                       className={cn(
                         "flex items-center justify-center px-4 py-1.5 rounded-md text-sm font-medium transition-colors",
                         isActive 
@@ -113,13 +124,13 @@ export default function Header() {
         </div>
         
         {/* Desktop header layout - adjusted for single line */}
-        <div className="hidden lg:flex justify-between items-center">
+        <div className="hidden lg:flex items-center h-[70px]">
           {/* Logo on left */}
           <div className="flex-shrink-0 mr-2">
-            <Link href="/" aria-label="SADH Care Hospital Home">
+            <Link href={getBasePath("/")} aria-label="SADH Care Hospital Home">
               <div className="relative h-16 w-48 sm:w-52">
                 <Image 
-                  src="/images/logos/hospitalLogo.png" 
+                  src={getBasePath("/images/logos/hospitalLogo.png")} 
                   alt="SADH Care Hospital Logo" 
                   fill
                   className="object-contain"
@@ -137,7 +148,7 @@ export default function Header() {
                 return (
                   <li key={link.path} className="h-10">
                     <Link 
-                      href={link.path}
+                      href={getBasePath(link.path)}
                       className={cn(
                         "flex items-center justify-center h-full px-1.5 xl:px-2 py-1 rounded-md text-xs sm:text-sm font-medium transition-colors whitespace-nowrap min-w-[60px] xl:min-w-[70px]",
                         isActive 
@@ -155,7 +166,7 @@ export default function Header() {
           </nav>
           
           {/* Theme toggle on right */}
-          <div className="flex-shrink-0 ml-2">
+          <div className="flex-shrink-0">
             <ThemeToggle />
           </div>
         </div>
