@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { cn, getBasePath, useNavigation } from '@/lib/utils';
+import { cn, getBasePath } from '@/lib/utils';
+import { useNavigation } from '@/lib/client-utils';
 import ThemeToggle from './ThemeToggle';
 
 export default function Header() {

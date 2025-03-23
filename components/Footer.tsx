@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { getBasePath, useNavigation } from '@/lib/utils';
+import { getBasePath } from '@/lib/utils';
+import { useNavigation } from '@/lib/client-utils';
 
 export default function Footer() {
   const { handleNavigation } = useNavigation();
