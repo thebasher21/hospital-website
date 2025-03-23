@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { LoadingSpinner } from './ui/loading-spinner';
 import { cn } from '@/lib/utils';
 
@@ -10,27 +10,56 @@ interface PageTransitionLoaderProps {
 
 export default function PageTransitionLoader({ isLoading }: PageTransitionLoaderProps) {
   const [showLoader, setShowLoader] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const startTimeRef = useRef<number | null>(null);
+  const MIN_DISPLAY_TIME = 600; // Minimum time in ms to show the loader
   
+  // Single effect to handle both showing and hiding the loader
   useEffect(() => {
+    // Clear any existing timeout to prevent stale updates
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    
     if (isLoading) {
       // Show loader immediately when navigation starts
       setShowLoader(true);
+      // Record the start time
+      startTimeRef.current = Date.now();
       
       // Safety timeout - force hide loader after 5 seconds
-      const timeout = setTimeout(() => {
+      timeoutRef.current = setTimeout(() => {
         setShowLoader(false);
+        timeoutRef.current = null;
+        startTimeRef.current = null;
       }, 5000);
+    } else if (startTimeRef.current) {
+      // Calculate how long we've been showing the loader
+      const elapsedTime = Date.now() - startTimeRef.current;
+      const remainingTime = Math.max(0, MIN_DISPLAY_TIME - elapsedTime);
       
-      return () => clearTimeout(timeout);
-    } else {
-      // When navigation completes, hide the loader after a small delay
-      // This ensures a smooth transition and prevents flickering for fast loads
-      const timeout = setTimeout(() => {
+      // If we haven't shown the loader for the minimum time, delay hiding it
+      timeoutRef.current = setTimeout(() => {
         setShowLoader(false);
+        timeoutRef.current = null;
+        startTimeRef.current = null;
+      }, remainingTime);
+    } else {
+      // If no start time was recorded, hide after a small delay
+      timeoutRef.current = setTimeout(() => {
+        setShowLoader(false);
+        timeoutRef.current = null;
       }, 300);
-      
-      return () => clearTimeout(timeout);
     }
+    
+    // Cleanup on unmount or when dependencies change
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+    };
   }, [isLoading]);
 
   return (

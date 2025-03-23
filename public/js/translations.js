@@ -1,5 +1,16 @@
 // Translations handler
 document.addEventListener('DOMContentLoaded', async function() {
+  // Load and apply translations initially
+  await loadAndApplyTranslations();
+  
+  // Listen for language change events
+  window.addEventListener('languageChanged', async function() {
+    await loadAndApplyTranslations();
+  });
+});
+
+// Function to load and apply translations
+async function loadAndApplyTranslations() {
   // Get preferred language from local storage or detect from browser
   let preferredLanguage = localStorage.getItem('preferredLanguage');
   
@@ -59,19 +70,19 @@ document.addEventListener('DOMContentLoaded', async function() {
       }
     }
   });
+}
+
+// Helper function to get nested value from object using dot notation
+function getNestedValue(obj, path) {
+  if (!obj || !path) return '';
   
-  // Helper function to get nested value from object using dot notation
-  function getNestedValue(obj, path) {
-    if (!obj || !path) return '';
-    
-    const keys = path.split('.');
-    let current = obj;
-    
-    for (const key of keys) {
-      if (current[key] === undefined) return '';
-      current = current[key];
-    }
-    
-    return current;
+  const keys = path.split('.');
+  let current = obj;
+  
+  for (const key of keys) {
+    if (current[key] === undefined) return '';
+    current = current[key];
   }
-}); 
+  
+  return current;
+} 

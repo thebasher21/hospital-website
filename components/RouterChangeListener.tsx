@@ -38,6 +38,22 @@ function RouterChangeListenerContent({
   }, [pathname, searchParams, onRouteChangeComplete]);
 
   useEffect(() => {
+    // Listen for custom routeChangeStart events from useNavigation
+    const handleCustomRouteChangeStart = () => {
+      if (!isNavigatingRef.current) {
+        onRouteChangeStart();
+        isNavigatingRef.current = true;
+        
+        // Safety timeout to clear loading state if navigation doesn't complete
+        setTimeout(() => {
+          if (isNavigatingRef.current) {
+            onRouteChangeComplete();
+            isNavigatingRef.current = false;
+          }
+        }, 3000);
+      }
+    };
+    
     // For capturing clicks on links before navigation
     const handleLinkClick = (e: MouseEvent) => {
       // Check if the click is on an anchor tag
@@ -52,8 +68,11 @@ function RouterChangeListenerContent({
         const anchorElement = target as HTMLAnchorElement;
         if (anchorElement.href && 
             new URL(anchorElement.href).origin === window.location.origin) {
-          onRouteChangeStart();
-          isNavigatingRef.current = true;
+          // Only trigger navigation start if we're not already navigating
+          if (!isNavigatingRef.current) {
+            onRouteChangeStart();
+            isNavigatingRef.current = true;
+          }
           
           // For GitHub Pages compatibility - update URL manually if needed
           if (process.env.NODE_ENV === 'production' && 
@@ -106,8 +125,11 @@ function RouterChangeListenerContent({
 
     // For capturing browser back/forward navigation
     const handlePopState = () => {
-      onRouteChangeStart();
-      isNavigatingRef.current = true;
+      // Only trigger navigation start if we're not already navigating
+      if (!isNavigatingRef.current) {
+        onRouteChangeStart();
+        isNavigatingRef.current = true;
+      }
       
       // Safety timer for popstate events
       setTimeout(() => {
@@ -118,6 +140,8 @@ function RouterChangeListenerContent({
       }, 3000);
     };
 
+    // Listen for custom routeChangeStart events
+    window.addEventListener('routeChangeStart', handleCustomRouteChangeStart);
     document.addEventListener('click', handleLinkClick);
     document.addEventListener('click', handleGitHubPagesLinks);
     window.addEventListener('popstate', handlePopState);
@@ -141,6 +165,7 @@ function RouterChangeListenerContent({
     window.addEventListener('click', handleUserInteraction);
 
     return () => {
+      window.removeEventListener('routeChangeStart', handleCustomRouteChangeStart);
       document.removeEventListener('click', handleLinkClick);
       document.removeEventListener('click', handleGitHubPagesLinks);
       window.removeEventListener('popstate', handlePopState);
