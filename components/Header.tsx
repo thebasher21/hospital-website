@@ -4,13 +4,14 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { cn, getBasePath } from '@/lib/utils';
+import { cn, getBasePath, useNavigation } from '@/lib/utils';
 import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentPath, setCurrentPath] = useState('');
   const pathname = usePathname();
+  const { handleNavigation } = useNavigation();
   
   // Update currentPath when pathname changes
   useEffect(() => {
@@ -50,7 +51,6 @@ export default function Header() {
   // const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
   //   if (process.env.NODE_ENV === 'production') {
   //     e.preventDefault();
-  //     window.location.href = `https://thebasher21.github.io${path}`;
   //   }
   // };
 
@@ -121,6 +121,7 @@ export default function Header() {
                           : "text-gray-700 hover:bg-gray-100 hover:text-blue-600 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-blue-400"
                       )}
                       aria-current={isActive ? "page" : undefined}
+                      onClick={(e) => handleNavigation(e, link.path)}
                     >
                       <span data-i18n={link.name}>{link.label}</span>
                     </Link>
@@ -135,7 +136,7 @@ export default function Header() {
         <div className="hidden lg:flex items-center h-[70px]">
           {/* Logo on left */}
           <div className="flex-shrink-0 mr-2">
-            <Link href={getBasePath("/")} aria-label="SADH Care Hospital Home">
+            <Link href={getBasePath("/")} aria-label="SADH Care Hospital Home" onClick={(e) => handleNavigation(e, "/")}>
               <div className="relative h-16 w-48 sm:w-52">
                 <Image 
                   src={getBasePath("/images/logos/hospitalLogo.png")} 
@@ -157,6 +158,7 @@ export default function Header() {
                   <li key={link.path} className="h-10">
                     <Link 
                       href={getBasePath(link.path)}
+                      onClick={(e) => handleNavigation(e, link.path)}
                       className={cn(
                         "flex items-center justify-center h-full px-1.5 xl:px-2 py-1 rounded-md text-xs sm:text-sm font-medium transition-colors whitespace-nowrap min-w-[60px] xl:min-w-[70px]",
                         isActive 

@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
+import { useRouter } from "next/navigation"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -27,4 +28,26 @@ export function navigateToPage(path: string): void {
     // Let Next.js handle client-side routing in development
     // This is handled by Link components
   }
+}
+
+/**
+ * Custom hook for handling navigation with Next.js
+ * Works with both production and development environments
+ */
+export function useNavigation() {
+  const router = useRouter();
+  
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (process.env.NODE_ENV === 'production') {
+      e.preventDefault();
+      console.log("Production environment detected");
+      console.log('Path: ', path);
+      window.location.href = getBasePath(path);
+    } else {
+      e.preventDefault();
+      router.push(path);
+    }
+  };
+  
+  return { handleNavigation };
 }
