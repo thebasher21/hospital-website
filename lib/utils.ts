@@ -18,3 +18,17 @@ export function getBasePath(path: string): string {
   
   return `${basePath}${normalizedPath}`;
 }
+
+/**
+ * Navigate to a path using full GitHub Pages URL in production
+ * or client-side routing in development
+ */
+export function navigateToPage(path: string): void {
+  if (process.env.NODE_ENV === 'production') {
+    // Use direct URL for GitHub Pages
+    window.location.href = `https://thebasher21.github.io/hospital-website${path.startsWith('/') ? path : `/${path}`}`;
+  } else {
+    // Let Next.js handle client-side routing in development
+    // This is handled by Link components
+  }
+}
