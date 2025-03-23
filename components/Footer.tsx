@@ -9,7 +9,7 @@ export default function Footer() {
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
     if (process.env.NODE_ENV === 'production') {
       e.preventDefault();
-      window.location.href = `https://thebasher21.github.io/hospital-website${path}`;
+      window.location.href = `https://thebasher21.github.io${path}`;
     }
   };
 
