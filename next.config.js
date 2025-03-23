@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: process.env.NODE_ENV === 'production' ? '/hospital-website' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/hospital-website/' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/' : '',
   trailingSlash: true,
   images: {
     remotePatterns: [
@@ -18,4 +18,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig 
+export default nextConfig 
