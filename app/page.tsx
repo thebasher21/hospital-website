@@ -59,7 +59,12 @@ export default function Home() {
     if (!isLoading) {
       const translatedSlides = getTranslation('hero.carousel.slides');
       if (Array.isArray(translatedSlides)) {
-        setSlides(translatedSlides as CarouselSlide[]);
+        // Apply getBasePath to all image URLs
+        const processedSlides = (translatedSlides as CarouselSlide[]).map(slide => ({
+          ...slide,
+          image: slide.image.startsWith('http') ? slide.image : getBasePath(slide.image)
+        }));
+        setSlides(processedSlides);
       } else {
         // Default slides if translation not found
         setSlides([]);

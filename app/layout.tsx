@@ -23,9 +23,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -82,6 +82,30 @@ export default function RootLayout({
             }
           `}
         </style>
+        {/* GitHub Pages redirect handling script */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                // Check if there's a redirect parameter in the URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const redirectPath = urlParams.get('redirect');
+                
+                // If there is a redirect parameter and we're not already on that page
+                if (redirectPath && window.location.pathname.indexOf(redirectPath) === -1) {
+                  // Remove the redirect parameter from URL
+                  urlParams.delete('redirect');
+                  const newQueryString = urlParams.toString();
+                  const newPath = '/hospital-website' + redirectPath;
+                  
+                  // Replace the current state with the correct path without reloading
+                  const newUrl = newPath + (newQueryString ? '?' + newQueryString : '');
+                  window.history.replaceState(null, null, newUrl);
+                }
+              })();
+            `,
+          }}
+        />
       </head>
       <body
         className={cn(
