@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { cn, getBasePath } from '@/lib/utils';
 import { useNavigation } from '@/lib/client-utils';
 import ThemeToggle from './ThemeToggle';
+import ClientLanguageSwitcher from './ClientLanguageSwitcher';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,7 +18,18 @@ export default function Header() {
   // Update currentPath when pathname changes
   useEffect(() => {
     if (pathname) {
-      setCurrentPath(pathname);
+      // Normalize the pathname to handle GitHub Pages base path
+      let normalizedPath = pathname;
+      
+      // Remove GitHub Pages base path if present
+      if (process.env.NODE_ENV === 'production' && pathname.startsWith('/hospital-website')) {
+        normalizedPath = pathname.replace('/hospital-website', '');
+      }
+      
+      // If path ends up empty, it's the home page
+      if (normalizedPath === '') normalizedPath = '/';
+      
+      setCurrentPath(normalizedPath);
     }
   }, [pathname]);
 
@@ -48,19 +60,28 @@ export default function Header() {
     { name: "header.menu.contactUs", path: "/contact-us", label: "Contact Us" },
   ];
 
-  // Function to handle direct navigation for GitHub Pages
-  // const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
-  //   if (process.env.NODE_ENV === 'production') {
-  //     e.preventDefault();
-  //   }
-  // };
+  // Check if a path matches the current path
+  const isLinkActive = (linkPath: string): boolean => {
+    // Normal matching - exact path match
+    if (linkPath === currentPath) return true;
+    
+    // Special case for nested paths - check if it's a subpath
+    if (linkPath !== '/' && currentPath.startsWith(linkPath)) return true;
+    
+    return false;
+  };
+
+  // Trigger loading state before navigation
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    handleNavigation(e, "/");
+  };
 
   return (
     <header className="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-200 dark:border-gray-800 sticky top-0 z-10 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 transition-colors">
       <div className="container mx-auto px-4 py-3">
         {/* Mobile header layout */}
         <div className="flex items-center justify-between lg:hidden">
-          <Link href={getBasePath("/")} aria-label="SADH Care Hospital Home" className="flex-shrink-0">
+          <Link href={getBasePath("/")} aria-label="SADH Care Hospital Home" className="flex-shrink-0" onClick={handleLogoClick}>
             <div className="relative h-16 w-48">
               <Image 
                 src={getBasePath("/images/logos/hospitalLogo.png")} 
@@ -110,7 +131,7 @@ export default function Header() {
           <nav className="py-2">
             <ul className="flex flex-col gap-3">
               {navLinks.map((link) => {
-                const isActive = pathname === link.path || currentPath === link.path;
+                const isActive = isLinkActive(link.path);
                 return (
                   <li key={link.path}>
                     <Link 
@@ -137,7 +158,7 @@ export default function Header() {
         <div className="hidden lg:flex items-center h-[70px]">
           {/* Logo on left */}
           <div className="flex-shrink-0 mr-2">
-            <Link href={getBasePath("/")} aria-label="SADH Care Hospital Home" onClick={(e) => handleNavigation(e, "/")}>
+            <Link href={getBasePath("/")} aria-label="SADH Care Hospital Home" onClick={handleLogoClick}>
               <div className="relative h-16 w-48 sm:w-52">
                 <Image 
                   src={getBasePath("/images/logos/hospitalLogo.png")} 
@@ -154,7 +175,7 @@ export default function Header() {
           <nav className="flex-1 flex justify-center mx-1 sm:mx-2">
             <ul className="flex items-center justify-center gap-1 xl:gap-2">
               {navLinks.map((link) => {
-                const isActive = pathname === link.path || currentPath === link.path;
+                const isActive = isLinkActive(link.path);
                 return (
                   <li key={link.path} className="h-10">
                     <Link 
@@ -177,7 +198,8 @@ export default function Header() {
           </nav>
           
           {/* Theme toggle on right */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex items-center space-x-2">
+            <ClientLanguageSwitcher />
             <ThemeToggle />
           </div>
         </div>

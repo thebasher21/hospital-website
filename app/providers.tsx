@@ -1,36 +1,44 @@
 'use client';
 
-import { ReactNode, useState } from 'react';
+import { ReactNode, useState, useRef, useCallback } from 'react';
 import PageTransitionLoader from '@/components/PageTransitionLoader';
 import RouterChangeListener from '@/components/RouterChangeListener';
-import NavigationEvents from '@/components/NavigationEvents';
 
 interface ProvidersProps {
   children: ReactNode;
 }
 
 export default function Providers({ children }: ProvidersProps) {
-  const [isNavigating, setIsNavigating] = useState(false);
+  // Use a ref for internal state tracking to reduce rerenders
+  const isNavigatingRef = useRef(false);
+  // State for UI updates only
+  const [isLoading, setIsLoading] = useState(false);
   
-  const handleRouteChangeStart = () => {
-    setIsNavigating(true);
-  };
+  // Memoize callback functions to prevent them from changing on rerenders
+  const handleRouteChangeStart = useCallback(() => {
+    // Update ref immediately
+    isNavigatingRef.current = true;
+    // Then update state for UI
+    setIsLoading(true);
+  }, []);
   
-  const handleRouteChangeComplete = () => {
-    setIsNavigating(false);
-  };
+  const handleRouteChangeComplete = useCallback(() => {
+    // Update ref immediately
+    isNavigatingRef.current = false;
+    // Then update state for UI
+    setIsLoading(false);
+  }, []);
   
   return (
     <>
-      {/* Use both navigation detection methods for maximum reliability */}
+      {/* Use only one navigation detection method to prevent infinite loops */}
       <RouterChangeListener 
         onRouteChangeStart={handleRouteChangeStart}
         onRouteChangeComplete={handleRouteChangeComplete}
       />
-      <NavigationEvents setIsNavigating={setIsNavigating} />
       
       {/* Loading UI */}
-      <PageTransitionLoader isLoading={isNavigating} />
+      <PageTransitionLoader isLoading={isLoading} />
       
       {children}
     </>
