@@ -96,7 +96,7 @@ export default async function Home() {
         const label = getTranslationValue(translations, "gallery.imageLabel");
         return typeof label === "string"
             ? label.replace("{number}", (i + 1).toString())
-            : `gallery${i + 1}.jpeg`;
+            : `/images/gallery/gallery${i + 1}.jpeg`;
     });
 
     return (

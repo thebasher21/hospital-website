@@ -16,6 +16,7 @@ import {
     SquareActivity,
 } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { getBasePath } from "@/lib/utils";
 
 const services = [
     {
@@ -396,7 +397,7 @@ export default function ServicesPage() {
                                         width="45"
                                         decoding="async"
                                         data-nimg="1"
-                                        src={`http://localhost:3000${amenity.icon}`}
+                                        src={getBasePath(amenity.icon)}
                                     />
                                 </div>
                                 <p className="text-xl font-semibold text-slate-900 dark:text-white mx-4">
@@ -425,7 +426,7 @@ export default function ServicesPage() {
                                             width="45"
                                             decoding="async"
                                             data-nimg="1"
-                                            src={`http://localhost:3000${insurance.icon}`}
+                                            src={getBasePath(insurance.icon)}
                                         />
                                     </div>
                                     <p className="text-xl font-semibold text-slate-900 dark:text-white mx-4">
