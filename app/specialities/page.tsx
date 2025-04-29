@@ -3,7 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import PageTitle from "@/components/PageTitle";
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 export default function Specialities() {
