@@ -83,9 +83,6 @@ export default function TestimonialsCarousel({
         };
     }, [api, current, testimonials.length, visibleSlides]);
 
-    // Calculate total number of pages for pagination indicators
-    const totalPages = Math.ceil(testimonials.length / visibleSlides);
-
     return (
         <div
             className="max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl mx-auto"
