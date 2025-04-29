@@ -1,27 +1,19 @@
-import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import PageTitle from "@/components/PageTitle";
 import Link from "next/link";
 import {
-    Activity,
     Ambulance,
     Baby,
     Bone,
     Dna,
     Ear,
-    FileText,
-    FlaskConical,
     Heart,
-    Home,
     HousePlug,
-    LifeBuoy,
     Microscope,
     Pill,
     PillBottle,
     Scissors,
-    SmilePlus,
     SquareActivity,
-    Users,
 } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
