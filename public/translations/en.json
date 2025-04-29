@@ -1,140 +1,140 @@
 {
-  "header": {
-    "hospitalName": "SADH Care Hospital",
-    "menu": {
-      "home": "Home",
-      "aboutUs": "About Us",
-      "specialities": "Specialities",
-      "services": "Services",
-      "outreachProgrammes": "Outreach Programmes",
-      "gallery": "Gallery",
-      "donations": "Donations",
-      "contactUs": "Contact Us"
+    "header": {
+        "hospitalName": "SADH Care Hospital",
+        "menu": {
+            "home": "Home",
+            "aboutUs": "About Us",
+            "specialities": "Specialities",
+            "services": "Services",
+            "outreachProgrammes": "Outreach Programmes",
+            "gallery": "Gallery",
+            "donations": "Donations",
+            "contactUs": "Contact Us"
+        },
+        "menuToggle": "Toggle menu",
+        "openMainMenu": "Open main menu"
     },
-    "menuToggle": "Toggle menu",
-    "openMainMenu": "Open main menu"
-  },
-  "hero": {
-    "welcome": "Your health is our priority",
-    "subtext": "We provide quality healthcare services",
-    "mission": "Care &nbsp;·&nbsp; Compassion &nbsp;·&nbsp; Empathy",
-    "carousel": {
-      "slides": [
-        {
-          "title": "Your health is our priority",
-          "description": "Care &nbsp;·&nbsp; Compassion &nbsp;·&nbsp; Empathy",
-          "image": "/images/infrastructure/hospitalBuilding.jpg"
-        },
-        {
-          "title": "24 x 7 Open",
-          "description": "Emergency services available round the clock",
-          "image": "/images/services/24x7Open.jpg"
-        },
-        {
-          "title": "Ayushman Bharat Empanelled",
-          "description": "Proud participant in India's flagship healthcare program",
-          "image": "/images/services/ayushmanBharatEmpanelled.jpg"
-        },
-        {
-          "title": "State of the art technology",
-          "description": "Advanced medical equipment for precise diagnostics and treatment",
-          "image": "/images/infrastructure/stateOfTheArtTechnology.jpg"
+    "hero": {
+        "welcome": "Your health is our priority",
+        "subtext": "We provide quality healthcare services",
+        "mission": "Care &nbsp;·&nbsp; Compassion &nbsp;·&nbsp; Empathy",
+        "carousel": {
+            "slides": [
+                {
+                    "title": "Your health is our priority",
+                    "description": "Care &nbsp;·&nbsp; Compassion &nbsp;·&nbsp; Empathy",
+                    "image": "/images/infrastructure/hospitalBuilding.jpg"
+                },
+                {
+                    "title": "24 x 7 Open",
+                    "description": "Emergency services available round the clock",
+                    "image": "/images/services/24x7Open.jpg"
+                },
+                {
+                    "title": "Ayushman Bharat Empanelled",
+                    "description": "Proud participant in India's flagship healthcare program",
+                    "image": "/images/services/ayushmanBharatEmpanelled.jpg"
+                },
+                {
+                    "title": "State of the art technology",
+                    "description": "Advanced medical equipment for precise diagnostics and treatment",
+                    "image": "/images/infrastructure/stateOfTheArtTechnology.jpg"
+                }
+            ]
         }
-      ]
-    }
-  },
-  "services": {
-    "title": "Our Services",
-    "emergency": {
-      "title": "Emergency Care",
-      "description": "24/7 emergency services with state-of-the-art facilities and expert medical staff."
     },
     "services": {
-      "title": "Services",
-      "description": "Comprehensive healthcare services including consultations, diagnostics, and various medical procedures."
+        "title": "Our Services",
+        "emergency": {
+            "title": "Emergency Care",
+            "description": "24/7 emergency services with state-of-the-art facilities and expert medical staff."
+        },
+        "services": {
+            "title": "Services",
+            "description": "Comprehensive healthcare services including consultations, diagnostics, and various medical procedures."
+        },
+        "specialities": {
+            "title": "Specialities",
+            "description": "Specialized medical departments including Gynaecology & Obstetrics, Orthopedics, Pediatrics, and other critical medical specialties."
+        }
     },
-    "specialities": {
-      "title": "Specialities",
-      "description": "Specialized medical departments including Gynaecology & Obstetrics, Orthopedics, Pediatrics, and other critical medical specialties."
-    }
-  },
-  "gallery": {
-    "title": "Gallery",
-    "imageLabel": "Hospital Image {number}"
-  },
-  "testimonials": {
-    "title": "Patient Testimonials",
-    "testimonial1": {
-      "quote": "The care I received at SADH Care Hospital was exceptional. The doctors were knowledgeable and compassionate, and the staff went above and beyond to ensure my comfort.",
-      "name": "John Doe",
-      "role": "Cardiac Patient"
+    "gallery": {
+        "title": "Gallery",
+        "imageLabel": "gallery{number}.jpeg"
     },
-    "testimonial2": {
-      "quote": "I was impressed by the modern facilities and technology at SADH Care Hospital. The entire process from admission to discharge was smooth and well-coordinated.",
-      "name": "Jane Smith",
-      "role": "Maternity Patient"
-    }
-  },
-  "cta": {
-    "title": "Ready to Experience Quality Healthcare?",
-    "description": "Our team of specialists is ready to provide you with the best care possible.",
-    "contactButton": "Contact Us"
-  },
-  "aboutUs": {
-    "carousel": {
-      "title": "About SADH Care Hospital"
-    },
-    "ourStory": {
-      "title": "Our Story",
-      "paragraph1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.",
-      "paragraph2": "Suspendisse in orci enim. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse in orci enim.",
-      "paragraph3": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
-    },
-    "management": {
-      "title": "Our Management Team",
-      "staffName": "{name}",
-      "staffRole": "{role}",
-      "staffBio": "{bio}"
-    }
-  },
-  "specialities": {
-    "hero": {
-      "title": "Our Specialities",
-      "description": "Our hospital offers comprehensive medical care across a wide range of specialties. Our team of experienced specialists is committed to providing the highest quality healthcare services."
-    },
-    "section": {
-      "title": "Medical Specialties"
-    },
-    "specialty": {
-      "name": "{name}",
-      "description": "{description}"
+    "testimonials": {
+        "title": "Patient Testimonials",
+        "testimonial1": {
+            "quote": "The care I received at SADH Care Hospital was exceptional. The doctors were knowledgeable and compassionate, and the staff went above and beyond to ensure my comfort.",
+            "name": "John Doe",
+            "role": "Cardiac Patient"
+        },
+        "testimonial2": {
+            "quote": "I was impressed by the modern facilities and technology at SADH Care Hospital. The entire process from admission to discharge was smooth and well-coordinated.",
+            "name": "Jane Smith",
+            "role": "Maternity Patient"
+        }
     },
     "cta": {
-      "title": "Need Medical Consultation?",
-      "description": "Our specialists are available for consultations. Contact us to schedule a consultation with the appropriate department.",
-      "contactButton": "Contact Us"
+        "title": "Ready to Experience Quality Healthcare?",
+        "description": "Our team of specialists is ready to provide you with the best care possible.",
+        "contactButton": "Contact Us"
+    },
+    "aboutUs": {
+        "carousel": {
+            "title": "About SADH Care Hospital"
+        },
+        "ourStory": {
+            "title": "Our Story",
+            "paragraph1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.",
+            "paragraph2": "Suspendisse in orci enim. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse in orci enim.",
+            "paragraph3": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+        },
+        "management": {
+            "title": "Our Management Team",
+            "staffName": "{name}",
+            "staffRole": "{role}",
+            "staffBio": "{bio}"
+        }
+    },
+    "specialities": {
+        "hero": {
+            "title": "Our Specialities",
+            "description": "Our hospital offers comprehensive medical care across a wide range of specialties. Our team of experienced specialists is committed to providing the highest quality healthcare services."
+        },
+        "section": {
+            "title": "Medical Specialties"
+        },
+        "specialty": {
+            "name": "{name}",
+            "description": "{description}"
+        },
+        "cta": {
+            "title": "Need Medical Consultation?",
+            "description": "Our specialists are available for consultations. Contact us to schedule a consultation with the appropriate department.",
+            "contactButton": "Contact Us"
+        }
+    },
+    "footer": {
+        "quickLinks": {
+            "title": "Quick Links",
+            "aboutUs": "About Us",
+            "ourDoctors": "Our Doctors",
+            "departments": "Departments",
+            "careers": "Careers"
+        },
+        "contactUs": {
+            "title": "Contact Us",
+            "address": "SADH Care Hospital, \nAshram Hari Mandir, Pataudi \nGurugram, Haryana \n122503",
+            "email": "Email: info@sadhcare.org",
+            "phone": "Phone: 0124 2970919"
+        },
+        "workingHours": {
+            "title": "Working Hours",
+            "weekdays": "Monday - Friday: 8am - 8pm",
+            "emergency": "Emergency: 24/7"
+        },
+        "copyright": "© {year} SADH Care Hospital. All rights reserved.",
+        "trustedPartner": "Your trusted healthcare partner providing quality medical services since [year]."
     }
-  },
-  "footer": {
-    "quickLinks": {
-      "title": "Quick Links",
-      "aboutUs": "About Us",
-      "ourDoctors": "Our Doctors",
-      "departments": "Departments",
-      "careers": "Careers"
-    },
-    "contactUs": {
-      "title": "Contact Us",
-      "address": "123 Hospital Street, City, Country",
-      "email": "Email: info@hospital.com",
-      "phone": "Phone: (123) 456-7890"
-    },
-    "workingHours": {
-      "title": "Working Hours",
-      "weekdays": "Monday - Friday: 8am - 8pm",
-      "emergency": "Emergency: 24/7"
-    },
-    "copyright": "© {year} SADH Care Hospital. All rights reserved.",
-    "trustedPartner": "Your trusted healthcare partner providing quality medical services since [year]."
-  }
-} 
+}
