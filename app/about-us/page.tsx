@@ -9,7 +9,7 @@ import {
     CardTitle,
     CardDescription,
 } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import { cn, getBasePath } from "@/lib/utils";
 import PageTitle from "@/components/PageTitle";
 
 export default function AboutUs() {
@@ -97,7 +97,7 @@ export default function AboutUs() {
                                 )}
                             >
                                 <Image
-                                    src={`http://localhost:3000${image.src}`}
+                                    src={getBasePath(image.src)}
                                     alt={image.alt}
                                     fill
                                     priority={index === 0}
@@ -200,7 +200,7 @@ export default function AboutUs() {
                             >
                                 <div className="relative h-64 w-full">
                                     <Image
-                                        src={`http://localhost:3000${staff.image}`}
+                                        src={getBasePath(staff.image)}
                                         alt={staff.name}
                                         fill
                                         className="object-contain"

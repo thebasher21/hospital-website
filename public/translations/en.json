@@ -60,7 +60,7 @@
     },
     "gallery": {
         "title": "Gallery",
-        "imageLabel": "gallery{number}.jpeg"
+        "imageLabel": "/images/gallery/gallery{number}.jpeg"
     },
     "testimonials": {
         "title": "Patient Testimonials",

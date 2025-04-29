@@ -8,6 +8,7 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
+import { getBasePath } from "@/lib/utils";
 
 interface GalleryCarouselProps {
     imageSrc: string[];
@@ -27,7 +28,7 @@ export default function GalleryCarousel({ imageSrc }: GalleryCarouselProps) {
                                 <CardContent className="flex aspect-square items-center justify-center p-4 sm:p-6">
                                     <div className="bg-gray-100 dark:bg-gray-700 w-full h-70 rounded-md flex items-center justify-center overflow-hidden">
                                         <img
-                                            src={`http://localhost:3000/images/gallery/${image}`}
+                                            src={getBasePath(image)}
                                             alt={image}
                                             className="object-cover w-full h-full"
                                         />
