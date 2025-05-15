@@ -12,6 +12,7 @@ export function cn(...inputs: ClassValue[]) {
 export function getBasePath(path: string): string {
   // In production (GitHub Pages), add the repository name prefix
   // In development, use the path as is
-  
-  return `https://thebasher21.github.io/hospital-website${path.startsWith('/') ? path : `/${path}`}`;
+
+  // return `https://thebasher21.github.io/hospital-website${path.startsWith('/') ? path : `/${path}`}`;
+  return `http://localhost:3000${path.startsWith('/') ? path : `/${path}`}`;
 }

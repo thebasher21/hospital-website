@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import {
     Card,
-    CardContent,
     CardHeader,
     CardTitle,
     CardDescription,
@@ -29,17 +28,16 @@ export default function AboutUs() {
         { src: "/images/about/patient_care.jpeg", alt: "Patient Care" },
     ];
 
-    // Sample management staff data
     const managementStaff = [
         {
-            name: "Dr. (Brig) Amitava Banerjee (Retd)",
-            designation: "Director & HOD",
+            name: "Dr. (Brig) Amitava Banerjee",
+            designation: "Medical Director & HOD",
             image: "/images/doctors/Amitava_Banerjee.jpg",
             bio: "Radiodiagnosis",
         },
         {
-            name: "Dr. (Maj) Roli Tewari (Retd)",
-            designation: "Deputy Medical",
+            name: "Dr. (Maj) Roli Tewari",
+            designation: "COO & Medical Deputy MS",
             image: "/images/doctors/Roli_Tewari.jpg",
             bio: "Superintendent",
         },
@@ -51,7 +49,7 @@ export default function AboutUs() {
         },
         {
             name: "Dr. Umesh Kumari Yadav",
-            designation: "Gynaecologist & Obstetrician",
+            designation: "Gynaecologist",
             image: "/images/doctors/Umesh_Kumari_Yadav.jpg",
             bio: "",
         },
@@ -192,18 +190,18 @@ export default function AboutUs() {
                     >
                         Our Management Team
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
                         {managementStaff.map((staff, index) => (
                             <Card
                                 key={index}
-                                className="overflow-hidden transition-all duration-300 hover:shadow-lg border bg-white dark:bg-gray-800/70"
+                                className="overflow-hidden transition-all duration-300 hover:shadow-lg border bg-white dark:bg-gray-800/70 py-0"
                             >
-                                <div className="relative h-64 w-full">
+                                <div className="relative h-80 w-full">
                                     <Image
                                         src={getBasePath(staff.image)}
                                         alt={staff.name}
                                         fill
-                                        className="object-contain"
+                                        className="object-cover"
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                                     />
                                 </div>
@@ -222,16 +220,14 @@ export default function AboutUs() {
                                     >
                                         {staff.designation}
                                     </CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    <p
-                                        className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed"
-                                        data-i18n-key="aboutUs.management.staffBio"
-                                        data-i18n-params={`{"bio":"${staff.bio}"}`}
+                                    <CardDescription
+                                        className="text-slate-600 dark:text-slate-400"
+                                        data-i18n-key="aboutUs.management.staffRole"
+                                        data-i18n-params={`{"role":"${staff.bio}"}`}
                                     >
                                         {staff.bio}
-                                    </p>
-                                </CardContent>
+                                    </CardDescription>
+                                </CardHeader>
                             </Card>
                         ))}
                     </div>

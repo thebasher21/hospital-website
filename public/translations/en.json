@@ -22,22 +22,26 @@
             "slides": [
                 {
                     "title": "Your health is our priority",
-                    "description": "Care &nbsp;·&nbsp; Compassion &nbsp;·&nbsp; Empathy",
+                    "subtitle": "Care &nbsp;·&nbsp; Compassion &nbsp;·&nbsp; Empathy",
+                    "description": "Supported by: Mankind Pharma Limited",
                     "image": "/images/infrastructure/hospitalBuilding.jpg"
                 },
                 {
                     "title": "24 x 7 Open",
-                    "description": "Emergency services available round the clock",
+                    "subtitle": "Emergency services available round the clock",
+                    "description": " ",
                     "image": "/images/services/24x7Open.jpg"
                 },
                 {
                     "title": "Ayushman Bharat Empanelled",
-                    "description": "Proud participant in India's flagship healthcare program",
+                    "subtitle": "Proud participant in India's flagship healthcare program",
+                    "description": " ",
                     "image": "/images/services/ayushmanBharatEmpanelled.jpg"
                 },
                 {
                     "title": "State of the art technology",
-                    "description": "Advanced medical equipment for precise diagnostics and treatment",
+                    "subtitle": "Advanced medical equipment for precise diagnostics and treatment",
+                    "description": " ",
                     "image": "/images/infrastructure/stateOfTheArtTechnology.jpg"
                 }
             ]

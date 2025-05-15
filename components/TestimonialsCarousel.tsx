@@ -138,7 +138,7 @@ export default function TestimonialsCarousel({
                 <div className="flex justify-center">
                     <button
                         onClick={() => api?.scrollPrev()}
-                        className="h-10 w-10 rounded-full border border-neutral-200 dark:border-neutral-600 flex items-center justify-center mr-4"
+                        className="h-10 w-10 rounded-full border border-neutral-200 dark:border-neutral-600 flex items-center justify-center mr-4 transition-all duration-300 transform hover:scale-125 cursor-pointer"
                         aria-label="Previous page"
                     >
                         <svg
@@ -158,7 +158,7 @@ export default function TestimonialsCarousel({
                     </button>
                     <button
                         onClick={() => api?.scrollNext()}
-                        className="h-10 w-10 rounded-full border border-neutral-200 dark:border-neutral-600 flex items-center justify-center"
+                        className="h-10 w-10 rounded-full border border-neutral-200 dark:border-neutral-600 flex items-center justify-center transition-all duration-300 transform hover:scale-125 cursor-pointer"
                         aria-label="Next page"
                     >
                         <svg

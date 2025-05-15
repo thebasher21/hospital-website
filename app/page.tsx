@@ -1,4 +1,10 @@
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import {
+    Card,
+    CardHeader,
+    CardTitle,
+    CardContent,
+    CardClickHandler,
+} from "@/components/ui/card";
 import {
     getTranslations,
     getTranslationValue,
@@ -8,10 +14,13 @@ import WelcomeModal from "@/components/WelcomeModal";
 import HeroCarousel from "@/components/HeroCarousel";
 import GalleryCarousel from "@/components/GalleryCarousel";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import Link from "next/link";
+import StatisticsComponent from "@/components/Statistics";
 
 // Define the type for carousel slides
 interface CarouselSlide {
     title: string;
+    subtitle: string;
     description: string;
     image: string;
 }
@@ -123,118 +132,94 @@ export default async function Home() {
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                         {/* Service 1 */}
-                        <Card className="shadow-md border bg-white dark:bg-gray-800/60">
-                            <CardHeader className="text-center">
-                                <div className="bg-gray-100 dark:bg-gray-700 w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-gray-700 dark:text-gray-300 text-2xl flex items-center justify-center w-full h-full">
-                                        🚑
-                                    </span>
-                                </div>
-                                <CardTitle
-                                    className="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white"
-                                    data-i18n="services.emergency.title"
-                                >
-                                    {(getTranslationValue(
-                                        translations,
-                                        "services.emergency.title"
-                                    ) as string) || "Emergency Care"}
-                                </CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p
-                                    className="text-slate-600 dark:text-slate-300 leading-relaxed"
-                                    data-i18n="services.emergency.description"
-                                >
-                                    {(getTranslationValue(
-                                        translations,
-                                        "services.emergency.description"
-                                    ) as string) ||
-                                        "24/7 emergency services with state-of-the-art facilities and expert medical staff."}
-                                </p>
-                            </CardContent>
-                        </Card>
+                        <CardClickHandler
+                            icon={"🚑"}
+                            title={
+                                (getTranslationValue(
+                                    translations,
+                                    "services.emergency.title"
+                                ) as string) || "Emergency Care"
+                            }
+                            description={
+                                (getTranslationValue(
+                                    translations,
+                                    "services.emergency.description"
+                                ) as string) ||
+                                "24/7 emergency services with state-of-the-art facilities and expert medical staff."
+                            }
+                            data={[
+                                "Emergency",
+                                "OT",
+                                "Ultrasound",
+                                "X-Ray",
+                                "Normal & CS Delivery",
+                                "Ambulance",
+                                "Lab",
+                                "NICU",
+                                "Pharmacy",
+                                "Dialysis",
+                            ]}
+                        />
 
                         {/* Service 2 */}
-                        <Card className="shadow-md border bg-white dark:bg-gray-800/60">
-                            <CardHeader className="text-center">
-                                <div className="bg-gray-100 dark:bg-gray-700 w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-gray-700 dark:text-gray-300 text-2xl flex items-center justify-center w-full h-full">
-                                        🛏️
-                                    </span>
-                                </div>
-                                <CardTitle
-                                    className="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white"
-                                    data-i18n="services.services.title"
-                                >
-                                    {(getTranslationValue(
-                                        translations,
-                                        "services.specialized.title"
-                                    ) as string) || "Services"}
-                                </CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p
-                                    className="text-slate-600 dark:text-slate-300 leading-relaxed"
-                                    data-i18n="services.services.description"
-                                >
-                                    {(getTranslationValue(
-                                        translations,
-                                        "services.services.description"
-                                    ) as string) ||
-                                        "Comprehensive healthcare services including consultations, diagnostics, and various medical procedures."}
-                                </p>
-                            </CardContent>
-                        </Card>
+                        <CardClickHandler
+                            icon={"🛏️"}
+                            title={
+                                (getTranslationValue(
+                                    translations,
+                                    "services.specialized.title"
+                                ) as string) || "Services"
+                            }
+                            description={
+                                (getTranslationValue(
+                                    translations,
+                                    "services.services.description"
+                                ) as string) ||
+                                "Comprehensive healthcare services including consultations, diagnostics, and various medical procedures."
+                            }
+                            data={[]}
+                        />
 
                         {/* Service 3 */}
-                        <Card className="shadow-md border bg-white dark:bg-gray-800/60">
-                            <CardHeader className="text-center">
-                                <div className="bg-gray-100 dark:bg-gray-700 w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-gray-700 dark:text-gray-300 text-2xl flex items-center justify-center w-full h-full">
-                                        🩺
-                                    </span>
-                                </div>
-                                <CardTitle
-                                    className="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white"
-                                    data-i18n="services.specialities.title"
-                                >
-                                    {(getTranslationValue(
-                                        translations,
-                                        "services.specialities.title"
-                                    ) as string) || "Specialities"}
-                                </CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p
-                                    className="text-slate-600 dark:text-slate-300 leading-relaxed"
-                                    data-i18n="services.specialities.description"
-                                >
-                                    {(getTranslationValue(
-                                        translations,
-                                        "services.specialities.description"
-                                    ) as string) ||
-                                        "Specialized medical departments including Gynaecology & Obstetrics, Orthopedics, Pediatrics, and other critical medical specialties."}
-                                </p>
-                            </CardContent>
+                        <Card className="shadow-md border bg-white dark:bg-gray-800/60 transition-all duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer">
+                            <Link href={getBasePath("/specialities")}>
+                                <CardHeader className="text-center">
+                                    <div className="bg-gray-100 dark:bg-gray-700 w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <span className="text-gray-700 dark:text-gray-300 text-2xl flex items-center justify-center w-full h-full">
+                                            🩺
+                                        </span>
+                                    </div>
+                                    <CardTitle
+                                        className="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white"
+                                        data-i18n="services.specialities.title"
+                                    >
+                                        {(getTranslationValue(
+                                            translations,
+                                            "services.specialities.title"
+                                        ) as string) || "Specialities"}
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p
+                                        className="text-slate-600 dark:text-slate-300 leading-relaxed"
+                                        data-i18n="services.specialities.description"
+                                    >
+                                        {(getTranslationValue(
+                                            translations,
+                                            "services.specialities.description"
+                                        ) as string) ||
+                                            "Specialized medical departments including Gynaecology & Obstetrics, Orthopedics, Pediatrics, and other critical medical specialties."}
+                                    </p>
+                                </CardContent>
+                            </Link>
                         </Card>
                     </div>
                 </div>
             </section>
 
-            {/* Gallery Section - Second content section (light gray) */}
+            {/* Stats Section - Second content section (light gray) */}
             <section className="bg-gray-100 dark:bg-gray-800/30 py-12 sm:py-16 md:py-20 border-y border-gray-200 dark:border-gray-700/30">
-                <div className="container mx-auto px-4 sm:px-6">
-                    <h2
-                        className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-slate-900 dark:text-white"
-                        data-i18n="gallery.title"
-                    >
-                        {(getTranslationValue(
-                            translations,
-                            "gallery.title"
-                        ) as string) || "Gallery"}
-                    </h2>
-                    <GalleryCarousel imageSrc={galleryImageLabels} />
-                </div>
+                <StatisticsComponent />
             </section>
 
             {/* Testimonials Section - Third content section (white) */}

@@ -13,7 +13,7 @@ export default function Footer() {
             <div className="container mx-auto px-4 sm:px-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-12">
                     <div>
-                        <div className="mb-4 bg-white dark:bg-gray-800 p-3 rounded-lg inline-block">
+                        <div className="bg-white dark:bg-gray-800 p-3 rounded-lg inline-block">
                             <div className="relative h-12 w-48">
                                 <Image
                                     src={getBasePath(
@@ -26,11 +26,17 @@ export default function Footer() {
                             </div>
                         </div>
                         <p
-                            className="text-blue-100 dark:text-gray-300"
+                            className="mb-8 font-bold text-blue-100 dark:text-gray-300"
+                            data-i18n="footer.trustedPartner"
+                        >
+                            A unit of Swami Amardev Vidyalaya Trust
+                        </p>
+                        <p
+                            className="mt-2 font-medium text-blue-200 dark:text-gray-200"
                             data-i18n="footer.trustedPartner"
                         >
                             Your trusted healthcare partner providing quality
-                            medical services since [year].
+                            medical services since 2018
                         </p>
                         <p
                             className="mt-2 font-medium text-blue-200 dark:text-gray-200"
@@ -101,7 +107,10 @@ export default function Footer() {
                         >
                             Contact Us
                         </h4>
-                        <Link href="https://maps.app.goo.gl/GBmGMXhWDFMNnJYy6">
+                        <Link
+                            href="https://maps.app.goo.gl/GBmGMXhWDFMNnJYy6"
+                            target="_blank"
+                        >
                             <p
                                 className="mb-2 text-blue-100 dark:text-gray-300 hover:underline"
                                 data-i18n="footer.contactUs.address"
@@ -110,7 +119,7 @@ export default function Footer() {
                                 Gurugram, Haryana 122503
                             </p>
                         </Link>
-                        <Link href="mailto:info@sadhcare.org">
+                        <Link href="mailto:info@sadhcare.org" target="_blank">
                             <p
                                 className="mb-2 text-blue-100 dark:text-gray-300 hover:underline"
                                 data-i18n="footer.contactUs.email"
@@ -118,12 +127,12 @@ export default function Footer() {
                                 Email: info@sadhcare.org
                             </p>
                         </Link>
-                        <Link href="tel:01242970919">
+                        <Link href="tel:+919862898628">
                             <p
                                 className="text-blue-100 dark:text-gray-300 hover:underline"
                                 data-i18n="footer.contactUs.phone"
                             >
-                                Phone: 0124 2970919
+                                Phone: +91 98628 98628
                             </p>
                         </Link>
                     </div>
@@ -137,6 +146,7 @@ export default function Footer() {
                         <div className="flex space-x-4">
                             <Link
                                 href="https://www.facebook.com/sadhcare/"
+                                target="_blank"
                                 className="text-blue-100 hover:text-white transition-colors dark:text-gray-300 dark:hover:text-white"
                                 aria-label="Facebook"
                             >
@@ -154,7 +164,10 @@ export default function Footer() {
                                 </svg>
                             </Link>
                             <Link
-                                href={getBasePath("#")}
+                                href={
+                                    "https://www.instagram.com/sadhcarehospital"
+                                }
+                                target="_blank"
                                 className="text-blue-100 hover:text-white transition-colors dark:text-gray-300 dark:hover:text-white"
                                 aria-label="Instagram"
                             >
@@ -172,21 +185,8 @@ export default function Footer() {
                                 </svg>
                             </Link>
                             <Link
-                                href={getBasePath("#")}
-                                className="text-blue-100 hover:text-white transition-colors dark:text-gray-300 dark:hover:text-white"
-                                aria-label="Twitter"
-                            >
-                                <svg
-                                    className="h-6 w-6"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                    aria-hidden="true"
-                                >
-                                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                                </svg>
-                            </Link>
-                            <Link
                                 href="https://www.linkedin.com/company/sadh-care-hospital/"
+                                target="_blank"
                                 className="text-blue-100 hover:text-white transition-colors dark:text-gray-300 dark:hover:text-white"
                                 aria-label="LinkedIn"
                             >

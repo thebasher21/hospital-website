@@ -7,6 +7,7 @@ export type TranslationData = Record<string, unknown>;
 
 interface CarouselSlide {
   title: string;
+  subtitle: string;
   description: string;
   image: string;
 }
@@ -27,13 +28,27 @@ const defaultTranslations: TranslationsStructure = {
       slides: [
         {
           title: "Your health is our priority",
-          description: "Care · Compassion · Empathy",
+          subtitle: "Care &nbsp;·&nbsp; Compassion &nbsp;·&nbsp; Empathy",
+          description: "Supported by: Mankind Pharma Limited",
           image: "/images/infrastructure/hospitalBuilding.jpg"
         },
         {
           title: "24 x 7 Open",
-          description: "Emergency services available round the clock",
+          subtitle: "Emergency services available round the clock",
+          description: " ",
           image: "/images/services/24x7Open.jpg"
+        },
+        {
+          title: "Ayushman Bharat Empanelled",
+          subtitle: "Proud participant in India's flagship healthcare program",
+          description: " ",
+          image: "/images/services/ayushmanBharatEmpanelled.jpg"
+        },
+        {
+          title: "State of the art technology",
+          subtitle: "Advanced medical equipment for precise diagnostics and treatment",
+          description: " ",
+          image: "/images/infrastructure/stateOfTheArtTechnology.jpg"
         }
       ]
     }
@@ -44,22 +59,22 @@ const defaultTranslations: TranslationsStructure = {
  * Load translations from JSON file based on language preference
  * This is a server-side function that loads translations from the file system
  */
-export async function getTranslations(language = 'en'): Promise<{ 
-  translations: TranslationData; 
+export async function getTranslations(language = 'en'): Promise<{
+  translations: TranslationData;
   language: string;
 }> {
   try {
     // In server components, we can read from the file system directly
     const filePath = path.join(process.cwd(), 'public', 'translations', `${language}.json`);
-    
+
     // Check if file exists
     if (fs.existsSync(filePath)) {
       const fileContents = fs.readFileSync(filePath, 'utf8');
       const data = JSON.parse(fileContents) as TranslationData;
-      
+
       // Process any URLs in the translation data to add base path
       const processedData = processTranslationImages(data);
-      
+
       return {
         translations: processedData,
         language
@@ -69,10 +84,10 @@ export async function getTranslations(language = 'en'): Promise<{
       const fallbackPath = path.join(process.cwd(), 'public', 'translations', 'en.json');
       const fileContents = fs.readFileSync(fallbackPath, 'utf8');
       const data = JSON.parse(fileContents) as TranslationData;
-      
+
       // Process any URLs in the translation data to add base path
       const processedData = processTranslationImages(data);
-      
+
       return {
         translations: processedData,
         language: 'en'
@@ -93,7 +108,7 @@ export async function getTranslations(language = 'en'): Promise<{
  */
 function processDefaultTranslations(): TranslationData {
   const processedData = { ...defaultTranslations } as TranslationsStructure;
-  
+
   // Apply base path to hero carousel slides
   if (processedData.hero?.carousel?.slides) {
     processedData.hero.carousel.slides = processedData.hero.carousel.slides.map(slide => ({
@@ -101,7 +116,7 @@ function processDefaultTranslations(): TranslationData {
       image: getBasePath(slide.image)
     }));
   }
-  
+
   return processedData;
 }
 
@@ -111,7 +126,7 @@ function processDefaultTranslations(): TranslationData {
 function processTranslationImages(data: TranslationData): TranslationData {
   // Deep clone to avoid mutating the original
   const processedData = JSON.parse(JSON.stringify(data)) as TranslationsStructure;
-  
+
   // Apply base path to hero carousel slides
   if (processedData.hero?.carousel?.slides) {
     processedData.hero.carousel.slides = processedData.hero.carousel.slides.map(slide => ({
@@ -119,7 +134,7 @@ function processTranslationImages(data: TranslationData): TranslationData {
       image: slide.image.startsWith('http') ? slide.image : getBasePath(slide.image)
     }));
   }
-  
+
   return processedData;
 }
 
@@ -128,15 +143,15 @@ function processTranslationImages(data: TranslationData): TranslationData {
  */
 export function getTranslationValue(translations: TranslationData, key: string): unknown {
   if (!key) return '';
-  
+
   const keys = key.split('.');
   let current: unknown = translations;
-  
+
   for (const k of keys) {
     if (!current || typeof current !== 'object' || current === null) return '';
     current = (current as Record<string, unknown>)[k];
     if (current === undefined) return '';
   }
-  
+
   return current;
 } 
