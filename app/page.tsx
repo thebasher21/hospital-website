@@ -12,7 +12,6 @@ import {
 import { getBasePath } from "@/lib/utils";
 import WelcomeModal from "@/components/WelcomeModal";
 import HeroCarousel from "@/components/HeroCarousel";
-import GalleryCarousel from "@/components/GalleryCarousel";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import Link from "next/link";
 import StatisticsComponent from "@/components/Statistics";
@@ -99,14 +98,6 @@ export default async function Home() {
             role: "Regular Patient",
         },
     ];
-
-    // Gallery image labels
-    const galleryImageLabels = Array.from({ length: 14 }, (_, i) => {
-        const label = getTranslationValue(translations, "gallery.imageLabel");
-        return typeof label === "string"
-            ? label.replace("{number}", (i + 1).toString())
-            : `/images/gallery/gallery${i + 1}.jpeg`;
-    });
 
     return (
         <>

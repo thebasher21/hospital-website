@@ -116,7 +116,7 @@ export default function Doctors() {
     const workingDayLabels = ["S", "M", "T", "W", "T", "F", "S"];
 
     const [isSorted, setIsSorted] = useState(false);
-    var [doctorsData, setDoctorsData] = useState([...doctors]);
+    const [doctorsData, setDoctorsData] = useState([...doctors]);
 
     const handleArrowClick = () => {
         if (isSorted) {

@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { getBasePath } from "@/lib/utils";
+import Image from "next/image";
 
 const services = [
     {
@@ -336,10 +337,11 @@ export default function ServicesPage() {
                             <Link key={index} href={insurance.link}>
                                 <div className="flex items-center justify-flex-start bg-white dark:bg-transparent p-4 rounded-lg shadow-sm hover:underline cursor-pointer">
                                     <div>
-                                        <img
+                                        <Image
                                             alt=""
                                             loading="lazy"
                                             width="45"
+                                            height={45}
                                             decoding="async"
                                             data-nimg="1"
                                             src={getBasePath(insurance.icon)}

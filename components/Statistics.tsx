@@ -2,6 +2,7 @@
 import { useState } from "react";
 import CountUp from "react-countup";
 import { InView } from "react-intersection-observer";
+import Image from "next/image";
 
 const statistics = [
     {
@@ -40,10 +41,12 @@ export default function StatisticsComponent() {
                         onChange={(inView) => inView && setHasStarted(true)}
                     >
                         <div className="mr-4">
-                            <img
+                            <Image
                                 src={`/images/stats/${stat.icon}`}
                                 alt={stat.title}
                                 className="w-20 h-20"
+                                width={20}
+                                height={20}
                             />
                         </div>
                         <div className="text-center">
