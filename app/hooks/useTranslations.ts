@@ -18,16 +18,16 @@ export function useTranslations() {
       try {
         // Get preferred language from local storage or detect from browser
         let preferredLanguage = localStorage.getItem('preferredLanguage');
-        
+
         if (!preferredLanguage) {
           // Detect browser language
           const browserLang = navigator.language;
           preferredLanguage = browserLang.includes('hi') ? 'hi' : 'en';
           localStorage.setItem('preferredLanguage', preferredLanguage);
         }
-        
+
         setLanguage(preferredLanguage);
-        
+
         // Load translations with the correct base path for GitHub Pages
         const response = await fetch(getBasePath(`/translations/${preferredLanguage}.json`));
         if (!response.ok) throw new Error('Failed to load translations');
@@ -61,7 +61,7 @@ export function useTranslations() {
 
     fetchTranslations();
   }, []);
-  
+
   // Set up listener for language changes
   useEffect(() => {
     const handleStorageChange = (e: StorageEvent) => {
@@ -69,23 +69,23 @@ export function useTranslations() {
         window.location.reload();
       }
     };
-    
+
     window.addEventListener('storage', handleStorageChange);
     return () => window.removeEventListener('storage', handleStorageChange);
   }, [language]);
 
   const getTranslation = (key: string): unknown => {
     if (!key) return '';
-    
+
     const keys = key.split('.');
     let current: unknown = translations;
-    
+
     for (const k of keys) {
       if (!current || typeof current !== 'object' || current === null) return '';
       current = (current as Record<string, unknown>)[k];
       if (current === undefined) return '';
     }
-    
+
     return current;
   };
 

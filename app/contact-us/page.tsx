@@ -12,9 +12,9 @@ export default function ContactUs() {
         phones: [
             {
                 label: "Reception",
-                number: ["0124-2970919", "0124-2671918", "0124-2671919"],
+                number: ["0124-2671918", "0124-2671919", "+91 98120 08765"],
             },
-            { label: "Emergency", number: ["+91 98120 08765"] },
+            { label: "Emergency", number: ["+91 98628 98628"] },
         ],
         location: {
             address:

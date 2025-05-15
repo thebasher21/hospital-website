@@ -164,7 +164,7 @@ export default function Specialities() {
                         {specialties.map((specialty, index) => (
                             <Card
                                 key={index}
-                                className="transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:bg-gray-100 dark:hover:bg-gray-700 border bg-white dark:bg-gray-800/70 cursor-pointer"
+                                className="transition-all duration-300 transform hover:scale-105 hover:shadow-xl border bg-white dark:bg-gray-800/70 cursor-pointer"
                                 onClick={() => handleCardClick(index)}
                             >
                                 <CardHeader>
@@ -189,7 +189,7 @@ export default function Specialities() {
                                                     (treatment, index) => (
                                                         <li
                                                             key={index}
-                                                            className="bg-blue-600 dark:bg-blue-400 text-white px-4 py-1 rounded-full text-sm"
+                                                            className="bg-blue-400 dark:bg-blue-400 text-white px-4 py-1 rounded-full text-sm"
                                                         >
                                                             {treatment}
                                                         </li>
@@ -230,7 +230,10 @@ export default function Specialities() {
                             providing compassionate, patient-centered care using
                             the latest medical technologies and treatments.
                         </p>
-                        <Button variant="default" className="font-medium">
+                        <Button
+                            variant="default"
+                            className="font-medium cursor-pointer"
+                        >
                             Meet Our Doctors
                         </Button>
                     </div>
@@ -258,7 +261,7 @@ export default function Specialities() {
                         <Link href="/contact-us">
                             <Button
                                 variant="outline"
-                                className="border-gray-400 text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800/60 font-medium"
+                                className="border-gray-400 text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800/60 font-medium cursor-pointer"
                             >
                                 Contact Us
                             </Button>

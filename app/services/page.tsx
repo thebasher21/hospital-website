@@ -103,14 +103,10 @@ const services = [
     },
 ];
 
-const amenties = [
+const amenities = [
     {
         title: "Cashless Insurance",
         icon: "/images/services/cashless_insurance.png",
-    },
-    {
-        title: "ICU Available",
-        icon: "/images/services/icu_available.png",
     },
     {
         title: "OPD Available",
@@ -128,29 +124,9 @@ const amenties = [
 
 const insurances = [
     {
-        title: "Acko Health Insurance",
-        icon: "/images/insurance/acko_health_insurance.png",
-        link: "https://www.acko.com/health-insurance/",
-    },
-    {
         title: "Aditya Birla Health Insurance",
         icon: "/images/insurance/aditya_birla_health_insurance.png",
         link: "https://www.adityabirlacapital.com/healthinsurance/homepage",
-    },
-    {
-        title: "Bajaj Allianz Health Insurance",
-        icon: "/images/insurance/bajaj_allianz.png",
-        link: "https://www.bajajallianz.com/health-insurance-plans.html",
-    },
-    {
-        title: "Bharti AXA Health Insurance",
-        icon: "/images/insurance/bharti_axa_health_insurance.png",
-        link: "https://www.bhartiaxa.com/health-plans",
-    },
-    {
-        title: "Care Health Insurance",
-        icon: "/images/insurance/care_health_insurance.png",
-        link: "https://www.careinsurance.com/",
     },
     {
         title: "Cholamandalam MS Health Insurance",
@@ -158,19 +134,19 @@ const insurances = [
         link: "https://www.cholainsurance.com/health-insurance",
     },
     {
-        title: "Digit Health Insurance",
-        icon: "/images/insurance/digit_health_insurance.png",
-        link: "https://www.godigit.com/health-insurance",
+        title: "Ericson",
+        icon: "/images/insurance/ericson_insurance.png",
+        link: "https://www.ericsontpa.com/",
     },
     {
-        title: "Edelweiss Health Insurance",
-        icon: "/images/insurance/edelweiss_health_insurance.png",
-        link: "https://www.edelweisslife.in/health-insurance-plans",
+        title: "Family Health Plan Insurance",
+        icon: "/images/insurance/fhpl_health_insurance.png",
+        link: "https://www.fhpl.net/",
     },
     {
-        title: "Future Generali Health Insurance",
-        icon: "/images/insurance/future_generali_health_insurance.png",
-        link: "https://general.futuregenerali.in/health-insurance",
+        title: "Health Insurance (HI)",
+        icon: "/images/insurance/hi_insurance.png",
+        link: "https://hitpa.co.in/",
     },
     {
         title: "HDFC ERGO Health Insurance",
@@ -183,74 +159,19 @@ const insurances = [
         link: "https://www.icicilombard.com/health-insurance",
     },
     {
-        title: "IFFCO Tokio Health Insurance",
-        icon: "/images/insurance/iffco_tokio_health_insurance.png",
-        link: "https://www.iffcotokio.co.in/health-insurance",
+        title: "Medi Assist TPA",
+        icon: "/images/insurance/mediassist_insurance.png",
+        link: "https://mediassisttpa.in/",
     },
     {
-        title: "Kotak Health Insurance",
-        icon: "/images/insurance/kotak_health_insurance.png",
-        link: "https://www.kotak.com/en/personal-banking/insurance/health-insurance.html",
-    },
-    {
-        title: "Liberty Health Insurance",
-        icon: "/images/insurance/liberty_health_insurance.png",
-        link: "https://www.libertyinsurance.in/health-insurance/",
-    },
-    {
-        title: "Manipal Cigna Health Insurance",
-        icon: "/images/insurance/manipal_cigna_health_insurance.png",
-        link: "https://www.manipalcigna.com/",
-    },
-    {
-        title: "Max Bupa Health Insurance",
-        icon: "/images/insurance/max_bupa_health_insurance.png",
+        title: "Niva Bupa",
+        icon: "/images/insurance/niva_bupa_insurance.png",
         link: "https://www.nivabupa.com/",
     },
     {
-        title: "National Insurance",
-        icon: "/images/insurance/national_insurance.png",
-        link: "https://nationalinsurance.nic.co.in/products/all-products/health",
-    },
-    {
-        title: "Navi General Insurance",
-        icon: "/images/insurance/navi_general.png",
-        link: "https://navi.com/insurance",
-    },
-    {
-        title: "New India Assurance",
-        icon: "/images/insurance/new_india_assurance.png",
-        link: "https://www.newindia.co.in//",
-    },
-    {
-        title: "Oriental Insurance",
-        icon: "/images/insurance/oriental_insurance.png",
-        link: "https://orientalinsurance.org.in/",
-    },
-    {
-        title: "Raheja QBE Health Insurance",
-        icon: "/images/insurance/raheja_qbe.png",
-        link: "https://www.rahejaqbe.com/health-insurance",
-    },
-    {
-        title: "Reliance General Insurance",
-        icon: "/images/insurance/reliance_general_insurance.png",
-        link: "https://www.reliancegeneral.co.in/",
-    },
-    {
-        title: "Royal Sundaram General Insurance",
-        icon: "/images/insurance/royal_sundaram_general_insurance.png",
-        link: "https://www.royalsundaram.in/",
-    },
-    {
-        title: "SBI Health Insurance",
-        icon: "/images/insurance/sbi_health_insurance.png",
-        link: "https://www.sbigeneral.in/health-insurance",
-    },
-    {
-        title: "Shriram General Insurance",
-        icon: "/images/insurance/shriram_general_insurance.png",
-        link: "https://www.shriramgi.com/",
+        title: "Paramount TPA",
+        icon: "/images/insurance/paramount_insurance.png",
+        link: "https://www.paramounttpa.com/",
     },
     {
         title: "Star Health Insurance",
@@ -261,11 +182,6 @@ const insurances = [
         title: "TATA AIG Health Insurance",
         icon: "/images/insurance/tata_aig_health_insurance.png",
         link: "https://www.tataaig.com/health-insurance",
-    },
-    {
-        title: "United India Insurance",
-        icon: "/images/insurance/united_india_insurance.png",
-        link: "https://uiic.co.in/",
     },
     {
         title: "Universal Sompo Health Insurance",
@@ -385,7 +301,7 @@ export default function ServicesPage() {
                         Amenities
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-5xl mx-auto">
-                        {amenties.map((amenity, index) => (
+                        {amenities.map((amenity, index) => (
                             <div
                                 key={index}
                                 className="flex items-center justify-flex-start bg-white dark:bg-gray-800/70 p-4 rounded-lg shadow-sm border"
