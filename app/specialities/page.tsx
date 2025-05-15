@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import PageTitle from "@/components/PageTitle";
 import { useState } from "react";
 import Link from "next/link";
+import { getBasePath } from "@/lib/utils";
 
 export default function Specialities() {
     // List of specialties with their names, icons, and descriptions
@@ -230,12 +231,14 @@ export default function Specialities() {
                             providing compassionate, patient-centered care using
                             the latest medical technologies and treatments.
                         </p>
-                        <Button
-                            variant="default"
-                            className="font-medium cursor-pointer"
-                        >
-                            Meet Our Doctors
-                        </Button>
+                        <Link href={getBasePath("/doctors")}>
+                            <Button
+                                variant="default"
+                                className="font-medium cursor-pointer"
+                            >
+                                Meet Our Doctors
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </section>
