@@ -15,94 +15,94 @@ import {
     Scissors,
     SquareActivity,
 } from "lucide-react";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+// import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { getBasePath } from "@/lib/utils";
 import Image from "next/image";
 
-const services = [
-    {
-        title: "Emergency Care",
-        description:
-            "24x7 emergency services with operation theatre, labour room, and neonatal ICU Level-1 support.",
-        icon: (
-            <Ambulance className="w-9 h-9 text-blue-600 dark:text-blue-400" />
-        ),
-    },
-    {
-        title: "General and Laparoscopic Surgery",
-        description:
-            "Advanced surgical care including minimally invasive laparoscopic procedures across multiple specialties.",
-        icon: <Scissors className="w-9 h-9 text-blue-600 dark:text-blue-400" />,
-    },
-    {
-        title: "Obstetrics and Gynaecology",
-        description:
-            "Comprehensive women's health services including maternity care, delivery, and gynecological surgeries.",
-        icon: <Dna className="w-9 h-9 text-blue-600 dark:text-blue-400" />,
-    },
-    {
-        title: "Orthopaedics",
-        description:
-            "Expert care for fractures, joint issues, and orthopedic surgeries ensuring full musculoskeletal recovery.",
-        icon: <Bone className="w-9 h-9 text-blue-600 dark:text-blue-400" />,
-    },
-    {
-        title: "Paediatrics",
-        description:
-            "24x7 specialized care for newborns, infants, and children in a safe, nurturing environment.",
-        icon: <Baby className="w-9 h-9 text-blue-600 dark:text-blue-400" />,
-    },
-    {
-        title: "Urology",
-        description:
-            "Dedicated services for urinary tract disorders and male reproductive health surgeries.",
-        icon: (
-            <PillBottle className="w-9 h-9 text-blue-600 dark:text-blue-400" />
-        ),
-    },
-    {
-        title: "ENT Surgeries",
-        description:
-            "Comprehensive ear, nose, and throat surgeries for hearing, breathing, and throat-related issues.",
-        icon: <Ear className="w-9 h-9 text-blue-600 dark:text-blue-400" />,
-    },
-    {
-        title: "Oral & Maxillofacial Surgery",
-        description:
-            "Specialized surgical care for facial trauma, jaw disorders, and oral reconstructive procedures.",
-        icon: (
-            <SquareActivity className="w-9 h-9 text-blue-600 dark:text-blue-400" />
-        ),
-    },
-    {
-        title: "Diagnostics and Imaging",
-        description:
-            "Advanced diagnostic facilities including USG, X-ray, C-arm radiography, ECG, and pathology lab services.",
-        icon: (
-            <Microscope className="w-9 h-9 text-blue-600 dark:text-blue-400" />
-        ),
-    },
-    {
-        title: "Support Facilities",
-        description:
-            "Essential support services including 24x7 ambulance, pharmacy, dialysis, and laundry facilities.",
-        icon: (
-            <HousePlug className="w-9 h-9 text-blue-600 dark:text-blue-400" />
-        ),
-    },
-    {
-        title: "Preventive Health Packages",
-        description:
-            "Customized health packages based on age, gender, and disease-specific needs for early diagnosis.",
-        icon: <Pill className="w-9 h-9 text-blue-600 dark:text-blue-400" />,
-    },
-    {
-        title: "Free OPD of All Doctors",
-        description:
-            "Free outpatient consultations available with all specialists including Obstetrics & Gynaecology, Paediatrics, and more.",
-        icon: <Heart className="w-9 h-9 text-blue-600 dark:text-blue-400" />,
-    },
-];
+// const services = [
+//     {
+//         title: "Emergency Care",
+//         description:
+//             "24x7 emergency services with operation theatre, labour room, and neonatal ICU Level-1 support.",
+//         icon: (
+//             <Ambulance className="w-9 h-9 text-blue-600 dark:text-blue-400" />
+//         ),
+//     },
+//     {
+//         title: "General and Laparoscopic Surgery",
+//         description:
+//             "Advanced surgical care including minimally invasive laparoscopic procedures across multiple specialties.",
+//         icon: <Scissors className="w-9 h-9 text-blue-600 dark:text-blue-400" />,
+//     },
+//     {
+//         title: "Obstetrics and Gynaecology",
+//         description:
+//             "Comprehensive women's health services including maternity care, delivery, and gynecological surgeries.",
+//         icon: <Dna className="w-9 h-9 text-blue-600 dark:text-blue-400" />,
+//     },
+//     {
+//         title: "Orthopaedics",
+//         description:
+//             "Expert care for fractures, joint issues, and orthopedic surgeries ensuring full musculoskeletal recovery.",
+//         icon: <Bone className="w-9 h-9 text-blue-600 dark:text-blue-400" />,
+//     },
+//     {
+//         title: "Paediatrics",
+//         description:
+//             "24x7 specialized care for newborns, infants, and children in a safe, nurturing environment.",
+//         icon: <Baby className="w-9 h-9 text-blue-600 dark:text-blue-400" />,
+//     },
+//     {
+//         title: "Urology",
+//         description:
+//             "Dedicated services for urinary tract disorders and male reproductive health surgeries.",
+//         icon: (
+//             <PillBottle className="w-9 h-9 text-blue-600 dark:text-blue-400" />
+//         ),
+//     },
+//     {
+//         title: "ENT Surgeries",
+//         description:
+//             "Comprehensive ear, nose, and throat surgeries for hearing, breathing, and throat-related issues.",
+//         icon: <Ear className="w-9 h-9 text-blue-600 dark:text-blue-400" />,
+//     },
+//     {
+//         title: "Oral & Maxillofacial Surgery",
+//         description:
+//             "Specialized surgical care for facial trauma, jaw disorders, and oral reconstructive procedures.",
+//         icon: (
+//             <SquareActivity className="w-9 h-9 text-blue-600 dark:text-blue-400" />
+//         ),
+//     },
+//     {
+//         title: "Diagnostics and Imaging",
+//         description:
+//             "Advanced diagnostic facilities including USG, X-ray, C-arm radiography, ECG, and pathology lab services.",
+//         icon: (
+//             <Microscope className="w-9 h-9 text-blue-600 dark:text-blue-400" />
+//         ),
+//     },
+//     {
+//         title: "Support Facilities",
+//         description:
+//             "Essential support services including 24x7 ambulance, pharmacy, dialysis, and laundry facilities.",
+//         icon: (
+//             <HousePlug className="w-9 h-9 text-blue-600 dark:text-blue-400" />
+//         ),
+//     },
+//     {
+//         title: "Preventive Health Packages",
+//         description:
+//             "Customized health packages based on age, gender, and disease-specific needs for early diagnosis.",
+//         icon: <Pill className="w-9 h-9 text-blue-600 dark:text-blue-400" />,
+//     },
+//     {
+//         title: "Free OPD of All Doctors",
+//         description:
+//             "Free outpatient consultations available with all specialists including Obstetrics & Gynaecology, Paediatrics, and more.",
+//         icon: <Heart className="w-9 h-9 text-blue-600 dark:text-blue-400" />,
+//     },
+// ];
 
 const amenities = [
     {
