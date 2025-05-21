@@ -7,22 +7,27 @@ import Image from "next/image";
 const statistics = [
     {
         title: "OPD Patients",
-        count: 57178,
+        count: 86708,
         icon: "medical.png",
     },
     {
         title: "Minor Surgeries",
-        count: 3564,
+        count: 5315,
         icon: "report.png",
     },
     {
+        title: "Patients Admitted",
+        count: 4696,
+        icon: "doctors.png",
+    },
+    {
         title: "Major Surgeries",
-        count: 620,
+        count: 1126,
         icon: "doctors.png",
     },
     {
         title: "Babies Born",
-        count: 190,
+        count: 759,
         icon: "baby.png",
     },
 ];
@@ -32,15 +37,15 @@ export default function StatisticsComponent() {
 
     return (
         <div className="container mx-auto px-4 sm:px-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
                 {statistics.map((stat, index) => (
                     <InView
-                        className="flex items-center justify-center p-6"
+                        className="flex items-center justify-center p-5"
                         key={index}
                         as="div"
                         onChange={(inView) => inView && setHasStarted(true)}
                     >
-                        <div className="mr-4">
+                        <div className="m-1">
                             <Image
                                 src={`/images/stats/${stat.icon}`}
                                 alt={stat.title}

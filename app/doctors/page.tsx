@@ -11,6 +11,8 @@ import { getBasePath } from "@/lib/utils";
 import Image from "next/image";
 import { useState } from "react";
 import { ChevronUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Doctors() {
     const managementStaff = [
@@ -278,6 +280,36 @@ export default function Doctors() {
                             ))}
                         </tbody>
                     </table>
+                </div>
+            </section>
+
+            {/* CTA Section - Third content section (white) */}
+            <section className="bg-white dark:bg-gray-900/40 py-20 border-t border-gray-200 dark:border-gray-700/30">
+                <div className="container mx-auto text-center">
+                    <h2
+                        className="text-2xl font-bold mb-6 text-slate-900 dark:text-white"
+                        data-i18n="specialities.cta.title"
+                    >
+                        Looking for Expert Care?
+                    </h2>
+                    <p
+                        className="text-lg text-slate-700 dark:text-slate-300 mb-10 max-w-3xl mx-auto"
+                        data-i18n="specialities.cta.description"
+                    >
+                        Our dedicated team of experienced doctors is here to
+                        offer specialized treatments and personalized care to
+                        ensure the best health outcomes for you.
+                    </p>
+                    <div className="flex justify-center gap-6 flex-wrap">
+                        <Link href="/contact-us">
+                            <Button
+                                variant="outline"
+                                className="border-gray-400 text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800/60 font-medium cursor-pointer"
+                            >
+                                Contact Us
+                            </Button>
+                        </Link>
+                    </div>
                 </div>
             </section>
         </>
