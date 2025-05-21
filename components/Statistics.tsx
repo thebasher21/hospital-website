@@ -18,7 +18,7 @@ const statistics = [
     {
         title: "Patients Admitted",
         count: 4696,
-        icon: "doctors.png",
+        icon: "patient.png",
     },
     {
         title: "Major Surgeries",
@@ -36,8 +36,8 @@ export default function StatisticsComponent() {
     const [hasStarted, setHasStarted] = useState(false);
 
     return (
-        <div className="container mx-auto px-4 sm:px-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
                 {statistics.map((stat, index) => (
                     <InView
                         className="flex items-center justify-center p-5"
@@ -45,16 +45,14 @@ export default function StatisticsComponent() {
                         as="div"
                         onChange={(inView) => inView && setHasStarted(true)}
                     >
-                        <div className="m-1">
-                            <Image
-                                src={`/images/stats/${stat.icon}`}
-                                alt={stat.title}
-                                className="w-20 h-20"
-                                width={20}
-                                height={20}
-                            />
-                        </div>
-                        <div className="text-center">
+                        <Image
+                            src={`/images/stats/${stat.icon}`}
+                            alt={stat.title}
+                            className="w-20 h-20"
+                            width={20}
+                            height={20}
+                        />
+                        <div className="text-center mx-5">
                             <h3 className="text-xl font-semibold text-slate-600 dark:text-slate-300 mb-2">
                                 {stat.title}
                             </h3>
