@@ -139,16 +139,14 @@ export default async function Home() {
                                 "24/7 emergency services with state-of-the-art facilities and expert medical staff."
                             }
                             data={[
-                                "Emergency",
-                                "OT",
-                                "Ultrasound",
+                                "Emergency Treatment and Admissions",
                                 "X-Ray",
-                                "Normal & CS Delivery",
-                                "Ambulance",
                                 "Lab",
+                                "Normal and Cesarean delivery",
+                                "Emergency OT",
                                 "NICU",
+                                "Ambulance",
                                 "Pharmacy",
-                                "Dialysis",
                             ]}
                         />
 
@@ -168,7 +166,19 @@ export default async function Home() {
                                 ) as string) ||
                                 "Comprehensive healthcare services including consultations, diagnostics, and various medical procedures."
                             }
-                            data={[]}
+                            data={[
+                                "OPD",
+                                "IPD",
+                                "Ultrasound",
+                                "OT",
+                                "Dialysis",
+                                "Ayushman Bharat",
+                                "TPA - cashless and reimbursement",
+                                "Haryana government",
+                                "Medical gas services",
+                                "Laundry services",
+                                "Dietary services",
+                            ]}
                         />
 
                         {/* Service 3 */}

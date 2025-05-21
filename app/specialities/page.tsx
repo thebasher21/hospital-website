@@ -16,23 +16,45 @@ export default function Specialities() {
             description:
                 "Comprehensive care for a wide range of adult illnesses, chronic disease management, and preventive healthcare.",
             treatments: [
-                "Piles",
-                "Anal Fissure",
-                "Anal Fistula",
-                "Perianal Abscess",
-                "Pilonidal Sinus",
+                "All general ailments such as Typhoid, jaundice , TB etc",
+                "All seasoned ailments such as Dengue, Gastroenteritis etc",
+                "Life style diseases such as Diabetes , hypertension etc",
+                "Thyroid",
+                "Anemia",
+                "Obesity",
+                "General weakness",
+                "other medical conditions",
             ],
         },
         {
-            name: "General and Laparoscopic Surgery",
+            name: "General Surgery",
+            icon: "🩺",
+            description:
+                "Surgical treatment for a wide range of conditions affecting the abdomen, digestive system, soft tissues, and more",
+            treatments: [
+                "Open Cholecystectomy",
+                "Haemorrhoids",
+                "Hernioplasty-Open",
+                "Herniorrhaphy",
+                "Breast Biopsy, Open Lumpectomy",
+                "Colon Resection",
+                "Laparotomy ",
+                "Varicose veins",
+                "Ambulatory phlebotomy etc.",
+            ],
+        },
+        {
+            name: "Laparoscopic Surgery",
             icon: "🛠️",
             description:
-                "Performs various surgical procedures, including minimally invasive laparoscopic techniques for internal medical conditions.",
+                "Minimally invasive surgery using small incisions and a camera to perform procedures with reduced recovery time",
             treatments: [
-                "Gall Stone Surgery",
-                "Hernia",
-                "Appendicitis",
-                "Rectal Prolapse",
+                "Laparoscopic Cholecystectomy (Gall Bladder)",
+                "Laparoscopic Hernioplasty",
+                "Herniorrhaphy",
+                "Laparoscopic colon Resection",
+                "Total Laparoscopic Hysterectomy",
+                "Diagnostic Laparoscopic Surgery etc.",
             ],
         },
         {
@@ -41,11 +63,16 @@ export default function Specialities() {
             description:
                 "Specializes in women's reproductive health, including pregnancy care, childbirth, and treating reproductive system disorders.",
             treatments: [
+                "High risk pregnancies",
+                "Late pregnancies",
+                "Dilation & Curettage (D&C)",
+                "Laparoscopic Tubectomy",
+                "Laparoscopic Oophorectomy",
+                "Colposcopy, Hysteroscopy",
                 "Hysterectomy",
-                "Ovarian Cyst",
-                "Uterine Fibroids",
-                "Infertility",
-                "IVF",
+                "Ovarian cysts, Malignancies",
+                "Fallopian tube surgery",
+                "Removal of fibroids",
             ],
         },
         {
@@ -54,9 +81,13 @@ export default function Specialities() {
             description:
                 "Focused on the health of infants, children, and adolescents, addressing diseases, development, and overall well-being.",
             treatments: [
-                "Pediatric Care",
-                "Vaccinations",
-                "Childhood Illnesses",
+                "Emergency",
+                "Daily OPD",
+                "New Born Baby Resuscitation",
+                "Level-1 NICU",
+                "Paediatric IPD",
+                "Vaccination",
+                "Nutrition and Growth Monitoring",
             ],
         },
         {
@@ -65,11 +96,13 @@ export default function Specialities() {
             description:
                 "Deals with musculoskeletal system disorders, treating fractures, joint issues, and conditions affecting bones, muscles, and tendons.",
             treatments: [
-                "ACL Tear",
-                "PCL Tear",
-                "Knee Pain",
-                "Hip Pain",
-                "Fractures",
+                "Total knee & Hip Replacement Surgery",
+                "Foot & ankle Surgery",
+                "Hand, Shoulder, Elbow Surgery",
+                "Spine Surgery",
+                "Arthritis diagnosis & Treatment ",
+                "Bone grafting",
+                "Internal fixation",
             ],
         },
         {
@@ -78,10 +111,13 @@ export default function Specialities() {
             description:
                 "Focuses on diagnosing and treating conditions related to the ear, nose, and throat, including hearing loss and respiratory issues.",
             treatments: [
-                "Tonsillectomy",
-                "Adenoidectomy",
-                "Septoplasty",
+                "Tonsillectomy, Adenoidectomy",
                 "Tympanoplasty",
+                "Functional Endoscopic Sinus surgery (FESS)",
+                "Snoring/sleep apnoea surgery",
+                "Corrective breathing surgery",
+                "Myringotomy with Tube Insertion",
+                "Nasal Surgery including Septoplasty",
             ],
         },
         {
@@ -90,10 +126,13 @@ export default function Specialities() {
             description:
                 "Specializes in urinary tract diseases and male reproductive health, treating conditions like kidney stones, infections, and cancers.",
             treatments: [
-                "Kidney Stones",
-                "Urine Incontinence",
-                "Prostate Cancer",
-                "Hydrocele",
+                "Renal (kidney) surgery (PCNL, RIRS)",
+                "Ureter surgery (URS)",
+                "Bladder surgery",
+                "Pelvic lymph node dissection",
+                "Prostatic surgery (TURP, HoLEP)",
+                "Testicular (scrotal) & penile surgery",
+                "Urethral surgery etc.",
             ],
         },
         {
@@ -120,14 +159,19 @@ export default function Specialities() {
             description:
                 "Involves surgical procedures for the mouth, teeth, gums, and jaw, including extractions and corrective surgeries.",
             treatments: [
-                "Dental Extractions",
-                "Tooth Implantation",
-                "Jaw Surgery",
+                "General and Preventive Dentistry",
+                "Endodontics (RCT)",
+                "Orthodontics (Braces)",
+                "Prosthodontics (Crown)",
+                "Periodontics (scaling & Polishing)",
+                "Paediatric dentistry",
+                "Oral & Maxillofacial surgery",
+                "Implantology",
             ],
         },
         {
             name: "Nephrology",
-            icon: "🩺",
+            icon: "🦠",
             description:
                 "Specializes in diagnosing and treating kidney diseases, including kidney failure, hypertension, and electrolyte imbalances.",
             treatments: [

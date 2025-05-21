@@ -202,7 +202,7 @@ export default function ServicesPage() {
             />
 
             {/* Services Grid - First content section (white) */}
-            <section className="bg-white dark:bg-gray-900/40 py-20">
+            {/* <section className="bg-white dark:bg-gray-900/40 py-20">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center mb-12 text-slate-900 dark:text-white">
                         Medical Services
@@ -235,7 +235,7 @@ export default function ServicesPage() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Treatment Process - Second content section (light gray) */}
             <section className="bg-gray-100 dark:bg-gray-800/30 py-20 border-y border-gray-200 dark:border-gray-700/30">
