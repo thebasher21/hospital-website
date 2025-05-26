@@ -176,6 +176,66 @@ export default function AboutUs() {
                                 healthcare services by introducing affordable
                                 treatment and diagnostic facilities.
                             </p>
+                            <p
+                                className="mb-4 text-slate-600 dark:text-slate-300 leading-relaxed text-justify"
+                                data-i18n="aboutUs.ourStory.paragraph4"
+                            >
+                                SADH Care Hospital is Managed by the team of Ex-
+                                Army Doctors who have dedicated themselves to
+                                the cause. Hospital is run by Swami Amar Dev
+                                Vidyalaya Trust and supported by Mankind Pharma
+                                Ltd.
+                            </p>
+                            <p
+                                className="mb-4 text-slate-600 dark:text-slate-300 leading-relaxed text-justify"
+                                data-i18n="aboutUs.ourStory.paragraph5"
+                            >
+                                SADH Care Consists of a fully functional
+                                Emergency and Trauma Care Center along with
+                                State-of-the-art Modular Operation theater, OPD
+                                & IPD services, ICU, NICU & HDU services; these
+                                services are unique in the rural area of the
+                                establishment and are also served at highly
+                                subsidized rates. Other diagnostic services such
+                                as digital X-Ray, C-Arm, USG, Eco- Cardiogram,
+                                Endoscopy, bone densitometry etc., are also
+                                provided at an affordable cost which is SADH
+                                Care's own way of promoting self-care and
+                                encouraging regular health check ups while
+                                reducing patient's travel cost to be incurred at
+                                nearest metro city Gurugram.
+                            </p>
+                            <p
+                                className="mb-4 text-slate-600 dark:text-slate-300 leading-relaxed text-justify"
+                                data-i18n="aboutUs.ourStory.paragraph6"
+                            >
+                                The Hospital has also been actively conducting
+                                outdoor medical checkup camps(Major & Minor),
+                                Ayushman Mela, Ante- Natal Camps, Eye Camps and
+                                OPDs. Other Speciality services at SADH Care
+                                include Eye- Care, Dental, Dialysis, Nephrology,
+                                Neurology, Orthopedics, General Surgery, Urology
+                                and ENT. In Covid 19 times, SADH Care was
+                                declared as a Dedicated Covid Health Care Center
+                                and was instrument in saving many lives.
+                            </p>
+                            <p
+                                className="mb-4 text-slate-600 dark:text-slate-300 leading-relaxed text-justify"
+                                data-i18n="aboutUs.ourStory.paragraph7"
+                            >
+                                Hospital being situated near Old-Age Home with
+                                70 Residents who's healthcare have been
+                                regularly checked Sadh Care. Hospital has
+                                already delivered 832+ babies in past 8 years,
+                                considering the fact that there were no mother
+                                and child care center/clinic in and around
+                                pataudi. There by highlights the level of
+                                significance/contribution of SADH Care to the
+                                surrounding areas of Pataudi in bringing up the
+                                standard of healthcare and making the population
+                                aware of the importance of preventive health
+                                check-ups and correct medical information.
+                            </p>
                         </div>
                     </div>
                 </div>

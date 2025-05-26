@@ -45,71 +45,89 @@ export default function Doctors() {
     const doctors = [
         {
             id: 1,
-            name: "Doctor Strange",
-            speciality: "Neurosurgeon / Sorcerer Supreme",
+            name: "Dr. Vipin Jamdagni",
+            image: "/images/doctors/Vipin_Jamdagni.jpeg",
+            speciality: "Medical Specialist",
             working_days: [1, 0, 1, 0, 1, 0, 0],
             timing: "9:00AM to 9:00PM",
         },
         {
             id: 2,
-            name: "Dr. Hannibal Lecter",
-            speciality: "Forensic Psychiatrist / Cannibal",
+            name: "Dr. Anadhi Dhar",
+            image: "/images/doctors/Anadhi_Dhar.jpeg",
+            speciality: "Medical Specialist",
             working_days: [1, 1, 1, 1, 0, 0, 0],
             timing: "8:30AM to 4:00PM",
         },
         {
             id: 3,
-            name: "Dr. Watson",
-            speciality: "General Practitioner",
+            name: "Dr. Rajesh Yadav",
+            image: "/images/doctors/Rajesh_Yadav.jpeg",
+            speciality: "General Surgeon",
             working_days: [1, 1, 1, 0, 1, 0, 0],
             timing: "8:00AM to 4:00PM",
         },
         {
             id: 4,
-            name: "Dr. Emmett Brown",
-            speciality: "Inventor / Time Travel Engineer",
+            name: "Dr. Shashikant Mishra",
+            image: "/images/doctors/Shashikant_Mishra.jpeg",
+            speciality: "Cardiologist",
             working_days: [0, 1, 0, 1, 0, 1, 1],
             timing: "10:00AM to 6:00PM",
         },
         {
             id: 5,
-            name: "Dr. Doofenshmirtz",
-            speciality: "Evil Science / Inventor",
+            name: "Dr. Sunil Yadav",
+            image: "/images/doctors/Sunil_Yadav.jpeg",
+            speciality: "Orthopedic Surgeon",
             working_days: [0, 1, 0, 1, 0, 1, 1],
             timing: "11:00AM to 11:30PM",
         },
         {
             id: 6,
-            name: "Dr. Leonard McCoy",
-            speciality: "Starship Medical Officer",
+            name: "Dr. Swarnima Saxena",
+            image: "/images/doctors/Swarnima_Saxena.jpeg",
+            speciality: "Gynaecologist",
             working_days: [1, 1, 1, 1, 1, 0, 0],
             timing: "9:00AM to 5:00PM",
         },
         {
             id: 7,
-            name: "Dr. Sheldon Cooper",
-            speciality: "Theoretical Physics",
+            name: "Dr. Karan Yadav",
+            image: "/images/doctors/Karan_Yadav.jpeg",
+            speciality: "ENT Surgeon",
             working_days: [1, 1, 0, 1, 1, 0, 0],
             timing: "9:30AM to 5:45PM",
         },
         {
             id: 8,
-            name: "Dr. Mario",
-            speciality: "Plumber / Pill Doctor",
+            name: "Dr. Vishal Ambare",
+            image: "/images/doctors/Vishal_Ambare.jpeg",
+            speciality: "Pediatrics",
             working_days: [1, 1, 1, 0, 1, 0, 0],
             timing: "10:00AM to 2:00PM",
         },
         {
             id: 9,
-            name: "Dr. Harleen Quinzel",
-            speciality: "Psychiatrist",
+            name: "Dr. J P Tak",
+            image: "/images/doctors/J_P_Tak.jpeg",
+            speciality: "Anesthetist",
             working_days: [0, 1, 1, 1, 0, 1, 0],
             timing: "1:15PM to 9:00PM",
         },
         {
             id: 10,
-            name: "Dr. Neo Cortex",
-            speciality: "Mad Geneticist",
+            name: "Dr. Mohit Tayal",
+            image: "/images/doctors/Mohit_Tayal.jpeg",
+            speciality: "Pediatrics",
+            working_days: [1, 0, 1, 0, 1, 0, 1],
+            timing: "6:30PM to 12:00AM",
+        },
+        {
+            id: 11,
+            name: "Dr. Priyank Bhatia",
+            image: "/images/doctors/Priyank_Bhatia.jpeg",
+            speciality: "Dentist",
             working_days: [1, 0, 1, 0, 1, 0, 1],
             timing: "6:30PM to 12:00AM",
         },
@@ -204,7 +222,8 @@ export default function Doctors() {
                     <table className="min-w-full table-auto bg-white dark:bg-gray-900/40 shadow-lg">
                         <thead>
                             <tr className="border-b">
-                                <th className="px-6 py-3 text-left text-sm font-semibold text-slate-600 dark:text-slate-400">
+                                <th></th>
+                                <th className="pl-3 pr-6 py-3 text-left text-sm font-semibold text-slate-600 dark:text-slate-400">
                                     <div
                                         className="flex items-center cursor-pointer"
                                         onClick={handleArrowClick}
@@ -235,9 +254,18 @@ export default function Doctors() {
                             {doctorsData.map((doctor) => (
                                 <tr
                                     key={doctor.id}
-                                    className="border-t hover:bg-gray-100 dark:hover:bg-gray-800"
+                                    className="border-t hover:bg-gray-200 dark:hover:bg-gray-800"
                                 >
-                                    <td className="px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">
+                                    <td className="px-1 py-4 flex items-center justify-center">
+                                        <Image
+                                            src={getBasePath(doctor.image)}
+                                            alt={doctor.name}
+                                            className="w-10 h-10 rounded-[10px]"
+                                            width={10}
+                                            height={10}
+                                        />
+                                    </td>
+                                    <td className="pl-3 pr-6 py-4 text-sm font-medium text-slate-900 dark:text-white">
                                         {doctor.name}
                                     </td>
                                     <td className="px-6 py-4 text-sm text-slate-900 dark:text-white">
