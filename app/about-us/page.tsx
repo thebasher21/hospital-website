@@ -200,10 +200,10 @@ export default function AboutUs() {
                                 as digital X-Ray, C-Arm, USG, Eco- Cardiogram,
                                 Endoscopy, bone densitometry etc., are also
                                 provided at an affordable cost which is SADH
-                                Care's own way of promoting self-care and
+                                Care&apos;s own way of promoting self-care and
                                 encouraging regular health check ups while
-                                reducing patient's travel cost to be incurred at
-                                nearest metro city Gurugram.
+                                reducing patient&apos;s travel cost to be
+                                incurred at nearest metro city Gurugram.
                             </p>
                             <p
                                 className="mb-4 text-slate-600 dark:text-slate-300 leading-relaxed text-justify"
@@ -224,7 +224,7 @@ export default function AboutUs() {
                                 data-i18n="aboutUs.ourStory.paragraph7"
                             >
                                 Hospital being situated near Old-Age Home with
-                                70 Residents who's healthcare have been
+                                70 Residents who&apos;s healthcare have been
                                 regularly checked Sadh Care. Hospital has
                                 already delivered 832+ babies in past 8 years,
                                 considering the fact that there were no mother
