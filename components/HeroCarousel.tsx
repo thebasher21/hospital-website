@@ -124,7 +124,7 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
             </CarouselContent>
 
             {/* Slide Indicators */}
-            <div className="absolute bottom-12 left-0 right-0 flex justify-center gap-2 z-20">
+            <div className="absolute bottom-12 left-0 right-0 flex justify-center gap-2 z-1">
                 <div className="flex gap-2">
                     {slides.map((_, index) => (
                         <button

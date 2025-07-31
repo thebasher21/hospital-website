@@ -263,6 +263,36 @@ export default function Header() {
                     </div>
                 </div>
             </div>
+            <div className="w-full bg-blue-600 text-white text-center py-4 z-100">
+                <div className="marquee-text">
+                    <div className="marquee-text-track">
+                        <p>
+                            Dialysis services available 24/7 for patients in
+                            need of urgent care.
+                        </p>
+                        <p>
+                            Our hospital is open 24/7 to cater to your medical
+                            emergencies anytime.
+                        </p>
+                        <p>
+                            Proudly supported by Mankind Pharma, ensuring
+                            quality medicines and healthcare!
+                        </p>
+                        <p>
+                            Dialysis services available 24/7 for patients in
+                            need of urgent care.
+                        </p>
+                        <p>
+                            Our hospital is open 24/7 to cater to your medical
+                            emergencies anytime.
+                        </p>
+                        <p>
+                            Proudly supported by Mankind Pharma, ensuring
+                            quality medicines and healthcare!
+                        </p>
+                    </div>
+                </div>
+            </div>
         </header>
     );
 }

@@ -14,7 +14,7 @@ export default function ContactUs() {
                 label: "Reception",
                 number: ["0124-2671918", "0124-2671919", "+91 98120 08765"],
             },
-            { label: "Emergency", number: ["+91 98628 98628"] },
+            { label: "Emergency", number: ["+91 84610 08461"] },
         ],
         location: {
             address:
@@ -162,20 +162,28 @@ export default function ContactUs() {
                             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
                                 Our Location
                             </h2>
-                            <div className="flex-1 bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden h-full min-h-[400px] flex items-center justify-center">
-                                {/* This would be replaced with an actual map component in production */}
+                            <div className="flex-1 bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden h-full min-h-[400px] relative group">
                                 <Link
                                     href={contactInfo.location.mapsUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex flex-col items-center text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                                    className="flex flex-col items-center text-gray-600 dark:text-gray-800/60 hover:text-white dark:hover:text-white transition-colors w-full h-full"
                                     aria-label="Open location in Google Maps"
                                     tabIndex={0}
                                 >
-                                    <MapPin className="h-12 w-12 mb-3" />
-                                    <span className="text-sm">
-                                        Click to view on Google Maps
-                                    </span>
+                                    <img
+                                        src={
+                                            "https://maps.googleapis.com/maps/api/staticmap?center=28.320206,76.7888022&zoom=17&size=1000x1000&maptype=roadmap&key=AIzaSyDRtDDCUoohxfXfRBfU-v-yqYMtu2nAWRw"
+                                        }
+                                        alt="Google Static Map"
+                                        className="w-full h-full object-cover transition duration-300 hover:brightness-55"
+                                    />
+                                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
+                                        <MapPin className="h-12 w-12 mb-3" />
+                                        <span className="text-sm font-bold">
+                                            Click to view on Google Maps
+                                        </span>
+                                    </div>
                                 </Link>
                             </div>
                         </div>
@@ -191,37 +199,6 @@ export default function ContactUs() {
                             Operating Hours
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="p-4">
-                                <h3 className="font-semibold text-lg text-slate-900 dark:text-white mb-3">
-                                    Regular Hours
-                                </h3>
-                                <ul className="space-y-2">
-                                    <li className="flex justify-between">
-                                        <span className="text-slate-600 dark:text-slate-300">
-                                            Monday - Friday
-                                        </span>
-                                        <span className="font-medium text-slate-900 dark:text-white">
-                                            8:00 AM - 8:00 PM
-                                        </span>
-                                    </li>
-                                    <li className="flex justify-between">
-                                        <span className="text-slate-600 dark:text-slate-300">
-                                            Saturday
-                                        </span>
-                                        <span className="font-medium text-slate-900 dark:text-white">
-                                            9:00 AM - 6:00 PM
-                                        </span>
-                                    </li>
-                                    <li className="flex justify-between">
-                                        <span className="text-slate-600 dark:text-slate-300">
-                                            Sunday
-                                        </span>
-                                        <span className="font-medium text-slate-900 dark:text-white">
-                                            10:00 AM - 4:00 PM
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
                             <div className="p-4">
                                 <h3 className="font-semibold text-lg text-slate-900 dark:text-white mb-3">
                                     Emergency Services
