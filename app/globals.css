@@ -125,3 +125,29 @@
     @apply bg-background text-foreground;
   }
 }
+
+.marquee-text {
+  display: flex;
+  gap: 4.8rem;
+}
+
+.marquee-text p {
+  width: fit-content;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.marquee-text-track {
+  display: flex;
+  padding-left: 4.8rem;
+  gap: 4.8rem;
+  width: max-content;
+  animation: marquee-move-text 10s linear infinite;
+}
+
+@keyframes marquee-move-text {
+  to {
+    transform: translateX(-50%);
+  }
+}

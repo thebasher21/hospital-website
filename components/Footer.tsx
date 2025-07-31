@@ -26,17 +26,24 @@ export default function Footer() {
                             </div>
                         </div>
                         <p
-                            className="mb-8 font-bold text-blue-100 dark:text-gray-300"
+                            className="font-bold text-blue-100 dark:text-gray-300"
                             data-i18n="footer.trustedPartner"
                         >
                             A unit of Swami Amardev Vidyalaya Trust
+                        </p>
+                        <p
+                            className="mb-4 font-medium text-blue-100 dark:text-gray-300"
+                            data-i18n="footer.trustedPartner"
+                        >
+                            Supported by Mankind Pharma pvt. ltd. under CSR
+                            initiative
                         </p>
                         <p
                             className="mt-2 font-medium text-blue-200 dark:text-gray-200"
                             data-i18n="footer.trustedPartner"
                         >
                             Your trusted healthcare partner providing quality
-                            medical services since 2018
+                            medical services since Jan 2017
                         </p>
                         <p
                             className="mt-2 font-medium text-blue-200 dark:text-gray-200"
@@ -67,7 +74,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    href={getBasePath("#")}
+                                    href={getBasePath("/doctors")}
                                     className="text-blue-100 hover:underline hover:text-white transition-colors dark:text-gray-300 dark:hover:text-white"
                                     data-i18n="footer.quickLinks.ourDoctors"
                                 >
@@ -127,12 +134,12 @@ export default function Footer() {
                                 Email: info@sadhcare.org
                             </p>
                         </Link>
-                        <Link href="tel:+919862898628">
+                        <Link href="tel:+918461008461">
                             <p
                                 className="text-blue-100 dark:text-gray-300 hover:underline"
                                 data-i18n="footer.contactUs.phone"
                             >
-                                Phone: +91 98628 98628
+                                Phone: +91 84610 08461
                             </p>
                         </Link>
                     </div>
