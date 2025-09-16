@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import { cn, getBasePath } from "@/lib/utils";
 import { useNavigation } from "@/lib/client-utils";
 import ThemeToggle from "./ThemeToggle";
-import ClientLanguageSwitcher from "./ClientLanguageSwitcher";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -258,7 +257,6 @@ export default function Header() {
 
                     {/* Theme toggle on right */}
                     <div className="flex-shrink-0 flex items-center space-x-2">
-                        <ClientLanguageSwitcher />
                         <ThemeToggle />
                     </div>
                 </div>

@@ -52,50 +52,49 @@ export default async function Home() {
     // Prepare testimonials
     const testimonials: Testimonial[] = [
         {
-            quote:
-                (getTranslationValue(
-                    translations,
-                    "testimonials.testimonial1.quote"
-                ) as string) ||
-                "The care I received at SADH Care Hospital was exceptional. The doctors were knowledgeable and compassionate, and the staff went above and beyond to ensure my comfort.",
-            name:
-                (getTranslationValue(
-                    translations,
-                    "testimonials.testimonial1.name"
-                ) as string) || "John Doe",
-            role:
-                (getTranslationValue(
-                    translations,
-                    "testimonials.testimonial1.role"
-                ) as string) || "Cardiac Patient",
+            quote: `I was very lucky to come to Sadh Care Hospital. My mother was very sick past 3½ months. She was admitted to 2 other hospitals in Delhi 
+            but nothing was helping her. Her condition was worsening. She was very disheartened with indifferent attitude of the doctors in those hospitals. 
+            Those hospitals were more like money sucking institutions. My mother's condiion was not improving and she was being prescribed unneccesary 
+            medications. So, then I called my very dear Friend Roli Tiwari who manages Sadh Care hospital. She felt the helplessness I was feeling and told 
+            me to come here with my mom. It's about 2 hours drive from my home but since I was so disheartened with all other hospitals & doctors, I decided 
+            to take another chance. As soon as I came here, I was so pleased & relieved to see the prompt & readiness of the staff. They were already ready 
+            with wheelchair for my mom & took all the blood samples as soon as she arrived. No form fillig, no deposits; just pure patient care & concern. 
+            My maom's fist impression was that she was super happy with the lab staff. Bood drawn effortlessly without much pain, which my mom never 
+            experienced before, in any hospital. After that, room arrangement, housekeeping staff, nurses & duty doctors were very helpful & friendly and 
+            took extra care which no commercial hospital ever offered. My mom was shown to an excellent & competent docter, Dr. Parul Priya. She talked to 
+            my mother for 45 mins to hear all her problem, unlike any other doctors my mom had seen earlier. I feel very confident after meting Dr. Parul 
+            Priya & she's now my mom's go to doctor, even from USA. The rooms, hospital & surroundings were extremely clean & ambience was very serene, like 
+            a beautiful ashram rather than a commercial hospital. Food was very good for both patients & attendants & staff was very corteous. Finally, 
+            billing was also vey effortless & bare minimun charges. This hospital is very ethical & not a commercial money making business like other metro 
+            city hospitals. I hope, one day, Sadh Care Hospital will become a multi-speciality hospital so all the procedures can be done in one place. I 
+            have a vey good & satisfactory experience after coming here. God blees all the staff, doctors of Sadh Care Hospital! Attendant: Kavita Khanna`,
+            name: "Sushiel Khanna",
+            role: "",
         },
         {
-            quote:
-                (getTranslationValue(
-                    translations,
-                    "testimonials.testimonial2.quote"
-                ) as string) ||
-                "I was impressed by the modern facilities and technology at SADH Care Hospital. The entire process from admission to discharge was smooth and well-coordinated.",
-            name:
-                (getTranslationValue(
-                    translations,
-                    "testimonials.testimonial2.name"
-                ) as string) || "Jane Smith",
-            role:
-                (getTranslationValue(
-                    translations,
-                    "testimonials.testimonial2.role"
-                ) as string) || "Maternity Patient",
+            quote: `THANK YOU NOTE on behalf of Jai Kumar. Dean Sadh Team/Mangement, I am writing this note to send my heartfelt gratitude. Thanks for giving
+                the good treatment to my father during the hospitalization at your hospital. Also giving the careness in all day & night by your supporting 
+                staff. As a doctor, you have gone above and beyond everything I ever would have expected. A patient's testimonial is less of a recognition 
+                of a doctor's professional expertise, and more of a recommendation of a doctor's ability to listen, care and heal. I can vouch for the fact 
+                that your abilities are unmatched. My special thanks to are as under:
+                Dr. Parul, Dr. Akash, Dr. Medha, Dr. Pankaj, Varsha, Neetu, Upasana, Madhusudan, Pawan, All of the members of the nursing staff
+                The above persons have given the good support to us during the tough time which will be always remember in my heart. I am stopping to write
+                that once again "BIG THANK YOU TO SADH"
+                Warm regards,
+                Ankit Dwivedi`,
+            name: "Ankit Dwivedi",
+            role: "",
         },
         {
-            quote: "The staff at SADH Care Hospital treated my family with respect and dignity. The doctors explained everything clearly and made sure we understood our options.",
-            name: "Robert Johnson",
-            role: "Family Member",
-        },
-        {
-            quote: "I've been visiting SADH Care Hospital for regular check-ups for years. The consistent quality of care and attention to detail makes me feel safe and valued as a patient.",
-            name: "Maria Garcia",
-            role: "Regular Patient",
+            quote: `Deas SADH CARE Hospital, This was very great to see your Hospital in such a good condition & preparation of NABH, I am very happy to see 
+            the preparation you have done. We have worked with many hospital but this was the best hospital till NOW, NO hospital prepared like this before, 
+            It's all because of good & dedicated team, all because of initiative taken by Kaul sir & Roli Tiwari mam. You all deserve to be genuine NABH 
+            Accreditation. Soon we'll achieve this stamp of appreciation.
+            All the very best.
+            Regards,
+            SONV KapiL`,
+            name: "Sonv Kapil",
+            role: "",
         },
     ];
 

@@ -114,12 +114,28 @@ const amenities = [
         icon: "/images/services/opd_available.png",
     },
     {
-        title: "OT Available",
+        title: "Major OT Available",
         icon: "/images/services/ot_available.png",
+    },
+    {
+        title: "Minor OT Available",
+        icon: "/images/services/minor_ot.png",
     },
     {
         title: "Radiology",
         icon: "/images/services/radiology.png",
+    },
+    {
+        title: "Pathology",
+        icon: "/images/services/pathology.png",
+    },
+    {
+        title: "Cafeteria",
+        icon: "/images/services/cafe.png",
+    },
+    {
+        title: "Ambulance Service",
+        icon: "/images/services/ambulance.png",
     },
 ];
 

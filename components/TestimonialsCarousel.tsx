@@ -8,6 +8,7 @@ import {
     type CarouselApi,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
+import { X } from "lucide-react";
 
 interface Testimonial {
     quote: string;
@@ -26,6 +27,25 @@ export default function TestimonialsCarousel({
     const [current, setCurrent] = useState(0);
     const [visibleSlides, setVisibleSlides] = useState(1);
     const containerRef = useRef<HTMLDivElement>(null);
+
+    const [selectedTestimonial, setSelectedTestimonial] = useState<
+        null | (typeof testimonials)[0]
+    >(null);
+
+    const truncateQuote = (quote: string, maxLength = 250) => {
+        if (quote.length <= maxLength) return quote;
+        return quote.slice(0, maxLength) + "...";
+    };
+
+    const openModal = (testimonial: (typeof testimonials)[0]) => {
+        setSelectedTestimonial(testimonial);
+        document.body.style.overflow = "hidden"; // Prevent background scroll
+    };
+
+    const closeModal = () => {
+        setSelectedTestimonial(null);
+        document.body.style.overflow = "visible";
+    };
 
     // Detect number of visible slides based on screen width
     useEffect(() => {
@@ -93,7 +113,7 @@ export default function TestimonialsCarousel({
                 setApi={handleCarouselApi}
                 opts={{
                     align: "start",
-                    slidesToScroll: visibleSlides, // Dynamic number of slides to scroll
+                    slidesToScroll: visibleSlides,
                     skipSnaps: false,
                     loop: true,
                 }}
@@ -104,14 +124,14 @@ export default function TestimonialsCarousel({
                             key={index}
                             className="basis-full md:basis-1/2 pl-2 md:pl-4 pb-6 pt-2"
                         >
-                            <Card className="shadow-md border bg-white dark:bg-gray-800/70 h-full">
+                            <Card
+                                className="shadow-md border bg-white dark:bg-gray-800/70 h-full cursor-pointer"
+                                onClick={() => openModal(testimonial)}
+                            >
                                 <CardContent className="pt-6 flex flex-col h-full">
-                                    <p
-                                        className="italic text-slate-600 dark:text-slate-300 mb-4 flex-grow"
-                                        dangerouslySetInnerHTML={{
-                                            __html: testimonial.quote,
-                                        }}
-                                    />
+                                    <p className="italic text-slate-600 dark:text-slate-300 mb-4 flex-grow">
+                                        {truncateQuote(testimonial.quote)}
+                                    </p>
                                     <div className="flex items-center mt-auto">
                                         <div className="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 mr-3">
                                             <span>👤</span>
@@ -131,6 +151,38 @@ export default function TestimonialsCarousel({
                     ))}
                 </CarouselContent>
             </Carousel>
+
+            {/* Modal for full quote */}
+            {selectedTestimonial && (
+                <div
+                    className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 md:p-8"
+                    onClick={closeModal}
+                >
+                    <div
+                        className="bg-white dark:bg-gray-800 max-w-2xl w-full rounded-lg overflow-hidden shadow-xl relative p-6"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div className="absolute top-4 right-4">
+                            <button
+                                onClick={() => closeModal()}
+                                className="h-10 w-10 rounded-full border border-neutral-200 dark:border-neutral-600 flex items-center justify-center transition-all duration-300 transform hover:scale-125 cursor-pointer"
+                                aria-label="Close carousel"
+                            >
+                                <X className="h-6 w-6" />
+                                <span className="sr-only">Close</span>
+                            </button>
+                        </div>
+
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
+                            {selectedTestimonial.name}{" "}
+                            {selectedTestimonial.role}
+                        </h3>
+                        <p className="text-slate-600 dark:text-slate-300">
+                            {selectedTestimonial.quote}
+                        </p>
+                    </div>
+                </div>
+            )}
 
             {/* External Controls */}
             <div className="mt-6 space-y-4">

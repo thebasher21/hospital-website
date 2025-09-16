@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import PageTitle from "@/components/PageTitle";
 import Image from "next/image";
 
@@ -116,6 +116,40 @@ const galleryItems = [
     },
 ];
 
+const videoItems = [
+    {
+        id: 1,
+        title: "Dialysis Facility Tour",
+        description:
+            "Walkthrough of our dialysis units and patient-friendly setups.",
+        videoUrl: "/images/videos/video1.mp4",
+        thumbnail: "/images/gallery/dialysis_thumb.jpg",
+    },
+    {
+        id: 2,
+        title: "Radiology Services",
+        description: "Introduction to our advanced radiology diagnostics.",
+        videoUrl: "/images/videos/video2.mp4",
+        thumbnail: "/images/gallery/radiology_thumb.jpg",
+    },
+    {
+        id: 3,
+        title: "Emergency Care Facility",
+        description:
+            "Experience our 24/7 emergency care facilities and ICU setup.",
+        videoUrl: "/images/videos/video3.mp4",
+        thumbnail: "/images/gallery/emergency_thumb.jpg",
+    },
+    {
+        id: 4,
+        title: "Emergency Care Facility",
+        description:
+            "Experience our 24/7 emergency care facilities and ICU setup.",
+        videoUrl: "/images/videos/video4.mp4",
+        thumbnail: "/images/gallery/emergency_thumb.jpg",
+    },
+];
+
 // Modal component for image viewing
 const ImageModal = ({
     isOpen,
@@ -193,6 +227,27 @@ export default function Gallery() {
         document.body.style.overflow = "visible";
     };
 
+    const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    const nextVideo = () => {
+        setCurrentVideoIndex((prev) => (prev + 1) % videoItems.length);
+        setIsPlaying(false);
+    };
+
+    const prevVideo = () => {
+        setCurrentVideoIndex(
+            (prev) => (prev - 1 + videoItems.length) % videoItems.length
+        );
+        setIsPlaying(false);
+    };
+
+    const togglePlay = () => {
+        setIsPlaying((prev) => !prev);
+    };
+
+    const currentVideo = videoItems[currentVideoIndex];
+
     return (
         <>
             <PageTitle
@@ -230,6 +285,67 @@ export default function Gallery() {
                                 </CardContent>
                             </Card>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Videos section */}
+            <section className="bg-white dark:bg-gray-900/40 py-20">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-3xl font-bold text-center mb-12 text-slate-900 dark:text-white">
+                        Hospital Video Tour
+                    </h2>
+
+                    {/* Video Card */}
+                    <div className="relative w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-lg">
+                        {/* Video / Thumbnail */}
+                        <video
+                            src={currentVideo.videoUrl}
+                            poster={currentVideo.thumbnail}
+                            className="w-full h-[400px] object-cover rounded-lg"
+                            autoPlay={isPlaying}
+                            controls={false} // We'll use custom play button
+                        />
+
+                        {/* Play button overlay */}
+                        {!isPlaying && (
+                            <div
+                                className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer"
+                                onClick={togglePlay}
+                            >
+                                <Play className="w-16 h-16 text-white" />
+                            </div>
+                        )}
+
+                        {/* Video title & description */}
+                        <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
+                            <h3 className="text-lg font-semibold">
+                                {currentVideo.title}
+                            </h3>
+                            <p className="text-sm">
+                                {currentVideo.description}
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Navigation buttons */}
+                    <div className="flex justify-center gap-4 mt-6">
+                        <Button
+                            variant="outline"
+                            size="icon"
+                            onClick={prevVideo}
+                            className="rounded-full"
+                        >
+                            <ChevronLeft className="w-6 h-6" />
+                        </Button>
+                        <Button
+                            variant="outline"
+                            size="icon"
+                            onClick={nextVideo}
+                            className="rounded-full"
+                        >
+                            <ChevronRight className="w-6 h-6" />
+                        </Button>
                     </div>
                 </div>
             </section>

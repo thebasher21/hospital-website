@@ -7,27 +7,27 @@ import Image from "next/image";
 const statistics = [
     {
         title: "OPD Patients",
-        count: 86708,
+        count: 113868,
         icon: "medical.png",
     },
     {
         title: "Minor Surgeries",
-        count: 5315,
+        count: 6117,
         icon: "report.png",
     },
     {
         title: "Patients Admitted",
-        count: 4696,
+        count: 5771,
         icon: "patient.png",
     },
     {
         title: "Major Surgeries",
-        count: 1126,
+        count: 1509,
         icon: "doctors.png",
     },
     {
         title: "Babies Born",
-        count: 759,
+        count: 857,
         icon: "baby.png",
     },
 ];
