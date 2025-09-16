@@ -290,15 +290,13 @@ export default function Gallery() {
             </section>
 
             {/* Videos section */}
-            <section className="bg-white dark:bg-gray-900/40 py-20">
+            {/* <section className="bg-white dark:bg-gray-900/40 py-20">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center mb-12 text-slate-900 dark:text-white">
                         Hospital Video Tour
                     </h2>
 
-                    {/* Video Card */}
                     <div className="relative w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-lg">
-                        {/* Video / Thumbnail */}
                         <video
                             src={currentVideo.videoUrl}
                             poster={currentVideo.thumbnail}
@@ -307,7 +305,6 @@ export default function Gallery() {
                             controls={false} // We'll use custom play button
                         />
 
-                        {/* Play button overlay */}
                         {!isPlaying && (
                             <div
                                 className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer"
@@ -317,7 +314,6 @@ export default function Gallery() {
                             </div>
                         )}
 
-                        {/* Video title & description */}
                         <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
                             <h3 className="text-lg font-semibold">
                                 {currentVideo.title}
@@ -328,7 +324,6 @@ export default function Gallery() {
                         </div>
                     </div>
 
-                    {/* Navigation buttons */}
                     <div className="flex justify-center gap-4 mt-6">
                         <Button
                             variant="outline"
@@ -348,7 +343,7 @@ export default function Gallery() {
                         </Button>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Modal for image viewing */}
             {selectedImage && (
