@@ -53,9 +53,15 @@ export default function Doctors() {
         },
         {
             id: 2,
+<<<<<<< HEAD
             name: "Dr. Nidhi Kumari",
             image: "",
             speciality: "Gynaecologist",
+=======
+            name: "Dr. Anadhi Dhar",
+            image: "/images/doctors/Anadhi_Dhar.jpeg",
+            speciality: "Medical Specialist",
+>>>>>>> e31addc92b5704474a0ecd3ecc4d575ad3c0eb18
             working_days: [1, 1, 1, 1, 0, 0, 0],
             timing: "8:30AM to 4:00PM",
         },
@@ -101,7 +107,11 @@ export default function Doctors() {
         },
         {
             id: 8,
+<<<<<<< HEAD
             name: "Dr. Vishal Subhash Ambare",
+=======
+            name: "Dr. Vishal Ambare",
+>>>>>>> e31addc92b5704474a0ecd3ecc4d575ad3c0eb18
             image: "/images/doctors/Vishal_Ambare.jpeg",
             speciality: "Pediatrics",
             working_days: [1, 1, 1, 0, 1, 0, 0],
@@ -125,6 +135,7 @@ export default function Doctors() {
         },
         {
             id: 11,
+<<<<<<< HEAD
             name: "Dr. Bhavna Sharma",
             image: "",
             speciality: "Pathologist",
@@ -179,6 +190,14 @@ export default function Doctors() {
             working_days: [1, 0, 1, 0, 1, 0, 0],
             timing: "9:00AM to 9:00PM",
         },
+=======
+            name: "Dr. Priyank Bhatia",
+            image: "/images/doctors/Priyank_Bhatia.jpeg",
+            speciality: "Dentist",
+            working_days: [1, 0, 1, 0, 1, 0, 1],
+            timing: "6:30PM to 12:00AM",
+        },
+>>>>>>> e31addc92b5704474a0ecd3ecc4d575ad3c0eb18
     ];
 
     const workingDayLabels = ["S", "M", "T", "W", "T", "F", "S"];

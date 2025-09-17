@@ -129,9 +129,12 @@
 .marquee-text {
   display: flex;
   gap: 4.8rem;
+<<<<<<< HEAD
   width: 100%;
   overflow-x: hidden;
   position: relative;
+=======
+>>>>>>> e31addc92b5704474a0ecd3ecc4d575ad3c0eb18
 }
 
 .marquee-text p {

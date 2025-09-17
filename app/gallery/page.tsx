@@ -163,9 +163,63 @@ const ImageModal = ({
     image: string;
     title: string;
     description: string;
+const ImageModal = ({
+    isOpen,
+    onClose,
+    image,
+    title,
+    description,
+}: {
+    isOpen: boolean;
+    onClose: () => void;
+    image: string;
+    title: string;
+    description: string;
 }) => {
     if (!isOpen) return null;
 
+    return (
+        <div
+            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 md:p-8"
+            onClick={onClose}
+        >
+            <div
+                className="bg-white dark:bg-gray-800 max-w-4xl w-full rounded-lg overflow-hidden shadow-xl relative"
+                onClick={(e) => e.stopPropagation()}
+            >
+                <div className="absolute top-4 right-4 z-10">
+                    <Button
+                        variant="outline"
+                        size="icon"
+                        onClick={onClose}
+                        className="rounded-full bg-black/20 border-none hover:bg-black/40 text-white h-10 w-10"
+                    >
+                        <X className="h-6 w-6" />
+                        <span className="sr-only">Close</span>
+                    </Button>
+                </div>
+
+                <div className="relative h-[60vh] w-full">
+                    <Image
+                        src={image}
+                        alt={title}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, 80vw"
+                    />
+                </div>
+
+                <div className="p-6">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                        {title}
+                    </h3>
+                    <p className="text-slate-600 dark:text-slate-300">
+                        {description}
+                    </p>
+                </div>
+            </div>
+        </div>
+    );
     return (
         <div
             className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 md:p-8"

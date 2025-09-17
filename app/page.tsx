@@ -52,6 +52,7 @@ export default async function Home() {
     // Prepare testimonials
     const testimonials: Testimonial[] = [
         {
+<<<<<<< HEAD
             quote: `I was very lucky to come to Sadh Care Hospital. My mother was very sick past 3½ months. She was admitted to 2 other hospitals in Delhi 
             but nothing was helping her. Her condition was worsening. She was very disheartened with indifferent attitude of the doctors in those hospitals. 
             Those hospitals were more like money sucking institutions. My mother's condiion was not improving and she was being prescribed unneccesary 
@@ -95,6 +96,52 @@ export default async function Home() {
             SONV KapiL`,
             name: "Sonv Kapil",
             role: "",
+=======
+            quote:
+                (getTranslationValue(
+                    translations,
+                    "testimonials.testimonial1.quote"
+                ) as string) ||
+                "The care I received at SADH Care Hospital was exceptional. The doctors were knowledgeable and compassionate, and the staff went above and beyond to ensure my comfort.",
+            name:
+                (getTranslationValue(
+                    translations,
+                    "testimonials.testimonial1.name"
+                ) as string) || "John Doe",
+            role:
+                (getTranslationValue(
+                    translations,
+                    "testimonials.testimonial1.role"
+                ) as string) || "Cardiac Patient",
+        },
+        {
+            quote:
+                (getTranslationValue(
+                    translations,
+                    "testimonials.testimonial2.quote"
+                ) as string) ||
+                "I was impressed by the modern facilities and technology at SADH Care Hospital. The entire process from admission to discharge was smooth and well-coordinated.",
+            name:
+                (getTranslationValue(
+                    translations,
+                    "testimonials.testimonial2.name"
+                ) as string) || "Jane Smith",
+            role:
+                (getTranslationValue(
+                    translations,
+                    "testimonials.testimonial2.role"
+                ) as string) || "Maternity Patient",
+        },
+        {
+            quote: "The staff at SADH Care Hospital treated my family with respect and dignity. The doctors explained everything clearly and made sure we understood our options.",
+            name: "Robert Johnson",
+            role: "Family Member",
+        },
+        {
+            quote: "I've been visiting SADH Care Hospital for regular check-ups for years. The consistent quality of care and attention to detail makes me feel safe and valued as a patient.",
+            name: "Maria Garcia",
+            role: "Regular Patient",
+>>>>>>> e31addc92b5704474a0ecd3ecc4d575ad3c0eb18
         },
     ];
 
