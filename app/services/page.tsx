@@ -114,7 +114,6 @@ const amenities = [
         icon: "/images/services/opd_available.png",
     },
     {
-<<<<<<< HEAD
         title: "Major OT Available",
         icon: "/images/services/ot_available.png",
     },
@@ -138,15 +137,6 @@ const amenities = [
         title: "Ambulance Service",
         icon: "/images/services/ambulance.png",
     },
-=======
-        title: "OT Available",
-        icon: "/images/services/ot_available.png",
-    },
-    {
-        title: "Radiology",
-        icon: "/images/services/radiology.png",
-    },
->>>>>>> e31addc92b5704474a0ecd3ecc4d575ad3c0eb18
 ];
 
 const insurances = [

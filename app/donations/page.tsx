@@ -1,10 +1,6 @@
 "use client";
 
-<<<<<<< HEAD
 import { useState } from "react";
-=======
-import { useState } from 'react';
->>>>>>> e31addc92b5704474a0ecd3ecc4d575ad3c0eb18
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -14,7 +10,6 @@ import Image from "next/image";
 
 // Sample donors data
 const donors = [
-<<<<<<< HEAD
     {
         id: 1,
         name: "Rajan Mehta",
@@ -95,99 +90,15 @@ const donors = [
         message:
             "Grateful for the care I received during my treatment. This is my way of giving back.",
     },
-=======
-  {
-    id: 1,
-    name: 'Rajan Mehta',
-    amount: '₹5,00,000',
-    date: 'March 15, 2023',
-    category: 'Platinum',
-    image: 'https://placehold.co/150x150/0067b8/ffffff.jpeg?text=RM',
-    message: 'Proud to support the hospital\'s mission to provide quality healthcare to all.',
-  },
-  {
-    id: 2,
-    name: 'Priya Shah Foundation',
-    amount: '₹10,00,000',
-    date: 'February 12, 2023',
-    category: 'Diamond',
-    image: 'https://placehold.co/150x150/00a2ed/ffffff.jpeg?text=PSF',
-    message: 'We believe in the vision of SADH Care Hospital and are committed to supporting healthcare initiatives.',
-  },
-  {
-    id: 3,
-    name: 'Dr. Anand Kumar',
-    amount: '₹2,50,000',
-    date: 'January 5, 2023',
-    category: 'Gold',
-    image: 'https://placehold.co/150x150/68217a/ffffff.jpeg?text=AK',
-    message: 'As a medical professional, I understand the importance of supporting healthcare institutions.',
-  },
-  {
-    id: 4,
-    name: 'Sushila Devi Trust',
-    amount: '₹7,50,000',
-    date: 'December 20, 2022',
-    category: 'Platinum',
-    image: 'https://placehold.co/150x150/107c10/ffffff.jpeg?text=SDT',
-    message: 'Our trust is dedicated to supporting healthcare initiatives that make a difference in the community.',
-  },
-  {
-    id: 5,
-    name: 'Vikram Singh',
-    amount: '₹1,00,000',
-    date: 'November 30, 2022',
-    category: 'Silver',
-    image: 'https://placehold.co/150x150/0067b8/ffffff.jpeg?text=VS',
-    message: 'Happy to contribute to the development of medical facilities in our community.',
-  },
-  {
-    id: 6,
-    name: 'Global Care Inc.',
-    amount: '₹15,00,000',
-    date: 'October 15, 2022',
-    category: 'Diamond',
-    image: 'https://placehold.co/150x150/00a2ed/ffffff.jpeg?text=GC',
-    message: 'As part of our CSR initiative, we are proud to support SADH Care Hospital\'s expansion project.',
-  },
-  {
-    id: 7,
-    name: 'Meera & Rajesh Patel',
-    amount: '₹3,00,000',
-    date: 'September 5, 2022',
-    category: 'Gold',
-    image: 'https://placehold.co/150x150/68217a/ffffff.jpeg?text=MRP',
-    message: 'This donation is made in memory of our parents who received excellent care at this hospital.',
-  },
-  {
-    id: 8,
-    name: 'Sunita Sharma',
-    amount: '₹50,000',
-    date: 'August 12, 2022',
-    category: 'Bronze',
-    image: 'https://placehold.co/150x150/107c10/ffffff.jpeg?text=SS',
-    message: 'Grateful for the care I received during my treatment. This is my way of giving back.',
-  }
->>>>>>> e31addc92b5704474a0ecd3ecc4d575ad3c0eb18
 ];
 
 // Hospital account details for donations
 const accountDetails = {
-<<<<<<< HEAD
     accountName: "SADH CARE HOSPITAL",
     accountNumber: "282601000533",
     ifscCode: "ICIC0002826",
     bankName: "ICICI Bank",
     branchName: "HAILY MANDI",
-=======
-  accountName: 'SADH Care Hospital Trust',
-  accountNumber: '1234567890123456',
-  ifscCode: 'ABCD0123456',
-  bankName: 'State Bank of India',
-  branchName: 'Medical College Branch',
-  panNumber: 'AAAHS1234A',
-  registrationNumber: 'E-12345-67',
->>>>>>> e31addc92b5704474a0ecd3ecc4d575ad3c0eb18
 };
 
 // Tax exemption details
@@ -556,7 +467,6 @@ export default function Donations() {
                             </CardContent>
                         </Card>
                     </div>
-<<<<<<< HEAD
                 </div>
             </section>
 
@@ -635,43 +545,3 @@ export default function Donations() {
         </>
     );
 }
-=======
-                  </div>
-                  <CardTitle className="text-lg text-slate-900 dark:text-white">{donor.name}</CardTitle>
-                  <div className="flex items-center justify-center gap-2 mt-1">
-                    <CategoryBadge category={donor.category} />
-                  </div>
-                </CardHeader>
-                <CardContent className="text-center pb-2">
-                  <p className="text-blue-600 dark:text-blue-400 font-semibold mb-1">{donor.amount}</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">{donor.date}</p>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 italic">&quot;{donor.message}&quot;</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-      
-      {/* Corporate Partners Section */}
-      <section className="bg-white dark:bg-gray-900/40 py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-8 text-slate-900 dark:text-white">
-            Corporate Social Responsibility
-          </h2>
-          <p className="text-lg text-slate-700 dark:text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-            We welcome corporate partnerships through CSR initiatives. Partner with us to make a significant 
-            impact on healthcare access and quality in our community.
-          </p>
-          <Button variant="outline" className="font-medium border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-900/30">
-            Corporate Partnership Inquiry
-          </Button>
-        </div>
-      </section>
-      
-      {/* Donation Modal */}
-      <DonationModal isOpen={isModalOpen} onClose={closeDonationModal} />
-    </>
-  );
-} 
->>>>>>> e31addc92b5704474a0ecd3ecc4d575ad3c0eb18
