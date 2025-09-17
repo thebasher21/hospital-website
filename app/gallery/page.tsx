@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { X, ChevronLeft, ChevronRight, Play } from "lucide-react";
+// import { X, ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { X } from "lucide-react";
 import PageTitle from "@/components/PageTitle";
 import Image from "next/image";
 
@@ -208,48 +209,6 @@ const ImageModal = ({
             </div>
         </div>
     );
-    return (
-        <div
-            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 md:p-8"
-            onClick={onClose}
-        >
-            <div
-                className="bg-white dark:bg-gray-800 max-w-4xl w-full rounded-lg overflow-hidden shadow-xl relative"
-                onClick={(e) => e.stopPropagation()}
-            >
-                <div className="absolute top-4 right-4 z-10">
-                    <Button
-                        variant="outline"
-                        size="icon"
-                        onClick={onClose}
-                        className="rounded-full bg-black/20 border-none hover:bg-black/40 text-white h-10 w-10"
-                    >
-                        <X className="h-6 w-6" />
-                        <span className="sr-only">Close</span>
-                    </Button>
-                </div>
-
-                <div className="relative h-[60vh] w-full">
-                    <Image
-                        src={image}
-                        alt={title}
-                        fill
-                        className="object-contain"
-                        sizes="(max-width: 768px) 100vw, 80vw"
-                    />
-                </div>
-
-                <div className="p-6">
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-                        {title}
-                    </h3>
-                    <p className="text-slate-600 dark:text-slate-300">
-                        {description}
-                    </p>
-                </div>
-            </div>
-        </div>
-    );
 };
 
 export default function Gallery() {
@@ -269,26 +228,26 @@ export default function Gallery() {
         document.body.style.overflow = "visible";
     };
 
-    const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-    const [isPlaying, setIsPlaying] = useState(false);
+    // const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+    // const [isPlaying, setIsPlaying] = useState(false);
 
-    const nextVideo = () => {
-        setCurrentVideoIndex((prev) => (prev + 1) % videoItems.length);
-        setIsPlaying(false);
-    };
+    // const nextVideo = () => {
+    //     setCurrentVideoIndex((prev) => (prev + 1) % videoItems.length);
+    //     setIsPlaying(false);
+    // };
 
-    const prevVideo = () => {
-        setCurrentVideoIndex(
-            (prev) => (prev - 1 + videoItems.length) % videoItems.length
-        );
-        setIsPlaying(false);
-    };
+    // const prevVideo = () => {
+    //     setCurrentVideoIndex(
+    //         (prev) => (prev - 1 + videoItems.length) % videoItems.length
+    //     );
+    //     setIsPlaying(false);
+    // };
 
-    const togglePlay = () => {
-        setIsPlaying((prev) => !prev);
-    };
+    // const togglePlay = () => {
+    //     setIsPlaying((prev) => !prev);
+    // };
 
-    const currentVideo = videoItems[currentVideoIndex];
+    // const currentVideo = videoItems[currentVideoIndex];
 
     return (
         <>
