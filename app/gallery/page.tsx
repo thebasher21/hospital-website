@@ -117,39 +117,39 @@ const galleryItems = [
     },
 ];
 
-const videoItems = [
-    {
-        id: 1,
-        title: "Dialysis Facility Tour",
-        description:
-            "Walkthrough of our dialysis units and patient-friendly setups.",
-        videoUrl: "/images/videos/video1.mp4",
-        thumbnail: "/images/gallery/dialysis_thumb.jpg",
-    },
-    {
-        id: 2,
-        title: "Radiology Services",
-        description: "Introduction to our advanced radiology diagnostics.",
-        videoUrl: "/images/videos/video2.mp4",
-        thumbnail: "/images/gallery/radiology_thumb.jpg",
-    },
-    {
-        id: 3,
-        title: "Emergency Care Facility",
-        description:
-            "Experience our 24/7 emergency care facilities and ICU setup.",
-        videoUrl: "/images/videos/video3.mp4",
-        thumbnail: "/images/gallery/emergency_thumb.jpg",
-    },
-    {
-        id: 4,
-        title: "Emergency Care Facility",
-        description:
-            "Experience our 24/7 emergency care facilities and ICU setup.",
-        videoUrl: "/images/videos/video4.mp4",
-        thumbnail: "/images/gallery/emergency_thumb.jpg",
-    },
-];
+// const videoItems = [
+//     {
+//         id: 1,
+//         title: "Dialysis Facility Tour",
+//         description:
+//             "Walkthrough of our dialysis units and patient-friendly setups.",
+//         videoUrl: "/images/videos/video1.mp4",
+//         thumbnail: "/images/gallery/dialysis_thumb.jpg",
+//     },
+//     {
+//         id: 2,
+//         title: "Radiology Services",
+//         description: "Introduction to our advanced radiology diagnostics.",
+//         videoUrl: "/images/videos/video2.mp4",
+//         thumbnail: "/images/gallery/radiology_thumb.jpg",
+//     },
+//     {
+//         id: 3,
+//         title: "Emergency Care Facility",
+//         description:
+//             "Experience our 24/7 emergency care facilities and ICU setup.",
+//         videoUrl: "/images/videos/video3.mp4",
+//         thumbnail: "/images/gallery/emergency_thumb.jpg",
+//     },
+//     {
+//         id: 4,
+//         title: "Emergency Care Facility",
+//         description:
+//             "Experience our 24/7 emergency care facilities and ICU setup.",
+//         videoUrl: "/images/videos/video4.mp4",
+//         thumbnail: "/images/gallery/emergency_thumb.jpg",
+//     },
+// ];
 
 // Modal component for image viewing
 const ImageModal = ({
