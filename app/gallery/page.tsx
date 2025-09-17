@@ -163,18 +163,6 @@ const ImageModal = ({
     image: string;
     title: string;
     description: string;
-const ImageModal = ({
-    isOpen,
-    onClose,
-    image,
-    title,
-    description,
-}: {
-    isOpen: boolean;
-    onClose: () => void;
-    image: string;
-    title: string;
-    description: string;
 }) => {
     if (!isOpen) return null;
 
