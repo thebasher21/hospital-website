@@ -8,10 +8,7 @@ import {
     type CarouselApi,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-<<<<<<< HEAD
 import { X } from "lucide-react";
-=======
->>>>>>> e31addc92b5704474a0ecd3ecc4d575ad3c0eb18
 
 interface Testimonial {
     quote: string;
@@ -31,7 +28,6 @@ export default function TestimonialsCarousel({
     const [visibleSlides, setVisibleSlides] = useState(1);
     const containerRef = useRef<HTMLDivElement>(null);
 
-<<<<<<< HEAD
     const [selectedTestimonial, setSelectedTestimonial] = useState<
         null | (typeof testimonials)[0]
     >(null);
@@ -51,8 +47,6 @@ export default function TestimonialsCarousel({
         document.body.style.overflow = "visible";
     };
 
-=======
->>>>>>> e31addc92b5704474a0ecd3ecc4d575ad3c0eb18
     // Detect number of visible slides based on screen width
     useEffect(() => {
         const updateVisibleSlides = () => {
@@ -119,11 +113,7 @@ export default function TestimonialsCarousel({
                 setApi={handleCarouselApi}
                 opts={{
                     align: "start",
-<<<<<<< HEAD
                     slidesToScroll: visibleSlides,
-=======
-                    slidesToScroll: visibleSlides, // Dynamic number of slides to scroll
->>>>>>> e31addc92b5704474a0ecd3ecc4d575ad3c0eb18
                     skipSnaps: false,
                     loop: true,
                 }}
@@ -134,7 +124,6 @@ export default function TestimonialsCarousel({
                             key={index}
                             className="basis-full md:basis-1/2 pl-2 md:pl-4 pb-6 pt-2"
                         >
-<<<<<<< HEAD
                             <Card
                                 className="shadow-md border bg-white dark:bg-gray-800/70 h-full cursor-pointer"
                                 onClick={() => openModal(testimonial)}
@@ -143,16 +132,6 @@ export default function TestimonialsCarousel({
                                     <p className="italic text-slate-600 dark:text-slate-300 mb-4 flex-grow">
                                         {truncateQuote(testimonial.quote)}
                                     </p>
-=======
-                            <Card className="shadow-md border bg-white dark:bg-gray-800/70 h-full">
-                                <CardContent className="pt-6 flex flex-col h-full">
-                                    <p
-                                        className="italic text-slate-600 dark:text-slate-300 mb-4 flex-grow"
-                                        dangerouslySetInnerHTML={{
-                                            __html: testimonial.quote,
-                                        }}
-                                    />
->>>>>>> e31addc92b5704474a0ecd3ecc4d575ad3c0eb18
                                     <div className="flex items-center mt-auto">
                                         <div className="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 mr-3">
                                             <span>👤</span>
@@ -173,7 +152,6 @@ export default function TestimonialsCarousel({
                 </CarouselContent>
             </Carousel>
 
-<<<<<<< HEAD
             {/* Modal for full quote */}
             {selectedTestimonial && (
                 <div
@@ -206,8 +184,6 @@ export default function TestimonialsCarousel({
                 </div>
             )}
 
-=======
->>>>>>> e31addc92b5704474a0ecd3ecc4d575ad3c0eb18
             {/* External Controls */}
             <div className="mt-6 space-y-4">
                 {/* Navigation Buttons */}

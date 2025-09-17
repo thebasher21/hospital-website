@@ -7,47 +7,27 @@ import Image from "next/image";
 const statistics = [
     {
         title: "OPD Patients",
-<<<<<<< HEAD
         count: 113868,
-=======
-        count: 86708,
->>>>>>> e31addc92b5704474a0ecd3ecc4d575ad3c0eb18
         icon: "medical.png",
     },
     {
         title: "Minor Surgeries",
-<<<<<<< HEAD
         count: 6117,
-=======
-        count: 5315,
->>>>>>> e31addc92b5704474a0ecd3ecc4d575ad3c0eb18
         icon: "report.png",
     },
     {
         title: "Patients Admitted",
-<<<<<<< HEAD
         count: 5771,
-=======
-        count: 4696,
->>>>>>> e31addc92b5704474a0ecd3ecc4d575ad3c0eb18
         icon: "patient.png",
     },
     {
         title: "Major Surgeries",
-<<<<<<< HEAD
         count: 1509,
-=======
-        count: 1126,
->>>>>>> e31addc92b5704474a0ecd3ecc4d575ad3c0eb18
         icon: "doctors.png",
     },
     {
         title: "Babies Born",
-<<<<<<< HEAD
         count: 857,
-=======
-        count: 759,
->>>>>>> e31addc92b5704474a0ecd3ecc4d575ad3c0eb18
         icon: "baby.png",
     },
 ];
