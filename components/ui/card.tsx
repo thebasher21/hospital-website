@@ -112,7 +112,7 @@ function CardClickHandler({
                         {data.map((emergency, index) => (
                             <li
                                 key={index}
-                                className="bg-blue-600 dark:bg-blue-400 text-white px-4 py-1 rounded-full text-sm"
+                                className="bg-blue-500 dark:bg-blue-400 text-white px-4 py-1 rounded-full text-sm"
                             >
                                 {emergency}
                             </li>

@@ -43,7 +43,7 @@ export default function ServiceCard({
   // Render different components based on whether href is provided
   if (href) {
     return (
-      <Link href={getBasePath(href)} className={className}>
+      <Link href={href} className={className}>
         <Card className="h-full transition-all duration-300 hover:shadow-lg">
           {content}
         </Card>

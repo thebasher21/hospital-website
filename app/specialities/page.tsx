@@ -5,40 +5,40 @@ import { Button } from "@/components/ui/button";
 import PageTitle from "@/components/PageTitle";
 import { useState } from "react";
 import Link from "next/link";
-import { getBasePath } from "@/lib/utils";
 
 export default function Specialities() {
     // List of specialties with their names, icons, and descriptions
     const specialties = [
         {
-            name: "General Medicine",
+            name: "General Medicine and Lifestyle Diseases",
             icon: "💊",
             description:
                 "Comprehensive care for a wide range of adult illnesses, chronic disease management, and preventive healthcare.",
             treatments: [
-                "All general ailments such as Typhoid, jaundice , TB etc",
-                "All seasoned ailments such as Dengue, Gastroenteritis etc",
-                "Life style diseases such as Diabetes , hypertension etc",
+                "All general ailments such as Typhoid, Jaundice, TB, etc",
+                "All seasonal ailments such as Dengue, Gastroenteritis, etc",
+                "Life style diseases such as Diabetes, Hypertension, etc",
                 "Thyroid",
                 "Anemia",
                 "Obesity",
                 "General weakness",
-                "other medical conditions",
+                "Other medical conditions",
             ],
         },
         {
             name: "General Surgery",
             icon: "🩺",
             description:
-                "Surgical treatment for a wide range of conditions affecting the abdomen, digestive system, soft tissues, and more",
+                "Surgical treatment for a wide range of conditions affecting the abdomen, digestive system, soft tissues, etc.",
             treatments: [
                 "Open Cholecystectomy",
                 "Haemorrhoids",
+                "Circumcision",
                 "Hernioplasty-Open",
                 "Herniorrhaphy",
                 "Breast Biopsy, Open Lumpectomy",
                 "Colon Resection",
-                "Laparotomy ",
+                "Laparotomy",
                 "Varicose veins",
                 "Ambulatory phlebotomy etc.",
             ],
@@ -47,32 +47,35 @@ export default function Specialities() {
             name: "Laparoscopic Surgery",
             icon: "🛠️",
             description:
-                "Minimally invasive surgery using small incisions and a camera to perform procedures with reduced recovery time",
+                "Minimally invasive surgery using small incisions and a camera to perform procedures resulting in early recovery.",
             treatments: [
                 "Laparoscopic Cholecystectomy (Gall Bladder)",
-                "Laparoscopic Hernioplasty",
-                "Herniorrhaphy",
+                "Laparoscopic Hernioplasty and Herniorrhaphy",
+                "Laproscopic Tubectomy",
+                "Laproscopic Oophorectomy",
+                "Laparoscopic Appendectomy",
                 "Laparoscopic colon Resection",
                 "Total Laparoscopic Hysterectomy",
-                "Diagnostic Laparoscopic Surgery etc.",
+                "Diagnostic Laparoscopy",
             ],
         },
         {
             name: "Gynaecology and Obstetrics",
             icon: "👩‍⚕️",
             description:
-                "Specializes in women's reproductive health, including pregnancy care, childbirth, and treating reproductive system disorders.",
+                "Specializes in women's reproductive health, including pre, ante and post natal care, childbirth, and treating reproductive system disorders.",
             treatments: [
                 "High risk pregnancies",
                 "Late pregnancies",
                 "Dilation & Curettage (D&C)",
-                "Laparoscopic Tubectomy",
-                "Laparoscopic Oophorectomy",
-                "Colposcopy, Hysteroscopy",
+                "Tubectomy",
+                "Oophorectomy",
+                "Colposcopy and Hysteroscopy",
                 "Hysterectomy",
                 "Ovarian cysts, Malignancies",
                 "Fallopian tube surgery",
                 "Removal of fibroids",
+                "MTP"
             ],
         },
         {
@@ -82,7 +85,6 @@ export default function Specialities() {
                 "Focused on the health of infants, children, and adolescents, addressing diseases, development, and overall well-being.",
             treatments: [
                 "Emergency",
-                "Daily OPD",
                 "New Born Baby Resuscitation",
                 "Level-1 NICU",
                 "Paediatric IPD",
@@ -96,13 +98,15 @@ export default function Specialities() {
             description:
                 "Deals with musculoskeletal system disorders, treating fractures, joint issues, and conditions affecting bones, muscles, and tendons.",
             treatments: [
-                "Total knee & Hip Replacement Surgery",
                 "Foot & ankle Surgery",
                 "Hand, Shoulder, Elbow Surgery",
-                "Spine Surgery",
                 "Arthritis diagnosis & Treatment ",
-                "Bone grafting",
-                "Internal fixation",
+                "Arthroscopic surgeries",
+                "Joint replacement surgeries such as Total Knee and Hip Replacement",
+                "Limb lengthening surgeries",
+                "Tendon transfer and repair surgeries",
+                "Surgical grafts",
+                "All types of fracture management"
             ],
         },
         {
@@ -118,13 +122,14 @@ export default function Specialities() {
                 "Corrective breathing surgery",
                 "Myringotomy with Tube Insertion",
                 "Nasal Surgery including Septoplasty",
+                "Mastoidectomy"
             ],
         },
         {
             name: "Urology",
             icon: "💧",
             description:
-                "Specializes in urinary tract diseases and male reproductive health, treating conditions like kidney stones, infections, and cancers.",
+                "Specializes in urinary tract diseases and male reproductive health, treating conditions like kidney stones, infections, etc.",
             treatments: [
                 "Renal (kidney) surgery (PCNL, RIRS)",
                 "Ureter surgery (URS)",
@@ -139,11 +144,12 @@ export default function Specialities() {
             name: "Non-interventional Cardiology",
             icon: "❤️",
             description:
-                "Involves the diagnosis and management of heart diseases using medications and lifestyle changes, without the need for surgery.",
+                "Involves the diagnosis, monitoring, prevention and risk management of heart diseases using medications and lifestyle changes, without the need for surgery.",
             treatments: [
-                "Pacemaker Implantation",
-                "Heart Valve Disease",
-                "Angiography",
+                "2-D Echo",
+                "ECG",
+                "Holter Monitor",
+                "Hypertension Management",
             ],
         },
         {
@@ -157,8 +163,8 @@ export default function Specialities() {
             name: "Dental Surgery",
             icon: "🦷",
             description:
-                "Involves surgical procedures for the mouth, teeth, gums, and jaw, including extractions and corrective surgeries.",
-            treatments: [
+                "Involves diagnosis and treatment for the mouth, teeth, gums and jaws including surgical extractions, etc.",
+                treatments: [
                 "General and Preventive Dentistry",
                 "Endodontics (RCT)",
                 "Orthodontics (Braces)",
@@ -173,10 +179,10 @@ export default function Specialities() {
             name: "Nephrology",
             icon: "🦠",
             description:
-                "Specializes in diagnosing and treating kidney diseases, including kidney failure, hypertension, and electrolyte imbalances.",
-            treatments: [
-                "Kidney Transplant",
+                "Specializes in diagnosing and treating kidney diseases, including CKD, AKI, Electrolyte imbalances etc.",
+                treatments: [
                 "Dialysis",
+                "Acute Kidney Injury Management",
                 "Chronic Kidney Disease Management",
             ],
         },
@@ -192,8 +198,8 @@ export default function Specialities() {
         <>
             <PageTitle
                 title="Our Specialities"
-                description="Our hospital offers comprehensive medical care across a wide range of specialties. 
-                   Our team of experienced specialists is committed to providing the highest quality healthcare services."
+                description="Our hospital offers comprehensive medical care across a wide range of specialities. 
+                   Our team of experienced specialists is committed to provide the highest quality healthcare services."
             />
 
             {/* Specialties Grid - First content section (white) */}
@@ -234,7 +240,7 @@ export default function Specialities() {
                                                     (treatment, index) => (
                                                         <li
                                                             key={index}
-                                                            className="bg-blue-400 dark:bg-blue-400 text-white px-4 py-1 rounded-full text-sm"
+                                                            className="bg-blue-500 dark:bg-blue-400 text-white px-4 py-1 rounded-full text-sm"
                                                         >
                                                             {treatment}
                                                         </li>
@@ -275,7 +281,7 @@ export default function Specialities() {
                             providing compassionate, patient-centered care using
                             the latest medical technologies and treatments.
                         </p>
-                        <Link href={getBasePath("/doctors")}>
+                        <Link href="/doctors">
                             <Button
                                 variant="default"
                                 className="font-medium cursor-pointer"

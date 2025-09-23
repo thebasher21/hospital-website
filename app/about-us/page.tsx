@@ -133,14 +133,12 @@ export default function AboutUs() {
                         <div className="prose prose-lg max-w-none dark:prose-invert">
                             <p
                                 className="mb-4 text-slate-600 dark:text-slate-300 leading-relaxed text-justify"
-                                data-i18n="aboutUs.ourStory.paragraph1"
                             >
                                 SADH Care Hospital is developing a sustainable
                                 healthcare facility in an underserved area of
-                                Pataudi, and its neighboring rural areas, in the
-                                Indian State of Haryana in India. We are a
-                                not-for- “know more” takes to “about us” page
-                                profit hospital dedicated to provide quality
+                                Pataudi, and its neighbouring villages, in the
+                                Indian State of Haryana. We are a
+                                not-for-profit hospital dedicated to provide quality
                                 healthcare services. The area lacked centers
                                 with proper healthcare facilities, the people of
                                 Pataudi and nearby areas had no choice but to

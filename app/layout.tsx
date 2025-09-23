@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import ClientScripts from "@/components/ClientScripts";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Providers from "@/app/providers";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -40,13 +41,15 @@ export default function RootLayout({
                     geistMono.variable
                 )}
             >
-                <div className="flex flex-col min-h-screen">
-                    <Header />
-                    <main className="flex-grow w-full overflow-x-hidden">
-                        {children}
-                    </main>
-                    <Footer />
-                </div>
+                <Providers>
+                    <div className="flex flex-col min-h-screen">
+                        <Header />
+                        <main className="flex-grow w-full overflow-x-hidden">
+                            {children}
+                        </main>
+                        <Footer />
+                    </div>
+                </Providers>
             </body>
         </html>
     );

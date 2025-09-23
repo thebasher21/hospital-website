@@ -101,7 +101,7 @@ export default function Header() {
                 {/* Mobile header layout */}
                 <div className="flex items-center justify-between lg:hidden">
                     <Link
-                        href={getBasePath("/")}
+                        href="/"
                         aria-label="SADH Care Hospital Home"
                         className="flex-shrink-0"
                         onClick={handleLogoClick}
@@ -175,7 +175,7 @@ export default function Header() {
                                 return (
                                     <li key={link.path}>
                                         <Link
-                                            href={getBasePath(link.path)}
+                                            href={link.path}
                                             className={cn(
                                                 "flex items-center justify-center px-4 py-1.5 rounded-md text-sm font-medium transition-colors",
                                                 isActive
@@ -205,7 +205,7 @@ export default function Header() {
                     {/* Logo on left */}
                     <div className="flex-shrink-0 mr-2">
                         <Link
-                            href={getBasePath("/")}
+                            href="/"
                             aria-label="SADH Care Hospital Home"
                             onClick={handleLogoClick}
                         >
@@ -231,7 +231,7 @@ export default function Header() {
                                 return (
                                     <li key={link.path} className="h-10">
                                         <Link
-                                            href={getBasePath(link.path)}
+                                            href={link.path}
                                             onClick={(e) =>
                                                 handleNavigation(e, link.path)
                                             }

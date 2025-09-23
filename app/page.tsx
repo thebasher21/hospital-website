@@ -173,7 +173,7 @@ export default async function Home() {
                                 "Dialysis",
                                 "Ayushman Bharat",
                                 "TPA - cashless and reimbursement",
-                                "Haryana government",
+                                // "Haryana government",
                                 "Medical gas services",
                                 "Laundry services",
                                 "Dietary services",
@@ -182,7 +182,7 @@ export default async function Home() {
 
                         {/* Service 3 */}
                         <Card className="shadow-md border bg-white dark:bg-gray-800/60 transition-all duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer">
-                            <Link href={getBasePath("/specialities")}>
+                            <Link href="/specialities">
                                 <CardHeader className="text-center">
                                     <div className="bg-gray-100 dark:bg-gray-700 w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                                         <span className="text-gray-700 dark:text-gray-300 text-2xl flex items-center justify-center w-full h-full">

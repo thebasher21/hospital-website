@@ -62,7 +62,7 @@ export default function Footer() {
                         <ul className="space-y-2">
                             <li>
                                 <Link
-                                    href={getBasePath("/about-us")}
+                                    href="/about-us"
                                     className="text-blue-100 hover:underline hover:text-white transition-colors dark:text-gray-300 dark:hover:text-white"
                                     data-i18n="footer.quickLinks.aboutUs"
                                     onClick={(e) =>
@@ -74,16 +74,19 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    href={getBasePath("/doctors")}
+                                    href="/doctors"
                                     className="text-blue-100 hover:underline hover:text-white transition-colors dark:text-gray-300 dark:hover:text-white"
                                     data-i18n="footer.quickLinks.ourDoctors"
+                                    onClick={(e) =>
+                                        handleNavigation(e, "/doctors")
+                                    }
                                 >
                                     Our Doctors
                                 </Link>
                             </li>
                             <li>
                                 <Link
-                                    href={getBasePath("/specialities")}
+                                    href="/specialities"
                                     className="text-blue-100 hover:underline hover:text-white transition-colors dark:text-gray-300 dark:hover:text-white"
                                     data-i18n="footer.quickLinks.departments"
                                     onClick={(e) =>
@@ -95,7 +98,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    href={getBasePath("/contact-us")}
+                                    href="/contact-us"
                                     className="text-blue-100 hover:underline hover:text-white transition-colors dark:text-gray-300 dark:hover:text-white"
                                     data-i18n="footer.quickLinks.careers"
                                     onClick={(e) =>

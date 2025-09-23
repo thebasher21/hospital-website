@@ -37,10 +37,10 @@ export default function StatisticsComponent() {
 
     return (
         <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-32">
                 {statistics.map((stat, index) => (
                     <InView
-                        className="flex items-center justify-center p-5"
+                        className="flex items-center justify-center p-2"
                         key={index}
                         as="div"
                         onChange={(inView) => inView && setHasStarted(true)}
