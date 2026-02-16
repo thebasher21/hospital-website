@@ -37,19 +37,19 @@ export default function AboutUs() {
         },
         {
             name: "Dr. (Maj) Roli Tewari",
-            designation: "COO & Medical Deputy MS",
+            designation: "COO & Deputy MS",
             image: "/images/doctors/Roli_Tewari.jpg",
-            bio: "Superintendent",
+            bio: "",
         },
         {
             name: "Dr. Parul Prinja",
-            designation: "Medical Specialist",
+            designation: "CMO & HOD Medicine",
             image: "/images/doctors/Parul_Prinja.jpg",
             bio: "",
         },
         {
             name: "Dr. Umesh Kumari Yadav",
-            designation: "Gynaecologist",
+            designation: "HOD OBGY",
             image: "/images/doctors/Umesh_Kumari_Yadav.jpg",
             bio: "",
         },
@@ -307,7 +307,7 @@ export default function AboutUs() {
                                 Care
                             </h3>
                             <p className="text-slate-600 dark:text-slate-300">
-                                We provide personalized, compassionate care to
+                                We provide personalized care to
                                 every patient who walks through our doors,
                                 recognizing each person&apos;s unique needs.
                             </p>
@@ -317,11 +317,10 @@ export default function AboutUs() {
                                 <span className="text-2xl">🤝</span>
                             </div>
                             <h3 className="text-xl font-semibold mb-3 text-slate-900 dark:text-white">
-                                Compassion
+                                Compassion and Empathy
                             </h3>
                             <p className="text-slate-600 dark:text-slate-300">
-                                We approach healthcare with empathy and
-                                understanding, treating each patient with
+                                We approach healthcare with understanding the need and treating each patient with
                                 dignity and respect.
                             </p>
                         </div>
@@ -334,7 +333,7 @@ export default function AboutUs() {
                             </h3>
                             <p className="text-slate-600 dark:text-slate-300">
                                 We strive for excellence in all aspects of our
-                                service, from medical care to patient experience
+                                services, from medical care to patient safety and experience
                                 and community engagement.
                             </p>
                         </div>

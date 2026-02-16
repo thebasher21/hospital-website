@@ -115,6 +115,13 @@ const galleryItems = [
             "Comfortable general ward with beds and facilities for multiple patients under observation.",
         image: "/images/gallery/general_ward.jpg",
     },
+    {
+        id: 16,
+        title: "Dialysis Unit",
+        description:
+            "Well-equipped dialysis unit with modern equipment for kidney patients.",
+        image: "/images/gallery/dialysis_unit.jpg",
+    },
 ];
 
 // const videoItems = [

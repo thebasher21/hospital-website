@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { X, Copy, CheckCircle } from "lucide-react";
 import PageTitle from "@/components/PageTitle";
 import Image from "next/image";
+import Link from "next/link";
 
 // Sample donors data
 const donors = [
@@ -206,7 +207,7 @@ const DonationModal = ({
                                         key={key}
                                         className="flex justify-between items-center"
                                     >
-                                        <p className="text-sm font-medium text-slate-600 dark:text-slate-300 capitalize">
+                                        <p className="text-sm font-medium text-slate-600 dark:text-slate-300 uppercase">
                                             {key
                                                 .replace(/([A-Z])/g, " $1")
                                                 .replace(/^./, (str) =>
@@ -282,7 +283,7 @@ const DonationModal = ({
                         </div>
                     </div>
 
-                    <div>
+                    {/* <div>
                         <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">
                             Donation Categories
                         </h3>
@@ -317,22 +318,22 @@ const DonationModal = ({
                                 </div>
                             ))}
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
                         <p className="text-sm text-slate-600 dark:text-slate-300 mb-6">
                             For assistance with donations or any queries, please
                             contact our donation coordinator at{" "}
-                            <span className="text-blue-600 dark:text-blue-400">
-                                info@sadhcare.org
-                            </span>{" "}
+                            <Link href="mailto:accounts@sadhcare.org" className="text-blue-600 dark:text-blue-400">
+                                accounts@sadhcare.org
+                            </Link>{" "}
                             or call{" "}
-                            <span className="text-blue-600 dark:text-blue-400">
+                            <Link href="tel:+918461008461" className="text-blue-600 dark:text-blue-400">
                                 +91 84610 08461
-                            </span>
+                            </Link>
                             .
                         </p>
-                        <div className="flex justify-center">
+                        {/* <div className="flex justify-center">
                             <Button
                                 variant="default"
                                 size="lg"
@@ -340,7 +341,7 @@ const DonationModal = ({
                             >
                                 Download Donation Form
                             </Button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
@@ -424,7 +425,7 @@ export default function Donations() {
                     <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                         <Card className="border bg-white dark:bg-gray-800/70 shadow-sm">
                             <CardHeader className="pb-2">
-                                <CardTitle className="text-lg text-center text-slate-900 dark:text-white">
+                                <CardTitle className="text-md text-center text-slate-900 dark:text-white">
                                     Medical Equipment
                                 </CardTitle>
                             </CardHeader>
@@ -439,7 +440,7 @@ export default function Donations() {
 
                         <Card className="border bg-white dark:bg-gray-800/70 shadow-sm">
                             <CardHeader className="pb-2">
-                                <CardTitle className="text-lg text-center text-slate-900 dark:text-white">
+                                <CardTitle className="text-md text-center text-slate-900 dark:text-white">
                                     Patient Support Fund
                                 </CardTitle>
                             </CardHeader>
@@ -454,7 +455,7 @@ export default function Donations() {
 
                         <Card className="border bg-white dark:bg-gray-800/70 shadow-sm">
                             <CardHeader className="pb-2">
-                                <CardTitle className="text-lg text-center text-slate-900 dark:text-white">
+                                <CardTitle className="text-md text-center text-bold text-slate-900 dark:text-white">
                                     Infrastructure Development
                                 </CardTitle>
                             </CardHeader>
@@ -471,7 +472,7 @@ export default function Donations() {
             </section>
 
             {/* Our Donors Section */}
-            <section className="bg-gray-100 dark:bg-gray-800/30 py-20 border-y border-gray-200 dark:border-gray-700/30">
+            {/* <section className="bg-gray-100 dark:bg-gray-800/30 py-20 border-y border-gray-200 dark:border-gray-700/30">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center mb-12 text-slate-900 dark:text-white">
                         Our Generous Donors
@@ -517,10 +518,10 @@ export default function Donations() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Corporate Partners Section */}
-            <section className="bg-white dark:bg-gray-900/40 py-20">
+            {/* <section className="bg-white dark:bg-gray-900/40 py-20">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-3xl font-bold mb-8 text-slate-900 dark:text-white">
                         Corporate Social Responsibility
@@ -538,7 +539,7 @@ export default function Donations() {
                         Corporate Partnership Inquiry
                     </Button>
                 </div>
-            </section>
+            </section> */}
 
             {/* Donation Modal */}
             <DonationModal isOpen={isModalOpen} onClose={closeDonationModal} />

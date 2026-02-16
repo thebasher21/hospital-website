@@ -215,20 +215,20 @@ export default function ContactUs() {
                                 <ul className="space-y-2">
                                     <li className="flex justify-between">
                                         <span className="text-slate-600 dark:text-slate-300">
-                                            Monday - Friday
+                                            All Days
                                         </span>
                                         <span className="font-medium text-slate-900 dark:text-white">
-                                            8:00 AM - 5:00 PM
+                                            9:00 AM - 5:00 PM
                                         </span>
                                     </li>
-                                    <li className="flex justify-between">
+                                    {/* <li className="flex justify-between">
                                         <span className="text-slate-600 dark:text-slate-300">
                                             Sunday
                                         </span>
                                         <span className="font-medium text-slate-900 dark:text-white">
                                             10:00 AM - 2:00 PM
                                         </span>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </div>
                         </div>

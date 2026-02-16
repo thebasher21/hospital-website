@@ -11,19 +11,21 @@ export default function Footer() {
     return (
         <footer className="bg-blue-800 dark:bg-gray-900 text-white py-8 transition-colors duration-200">
             <div className="container mx-auto px-4 sm:px-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-24">
                     <div>
                         <div className="bg-white dark:bg-gray-800 p-3 rounded-lg inline-block">
-                            <div className="relative h-12 w-48">
+                            {/* <div className="relative h-20 w-48"> */}
                                 <Image
                                     src={getBasePath(
                                         "/images/logos/hospitalLogo.png"
                                     )}
+                                    height={100}
+                                    width={200}
                                     alt="SADH Care Hospital Logo"
-                                    fill
+                                    // fill
                                     className="object-contain"
                                 />
-                            </div>
+                            {/* </div> */}
                         </div>
                         <p
                             className="font-bold text-blue-100 dark:text-gray-300"
@@ -35,7 +37,7 @@ export default function Footer() {
                             className="mb-4 font-medium text-blue-100 dark:text-gray-300"
                             data-i18n="footer.trustedPartner"
                         >
-                            Supported by Mankind Pharma pvt. ltd. under CSR
+                            Supported by Mankind Pharma pvt. ltd. under their CSR
                             initiative
                         </p>
                         <p
@@ -45,12 +47,12 @@ export default function Footer() {
                             Your trusted healthcare partner providing quality
                             medical services since Jan 2017
                         </p>
-                        <p
+                        {/* <p
                             className="mt-2 font-medium text-blue-200 dark:text-gray-200"
                             data-i18n="hero.mission"
                         >
                             Care · Compassion · Empathy
-                        </p>
+                        </p> */}
                     </div>
                     <div>
                         <h4
@@ -105,12 +107,12 @@ export default function Footer() {
                                         handleNavigation(e, "/contact-us")
                                     }
                                 >
-                                    Careers
+                                    Contact Us
                                 </Link>
                             </li>
                         </ul>
                     </div>
-                    <div>
+                    {/* <div>
                         <h4
                             className="text-xl font-bold mb-4 text-white"
                             data-i18n="footer.contactUs.title"
@@ -137,15 +139,45 @@ export default function Footer() {
                                 Email: info@sadhcare.org
                             </p>
                         </Link>
+                            <p
+                                className="text-blue-100 dark:text-gray-300 hover:underline"
+                                data-i18n="footer.contactUs.phone"
+                            >
+                                Phone:
+                            </p>
                         <Link href="tel:+918461008461">
                             <p
                                 className="text-blue-100 dark:text-gray-300 hover:underline"
                                 data-i18n="footer.contactUs.phone"
                             >
-                                Phone: +91 84610 08461
+                                +91 84610 08461
                             </p>
                         </Link>
-                    </div>
+                        <Link href="tel:+9101242671918">
+                            <p
+                                className="text-blue-100 dark:text-gray-300 hover:underline"
+                                data-i18n="footer.contactUs.phone"
+                            >
+                                0124-2671918
+                            </p>
+                        </Link>
+                        <Link href="tel:+9101242671919">
+                            <p
+                                className="text-blue-100 dark:text-gray-300 hover:underline"
+                                data-i18n="footer.contactUs.phone"
+                            >
+                                0124-2671919
+                            </p>
+                        </Link>
+                        <Link href="tel:+919812008765">
+                            <p
+                                className="text-blue-100 dark:text-gray-300 hover:underline"
+                                data-i18n="footer.contactUs.phone"
+                            >
+                                +91 98120 08765
+                            </p>
+                        </Link>
+                    </div> */}
                     <div>
                         <h4
                             className="text-xl font-bold mb-4 text-white"
@@ -208,6 +240,81 @@ export default function Footer() {
                                 >
                                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                                 </svg>
+                            </Link>
+                        </div>
+                    </div>
+                    <div>
+                        <h4
+                            className="text-xl font-bold mb-4 text-white text-center"
+                            data-i18n="footer.socialMedia.title"
+                        >
+                            Gratitude
+                        </h4>
+                        <div className="flex flex-col items-center justify-center space-y-10 bg-white rounded-lg p-4">
+                            <Link
+                                href="https://www.mankindpharma.com/"
+                                target="_blank"
+                                // className="flex items-center justify-center bg-white dark:bg-gray-800 p-4 rounded-lg"
+                                aria-label="Mankind Pharma Logo"
+                            >
+                                <Image
+                                    src={"/images/logos/mankind_pharma.png"}
+                                    alt="Mankind Pharma Logo"
+                                    width={100}
+                                    height={100}
+                                />
+                            </Link>
+                            <Link
+                                href="https://www.dsv.com/"
+                                target="_blank"
+                                // className="flex items-center justify-center bg-white dark:bg-gray-800 p-4 rounded-lg"
+                                aria-label="DSV Logo"
+                            >
+                                <Image
+                                    src={"/images/logos/dsv.png"}
+                                    alt="DSV Logo"
+                                    width={100}
+                                    height={100}
+                                />
+                            </Link>
+                            <Link
+                                href="https://www.concernindiafoundation.org/"
+                                target="_blank"
+                                // className="flex items-center justify-center bg-white dark:bg-gray-800 p-4 rounded-lg"
+                                aria-label="Concern India Logo"
+                            >
+                                <Image
+                                    src={"/images/logos/concernIndia.png"}
+                                    alt="Concern India Logo"
+                                    width={100}
+                                    height={100}
+                                />
+                            </Link>
+                            <Link
+                                href="https://www.iamgurgaon.org/"
+                                target="_blank"
+                                // className="flex items-center justify-center bg-white dark:bg-gray-800 p-4 rounded-lg"
+                                aria-label="I am Gurgaon Logo"
+                            >
+                                <Image
+                                    src={"https://cdn.prod.website-files.com/641c39238810d9113b06b56f/641c39238810d962da06b5e9_IAG%20Logo.svg"}
+                                    alt="I am Gurgaon Logo"
+                                    width={100}
+                                    height={100}
+                                />  
+                            </Link>
+                            <Link
+                                href="https://www.avantorsciences.com/in/en/"
+                                target="_blank"
+                                // className="flex items-center justify-center bg-white dark:bg-gray-800 p-4 rounded-lg"
+                                aria-label="Avantor Sciences Logo"
+                            >
+                                <Image
+                                    src={"/images/logos/avantorSciences.png"}
+                                    alt="Avantor Sciences Logo"
+                                    width={100}
+                                    height={100}
+                                />
                             </Link>
                         </div>
                     </div>
