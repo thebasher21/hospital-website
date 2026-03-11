@@ -1,46 +1,46 @@
 "use client";
 
 import PageTitle from "@/components/PageTitle";
-import {
-    Card,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
-import { getBasePath } from "@/lib/utils";
-import Image from "next/image";
-import { useState } from "react";
-import { ChevronUp } from "lucide-react";
+// import {
+//     Card,
+//     CardDescription,
+//     CardHeader,
+//     CardTitle,
+// } from "@/components/ui/card";
+// import { getBasePath } from "@/lib/utils";
+// import Image from "next/image";
+// import { useState } from "react";
+// import { ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Doctors() {
-    const managementStaff = [
-        {
-            name: "Dr. (Brig) Amitava Banerjee",
-            designation: "Medical Director & HOD",
-            image: "/images/doctors/Amitava_Banerjee.jpg",
-            bio: "Radiodiagnosis",
-        },
-        {
-            name: "Dr. (Maj) Roli Tewari",
-            designation: "COO & Medical Deputy MS",
-            image: "/images/doctors/Roli_Tewari.jpg",
-            bio: "Superintendent",
-        },
-        {
-            name: "Dr. Parul Prinja",
-            designation: "Medical Specialist",
-            image: "/images/doctors/Parul_Prinja.jpg",
-            bio: "",
-        },
-        {
-            name: "Dr. Umesh Kumari Yadav",
-            designation: "Gynaecologist",
-            image: "/images/doctors/Umesh_Kumari_Yadav.jpg",
-            bio: "",
-        },
-    ];
+    // const managementStaff = [
+    //     {
+    //         name: "Dr. (Brig) Amitava Banerjee",
+    //         designation: "Medical Director & HOD",
+    //         image: "/images/doctors/Amitava_Banerjee.jpg",
+    //         bio: "Radiodiagnosis",
+    //     },
+    //     {
+    //         name: "Dr. (Maj) Roli Tewari",
+    //         designation: "COO & Medical Deputy MS",
+    //         image: "/images/doctors/Roli_Tewari.jpg",
+    //         bio: "Superintendent",
+    //     },
+    //     {
+    //         name: "Dr. Parul Prinja",
+    //         designation: "Medical Specialist",
+    //         image: "/images/doctors/Parul_Prinja.jpg",
+    //         bio: "",
+    //     },
+    //     {
+    //         name: "Dr. Umesh Kumari Yadav",
+    //         designation: "Gynaecologist",
+    //         image: "/images/doctors/Umesh_Kumari_Yadav.jpg",
+    //         bio: "",
+    //     },
+    // ];
     const opdSchedule = [
         {
             id: 1,
@@ -116,172 +116,172 @@ export default function Doctors() {
             working_days: [1, 1, 1, 1, 1, 1, 1],
             timing: "24x7",
         },
-    ]
-    const doctors = [
-        {
-            id: 1,
-            name: "Dr. Vipin Jamdagni",
-            image: "/images/doctors/Vipin_Jamdagni.jpeg",
-            speciality: "Medical Specialist",
-            working_days: [1, 0, 1, 0, 1, 0, 0],
-            timing: "9:00AM to 9:00PM",
-        },
-        {
-            id: 2,
-            name: "Dr. Nidhi Kumari",
-            image: "",
-            speciality: "Gynaecologist",
-            working_days: [1, 1, 1, 1, 0, 0, 0],
-            timing: "8:30AM to 4:00PM",
-        },
-        {
-            id: 3,
-            name: "Dr. Rajesh Yadav",
-            image: "/images/doctors/Rajesh_Yadav.jpeg",
-            speciality: "General Surgeon",
-            working_days: [1, 1, 1, 0, 1, 0, 0],
-            timing: "8:00AM to 4:00PM",
-        },
-        {
-            id: 4,
-            name: "Dr. Shashikant Mishra",
-            image: "/images/doctors/Shashikant_Mishra.jpeg",
-            speciality: "Cardiologist",
-            working_days: [0, 1, 0, 1, 0, 1, 1],
-            timing: "10:00AM to 6:00PM",
-        },
-        {
-            id: 5,
-            name: "Dr. Sunil Yadav",
-            image: "/images/doctors/Sunil_Yadav.jpeg",
-            speciality: "Orthopedic Surgeon",
-            working_days: [0, 1, 0, 1, 0, 1, 1],
-            timing: "11:00AM to 11:30PM",
-        },
-        {
-            id: 6,
-            name: "Dr. Swarnima Saxena",
-            image: "/images/doctors/Swarnima_Saxena.jpeg",
-            speciality: "Gynaecologist",
-            working_days: [1, 1, 1, 1, 1, 0, 0],
-            timing: "9:00AM to 5:00PM",
-        },
-        {
-            id: 7,
-            name: "Dr. Karan Yadav",
-            image: "/images/doctors/Karan_Yadav.jpeg",
-            speciality: "ENT Surgeon",
-            working_days: [1, 1, 0, 1, 1, 0, 0],
-            timing: "9:30AM to 5:45PM",
-        },
-        {
-            id: 8,
-            name: "Dr. Vishal Subhash Ambare",
-            image: "/images/doctors/Vishal_Ambare.jpeg",
-            speciality: "Pediatrics",
-            working_days: [1, 1, 1, 0, 1, 0, 0],
-            timing: "10:00AM to 2:00PM",
-        },
-        {
-            id: 9,
-            name: "Dr. J P Tak",
-            image: "/images/doctors/J_P_Tak.jpeg",
-            speciality: "Anesthetist",
-            working_days: [0, 1, 1, 1, 0, 1, 0],
-            timing: "1:15PM to 9:00PM",
-        },
-        {
-            id: 10,
-            name: "Dr. Mohit Tayal",
-            image: "/images/doctors/Mohit_Tayal.jpeg",
-            speciality: "Pediatrics",
-            working_days: [1, 0, 1, 0, 1, 0, 1],
-            timing: "6:30PM to 12:00AM",
-        },
-        {
-            id: 11,
-            name: "Dr. Bhavna Sharma",
-            image: "",
-            speciality: "Pathologist",
-            working_days: [0, 1, 1, 1, 0, 1, 0],
-            timing: "1:15PM to 9:00PM",
-        },
-        {
-            id: 12,
-            name: "Dr. Pradhuman Yadav",
-            image: "",
-            speciality: "Uro Surgeon",
-            working_days: [1, 0, 1, 0, 1, 0, 0],
-            timing: "9:00AM to 9:00PM",
-        },
-        {
-            id: 13,
-            name: "Dr. Shri Bhagwan",
-            image: "",
-            speciality: "Forensics",
-            working_days: [1, 0, 1, 0, 1, 0, 1],
-            timing: "6:30PM to 12:00AM",
-        },
-        {
-            id: 14,
-            name: "Dr. Sameer",
-            image: "",
-            speciality: "General Physician",
-            working_days: [0, 1, 1, 1, 0, 1, 0],
-            timing: "1:15PM to 9:00PM",
-        },
-        {
-            id: 15,
-            name: "Dr. Akash Sharma",
-            image: "",
-            speciality: "General Physician",
-            working_days: [1, 0, 1, 0, 1, 0, 1],
-            timing: "6:30PM to 12:00AM",
-        },
-        {
-            id: 16,
-            name: "Dr. Tarun Sharma",
-            image: "",
-            speciality: "General Physician",
-            working_days: [1, 1, 1, 0, 1, 0, 0],
-            timing: "8:00AM to 4:00PM",
-        },
-        {
-            id: 17,
-            name: "Dr. Shivani Malik",
-            image: "",
-            speciality: "General Physician",
-            working_days: [1, 0, 1, 0, 1, 0, 0],
-            timing: "9:00AM to 9:00PM",
-        },
     ];
+    // const doctors = [
+    //     {
+    //         id: 1,
+    //         name: "Dr. Vipin Jamdagni",
+    //         image: "/images/doctors/Vipin_Jamdagni.jpeg",
+    //         speciality: "Medical Specialist",
+    //         working_days: [1, 0, 1, 0, 1, 0, 0],
+    //         timing: "9:00AM to 9:00PM",
+    //     },
+    //     {
+    //         id: 2,
+    //         name: "Dr. Nidhi Kumari",
+    //         image: "",
+    //         speciality: "Gynaecologist",
+    //         working_days: [1, 1, 1, 1, 0, 0, 0],
+    //         timing: "8:30AM to 4:00PM",
+    //     },
+    //     {
+    //         id: 3,
+    //         name: "Dr. Rajesh Yadav",
+    //         image: "/images/doctors/Rajesh_Yadav.jpeg",
+    //         speciality: "General Surgeon",
+    //         working_days: [1, 1, 1, 0, 1, 0, 0],
+    //         timing: "8:00AM to 4:00PM",
+    //     },
+    //     {
+    //         id: 4,
+    //         name: "Dr. Shashikant Mishra",
+    //         image: "/images/doctors/Shashikant_Mishra.jpeg",
+    //         speciality: "Cardiologist",
+    //         working_days: [0, 1, 0, 1, 0, 1, 1],
+    //         timing: "10:00AM to 6:00PM",
+    //     },
+    //     {
+    //         id: 5,
+    //         name: "Dr. Sunil Yadav",
+    //         image: "/images/doctors/Sunil_Yadav.jpeg",
+    //         speciality: "Orthopedic Surgeon",
+    //         working_days: [0, 1, 0, 1, 0, 1, 1],
+    //         timing: "11:00AM to 11:30PM",
+    //     },
+    //     {
+    //         id: 6,
+    //         name: "Dr. Swarnima Saxena",
+    //         image: "/images/doctors/Swarnima_Saxena.jpeg",
+    //         speciality: "Gynaecologist",
+    //         working_days: [1, 1, 1, 1, 1, 0, 0],
+    //         timing: "9:00AM to 5:00PM",
+    //     },
+    //     {
+    //         id: 7,
+    //         name: "Dr. Karan Yadav",
+    //         image: "/images/doctors/Karan_Yadav.jpeg",
+    //         speciality: "ENT Surgeon",
+    //         working_days: [1, 1, 0, 1, 1, 0, 0],
+    //         timing: "9:30AM to 5:45PM",
+    //     },
+    //     {
+    //         id: 8,
+    //         name: "Dr. Vishal Subhash Ambare",
+    //         image: "/images/doctors/Vishal_Ambare.jpeg",
+    //         speciality: "Pediatrics",
+    //         working_days: [1, 1, 1, 0, 1, 0, 0],
+    //         timing: "10:00AM to 2:00PM",
+    //     },
+    //     {
+    //         id: 9,
+    //         name: "Dr. J P Tak",
+    //         image: "/images/doctors/J_P_Tak.jpeg",
+    //         speciality: "Anesthetist",
+    //         working_days: [0, 1, 1, 1, 0, 1, 0],
+    //         timing: "1:15PM to 9:00PM",
+    //     },
+    //     {
+    //         id: 10,
+    //         name: "Dr. Mohit Tayal",
+    //         image: "/images/doctors/Mohit_Tayal.jpeg",
+    //         speciality: "Pediatrics",
+    //         working_days: [1, 0, 1, 0, 1, 0, 1],
+    //         timing: "6:30PM to 12:00AM",
+    //     },
+    //     {
+    //         id: 11,
+    //         name: "Dr. Bhavna Sharma",
+    //         image: "",
+    //         speciality: "Pathologist",
+    //         working_days: [0, 1, 1, 1, 0, 1, 0],
+    //         timing: "1:15PM to 9:00PM",
+    //     },
+    //     {
+    //         id: 12,
+    //         name: "Dr. Pradhuman Yadav",
+    //         image: "",
+    //         speciality: "Uro Surgeon",
+    //         working_days: [1, 0, 1, 0, 1, 0, 0],
+    //         timing: "9:00AM to 9:00PM",
+    //     },
+    //     {
+    //         id: 13,
+    //         name: "Dr. Shri Bhagwan",
+    //         image: "",
+    //         speciality: "Forensics",
+    //         working_days: [1, 0, 1, 0, 1, 0, 1],
+    //         timing: "6:30PM to 12:00AM",
+    //     },
+    //     {
+    //         id: 14,
+    //         name: "Dr. Sameer",
+    //         image: "",
+    //         speciality: "General Physician",
+    //         working_days: [0, 1, 1, 1, 0, 1, 0],
+    //         timing: "1:15PM to 9:00PM",
+    //     },
+    //     {
+    //         id: 15,
+    //         name: "Dr. Akash Sharma",
+    //         image: "",
+    //         speciality: "General Physician",
+    //         working_days: [1, 0, 1, 0, 1, 0, 1],
+    //         timing: "6:30PM to 12:00AM",
+    //     },
+    //     {
+    //         id: 16,
+    //         name: "Dr. Tarun Sharma",
+    //         image: "",
+    //         speciality: "General Physician",
+    //         working_days: [1, 1, 1, 0, 1, 0, 0],
+    //         timing: "8:00AM to 4:00PM",
+    //     },
+    //     {
+    //         id: 17,
+    //         name: "Dr. Shivani Malik",
+    //         image: "",
+    //         speciality: "General Physician",
+    //         working_days: [1, 0, 1, 0, 1, 0, 0],
+    //         timing: "9:00AM to 9:00PM",
+    //     },
+    // ];
 
     const workingDayLabels = ["S", "M", "T", "W", "T", "F", "S"];
 
-    const [isSorted, setIsSorted] = useState(false);
-    const [doctorsData, setDoctorsData] = useState([...doctors]);
+    // const [isSorted, setIsSorted] = useState(false);
+    // const [_, setDoctorsData] = useState([...doctors]);
 
-    const handleArrowClick = () => {
-        if (isSorted) {
-            setDoctorsData(
-                doctors.sort((a, b) => {
-                    const nameA = a.name.toLowerCase();
-                    const nameB = b.name.toLowerCase();
-                    return nameA > nameB ? -1 : nameA < nameB ? 1 : 0;
-                })
-            );
-        } else {
-            setDoctorsData(
-                doctors.sort((a, b) => {
-                    const nameA = a.name.toLowerCase();
-                    const nameB = b.name.toLowerCase();
-                    return nameA < nameB ? -1 : nameA > nameB ? 1 : 0;
-                })
-            );
-        }
+    // const handleArrowClick = () => {
+    //     if (isSorted) {
+    //         setDoctorsData(
+    //             doctors.sort((a, b) => {
+    //                 const nameA = a.name.toLowerCase();
+    //                 const nameB = b.name.toLowerCase();
+    //                 return nameA > nameB ? -1 : nameA < nameB ? 1 : 0;
+    //             })
+    //         );
+    //     } else {
+    //         setDoctorsData(
+    //             doctors.sort((a, b) => {
+    //                 const nameA = a.name.toLowerCase();
+    //                 const nameB = b.name.toLowerCase();
+    //                 return nameA < nameB ? -1 : nameA > nameB ? 1 : 0;
+    //             })
+    //         );
+    //     }
 
-        setIsSorted(!isSorted);
-    };
+    //     setIsSorted(!isSorted);
+    // };
 
     return (
         <>
@@ -419,7 +419,7 @@ export default function Doctors() {
                                                                 ]
                                                             }
                                                         </span>
-                                                    )
+                                                    ),
                                             )}
                                         </div>
                                     </td>

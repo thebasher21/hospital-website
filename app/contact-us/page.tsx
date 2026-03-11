@@ -3,6 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import PageTitle from "@/components/PageTitle";
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 
 export default function ContactUs() {
@@ -90,7 +91,7 @@ export default function ContactUs() {
                                                                     {phone.number.map(
                                                                         (
                                                                             number,
-                                                                            index
+                                                                            index,
                                                                         ) => (
                                                                             <Link
                                                                                 key={
@@ -98,7 +99,7 @@ export default function ContactUs() {
                                                                                 }
                                                                                 href={`tel:${number.replace(
                                                                                     /[^0-9+]/g,
-                                                                                    ""
+                                                                                    "",
                                                                                 )}`}
                                                                                 className="text-green-600 dark:text-green-400 hover:underline flex items-center"
                                                                                 aria-label={`Call ${phone.label} at ${number}`}
@@ -111,12 +112,12 @@ export default function ContactUs() {
                                                                                 }
                                                                                 <ExternalLink className="h-4 w-4 ml-1" />
                                                                             </Link>
-                                                                        )
+                                                                        ),
                                                                     )}
                                                                 </ul>
                                                             </div>
                                                         </li>
-                                                    )
+                                                    ),
                                                 )}
                                             </ul>
                                         </div>
@@ -171,7 +172,7 @@ export default function ContactUs() {
                                     aria-label="Open location in Google Maps"
                                     tabIndex={0}
                                 >
-                                    <img
+                                    <Image
                                         src={
                                             "https://maps.googleapis.com/maps/api/staticmap?center=28.320206,76.7888022&zoom=17&size=1000x1000&maptype=roadmap&key=AIzaSyDRtDDCUoohxfXfRBfU-v-yqYMtu2nAWRw"
                                         }

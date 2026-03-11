@@ -3,95 +3,95 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+// import { Badge } from "@/components/ui/badge";
 import { X, Copy, CheckCircle } from "lucide-react";
 import PageTitle from "@/components/PageTitle";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
 // Sample donors data
-const donors = [
-    {
-        id: 1,
-        name: "Rajan Mehta",
-        amount: "₹5,00,000",
-        date: "March 15, 2023",
-        category: "Platinum",
-        image: "https://placehold.co/150x150/0067b8/ffffff.jpeg?text=RM",
-        message:
-            "Proud to support the hospital's mission to provide quality healthcare to all.",
-    },
-    {
-        id: 2,
-        name: "Priya Shah Foundation",
-        amount: "₹10,00,000",
-        date: "February 12, 2023",
-        category: "Diamond",
-        image: "https://placehold.co/150x150/00a2ed/ffffff.jpeg?text=PSF",
-        message:
-            "We believe in the vision of SADH Care Hospital and are committed to supporting healthcare initiatives.",
-    },
-    {
-        id: 3,
-        name: "Dr. Anand Kumar",
-        amount: "₹2,50,000",
-        date: "January 5, 2023",
-        category: "Gold",
-        image: "https://placehold.co/150x150/68217a/ffffff.jpeg?text=AK",
-        message:
-            "As a medical professional, I understand the importance of supporting healthcare institutions.",
-    },
-    {
-        id: 4,
-        name: "Sushila Devi Trust",
-        amount: "₹7,50,000",
-        date: "December 20, 2022",
-        category: "Platinum",
-        image: "https://placehold.co/150x150/107c10/ffffff.jpeg?text=SDT",
-        message:
-            "Our trust is dedicated to supporting healthcare initiatives that make a difference in the community.",
-    },
-    {
-        id: 5,
-        name: "Vikram Singh",
-        amount: "₹1,00,000",
-        date: "November 30, 2022",
-        category: "Silver",
-        image: "https://placehold.co/150x150/0067b8/ffffff.jpeg?text=VS",
-        message:
-            "Happy to contribute to the development of medical facilities in our community.",
-    },
-    {
-        id: 6,
-        name: "Global Care Inc.",
-        amount: "₹15,00,000",
-        date: "October 15, 2022",
-        category: "Diamond",
-        image: "https://placehold.co/150x150/00a2ed/ffffff.jpeg?text=GC",
-        message:
-            "As part of our CSR initiative, we are proud to support SADH Care Hospital's expansion project.",
-    },
-    {
-        id: 7,
-        name: "Meera & Rajesh Patel",
-        amount: "₹3,00,000",
-        date: "September 5, 2022",
-        category: "Gold",
-        image: "https://placehold.co/150x150/68217a/ffffff.jpeg?text=MRP",
-        message:
-            "This donation is made in memory of our parents who received excellent care at this hospital.",
-    },
-    {
-        id: 8,
-        name: "Sunita Sharma",
-        amount: "₹50,000",
-        date: "August 12, 2022",
-        category: "Bronze",
-        image: "https://placehold.co/150x150/107c10/ffffff.jpeg?text=SS",
-        message:
-            "Grateful for the care I received during my treatment. This is my way of giving back.",
-    },
-];
+// const donors = [
+//     {
+//         id: 1,
+//         name: "Rajan Mehta",
+//         amount: "₹5,00,000",
+//         date: "March 15, 2023",
+//         category: "Platinum",
+//         image: "https://placehold.co/150x150/0067b8/ffffff.jpeg?text=RM",
+//         message:
+//             "Proud to support the hospital's mission to provide quality healthcare to all.",
+//     },
+//     {
+//         id: 2,
+//         name: "Priya Shah Foundation",
+//         amount: "₹10,00,000",
+//         date: "February 12, 2023",
+//         category: "Diamond",
+//         image: "https://placehold.co/150x150/00a2ed/ffffff.jpeg?text=PSF",
+//         message:
+//             "We believe in the vision of SADH Care Hospital and are committed to supporting healthcare initiatives.",
+//     },
+//     {
+//         id: 3,
+//         name: "Dr. Anand Kumar",
+//         amount: "₹2,50,000",
+//         date: "January 5, 2023",
+//         category: "Gold",
+//         image: "https://placehold.co/150x150/68217a/ffffff.jpeg?text=AK",
+//         message:
+//             "As a medical professional, I understand the importance of supporting healthcare institutions.",
+//     },
+//     {
+//         id: 4,
+//         name: "Sushila Devi Trust",
+//         amount: "₹7,50,000",
+//         date: "December 20, 2022",
+//         category: "Platinum",
+//         image: "https://placehold.co/150x150/107c10/ffffff.jpeg?text=SDT",
+//         message:
+//             "Our trust is dedicated to supporting healthcare initiatives that make a difference in the community.",
+//     },
+//     {
+//         id: 5,
+//         name: "Vikram Singh",
+//         amount: "₹1,00,000",
+//         date: "November 30, 2022",
+//         category: "Silver",
+//         image: "https://placehold.co/150x150/0067b8/ffffff.jpeg?text=VS",
+//         message:
+//             "Happy to contribute to the development of medical facilities in our community.",
+//     },
+//     {
+//         id: 6,
+//         name: "Global Care Inc.",
+//         amount: "₹15,00,000",
+//         date: "October 15, 2022",
+//         category: "Diamond",
+//         image: "https://placehold.co/150x150/00a2ed/ffffff.jpeg?text=GC",
+//         message:
+//             "As part of our CSR initiative, we are proud to support SADH Care Hospital's expansion project.",
+//     },
+//     {
+//         id: 7,
+//         name: "Meera & Rajesh Patel",
+//         amount: "₹3,00,000",
+//         date: "September 5, 2022",
+//         category: "Gold",
+//         image: "https://placehold.co/150x150/68217a/ffffff.jpeg?text=MRP",
+//         message:
+//             "This donation is made in memory of our parents who received excellent care at this hospital.",
+//     },
+//     {
+//         id: 8,
+//         name: "Sunita Sharma",
+//         amount: "₹50,000",
+//         date: "August 12, 2022",
+//         category: "Bronze",
+//         image: "https://placehold.co/150x150/107c10/ffffff.jpeg?text=SS",
+//         message:
+//             "Grateful for the care I received during my treatment. This is my way of giving back.",
+//     },
+// ];
 
 // Hospital account details for donations
 const accountDetails = {
@@ -115,36 +115,36 @@ const taxExemptionDetails = {
 };
 
 // Donation categories
-const donationCategories = [
-    {
-        name: "Diamond",
-        minAmount: "₹10,00,000 and above",
-        benefits:
-            "Name on permanent donor wall, annual recognition event, dedicated facility naming opportunity",
-    },
-    {
-        name: "Platinum",
-        minAmount: "₹5,00,000 to ₹9,99,999",
-        benefits:
-            "Name on permanent donor wall, annual recognition event, VIP hospital services",
-    },
-    {
-        name: "Gold",
-        minAmount: "₹2,00,000 to ₹4,99,999",
-        benefits: "Name on permanent donor wall, annual recognition event",
-    },
-    {
-        name: "Silver",
-        minAmount: "₹1,00,000 to ₹1,99,999",
-        benefits: "Name on permanent donor wall",
-    },
-    {
-        name: "Bronze",
-        minAmount: "₹50,000 to ₹99,999",
-        benefits:
-            "Certificate of appreciation and acknowledgment in annual report",
-    },
-];
+// const donationCategories = [
+//     {
+//         name: "Diamond",
+//         minAmount: "₹10,00,000 and above",
+//         benefits:
+//             "Name on permanent donor wall, annual recognition event, dedicated facility naming opportunity",
+//     },
+//     {
+//         name: "Platinum",
+//         minAmount: "₹5,00,000 to ₹9,99,999",
+//         benefits:
+//             "Name on permanent donor wall, annual recognition event, VIP hospital services",
+//     },
+//     {
+//         name: "Gold",
+//         minAmount: "₹2,00,000 to ₹4,99,999",
+//         benefits: "Name on permanent donor wall, annual recognition event",
+//     },
+//     {
+//         name: "Silver",
+//         minAmount: "₹1,00,000 to ₹1,99,999",
+//         benefits: "Name on permanent donor wall",
+//     },
+//     {
+//         name: "Bronze",
+//         minAmount: "₹50,000 to ₹99,999",
+//         benefits:
+//             "Certificate of appreciation and acknowledgment in annual report",
+//     },
+// ];
 
 // Modal component for donation details
 const DonationModal = ({
@@ -324,11 +324,17 @@ const DonationModal = ({
                         <p className="text-sm text-slate-600 dark:text-slate-300 mb-6">
                             For assistance with donations or any queries, please
                             contact our donation coordinator at{" "}
-                            <Link href="mailto:accounts@sadhcare.org" className="text-blue-600 dark:text-blue-400">
+                            <Link
+                                href="mailto:accounts@sadhcare.org"
+                                className="text-blue-600 dark:text-blue-400"
+                            >
                                 accounts@sadhcare.org
                             </Link>{" "}
                             or call{" "}
-                            <Link href="tel:+918461008461" className="text-blue-600 dark:text-blue-400">
+                            <Link
+                                href="tel:+918461008461"
+                                className="text-blue-600 dark:text-blue-400"
+                            >
                                 +91 84610 08461
                             </Link>
                             .
@@ -350,34 +356,34 @@ const DonationModal = ({
 };
 
 // Badge component for donor categories
-const CategoryBadge = ({ category }: { category: string }) => {
-    let badgeVariant: "default" | "secondary" | "outline" | "destructive" =
-        "default";
+// const CategoryBadge = ({ category }: { category: string }) => {
+//     let badgeVariant: "default" | "secondary" | "outline" | "destructive" =
+//         "default";
 
-    switch (category) {
-        case "Diamond":
-            badgeVariant = "default";
-            break;
-        case "Platinum":
-            badgeVariant = "secondary";
-            break;
-        case "Gold":
-            badgeVariant = "outline";
-            break;
-        case "Silver":
-        case "Bronze":
-            badgeVariant = "secondary";
-            break;
-        default:
-            badgeVariant = "default";
-    }
+//     switch (category) {
+//         case "Diamond":
+//             badgeVariant = "default";
+//             break;
+//         case "Platinum":
+//             badgeVariant = "secondary";
+//             break;
+//         case "Gold":
+//             badgeVariant = "outline";
+//             break;
+//         case "Silver":
+//         case "Bronze":
+//             badgeVariant = "secondary";
+//             break;
+//         default:
+//             badgeVariant = "default";
+//     }
 
-    return (
-        <Badge variant={badgeVariant} className="text-xs">
-            {category}
-        </Badge>
-    );
-};
+//     return (
+//         <Badge variant={badgeVariant} className="text-xs">
+//             {category}
+//         </Badge>
+//     );
+// };
 
 export default function Donations() {
     const [isModalOpen, setIsModalOpen] = useState(false);

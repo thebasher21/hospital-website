@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { getBasePath } from "@/lib/utils";
+import Image from "next/image";
 
 interface GalleryCarouselProps {
     imageSrc: string[];
@@ -27,7 +28,7 @@ export default function GalleryCarousel({ imageSrc }: GalleryCarouselProps) {
                             <Card className="border bg-white dark:bg-gray-800/70">
                                 <CardContent className="flex aspect-square items-center justify-center p-4 sm:p-6">
                                     <div className="bg-gray-100 dark:bg-gray-700 w-full h-70 rounded-md flex items-center justify-center overflow-hidden">
-                                        <img
+                                        <Image
                                             src={getBasePath(image)}
                                             alt={image}
                                             className="object-cover w-full h-full"

@@ -143,7 +143,7 @@ const amenities = [
         title: "Pathology",
         icon: "/images/services/pathology.png",
     },
-    
+
     {
         title: "Ambulance Service",
         icon: "/images/services/ambulance.png",
@@ -224,19 +224,20 @@ const insurances = [
 
 export default function ServicesPage() {
     const scrollToInsurances = () => {
-        const element = document.getElementById('insurances-accepted');
+        const element = document.getElementById("insurances-accepted");
         if (element) {
             // Get the actual header height dynamically
-            const header = document.querySelector('header');
+            const header = document.querySelector("header");
             const headerHeight = header ? header.offsetHeight : 80;
-            
+
             // Add some extra padding for better visibility
             const extraPadding = 10;
-            const elementPosition = element.offsetTop - headerHeight - extraPadding;
-            
+            const elementPosition =
+                element.offsetTop - headerHeight - extraPadding;
+
             window.scrollTo({
                 top: elementPosition,
-                behavior: 'smooth'
+                behavior: "smooth",
             });
         }
     };
@@ -355,14 +356,18 @@ export default function ServicesPage() {
                             <div
                                 key={index}
                                 className={`flex items-center justify-flex-start bg-white dark:bg-gray-800/70 p-4 rounded-lg shadow-sm border ${
-                                    amenity.title === "Cashless Insurance" 
-                                        ? "cursor-pointer hover:shadow-md transition-all duration-200 hover:bg-blue-50 dark:hover:bg-gray-700/50 hover:scale-105" 
+                                    amenity.title === "Cashless Insurance"
+                                        ? "cursor-pointer hover:shadow-md transition-all duration-200 hover:bg-blue-50 dark:hover:bg-gray-700/50 hover:scale-105"
                                         : ""
                                 }`}
-                                onClick={amenity.title === "Cashless Insurance" ? scrollToInsurances : undefined}
+                                onClick={
+                                    amenity.title === "Cashless Insurance"
+                                        ? scrollToInsurances
+                                        : undefined
+                                }
                             >
                                 <div>
-                                    <img
+                                    <Image
                                         alt=""
                                         loading="lazy"
                                         width="45"
@@ -375,7 +380,9 @@ export default function ServicesPage() {
                                 <p className="text-xl font-semibold text-slate-900 dark:text-white mx-4">
                                     {amenity.title}
                                     {amenity.title === "Cashless Insurance" && (
-                                        <span className="ml-2 text-blue-600 dark:text-blue-400 text-sm">↓</span>
+                                        <span className="ml-2 text-blue-600 dark:text-blue-400 text-sm">
+                                            ↓
+                                        </span>
                                     )}
                                 </p>
                             </div>
@@ -385,7 +392,10 @@ export default function ServicesPage() {
             </section>
 
             {/* Insurance Section - Fourth content section (white) */}
-            <section id="insurances-accepted" className="bg-gray-100 dark:bg-gray-800/30 py-20 border-t border-gray-200 dark:border-gray-700/30">
+            <section
+                id="insurances-accepted"
+                className="bg-gray-100 dark:bg-gray-800/30 py-20 border-t border-gray-200 dark:border-gray-700/30"
+            >
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-3xl font-bold mb-12 text-slate-900 dark:text-white">
                         Insurances Accepted

@@ -8,55 +8,55 @@ import PageTitle from "@/components/PageTitle";
 import Link from "next/link";
 
 // Sample data for past outreach programmes
-const pastProgrammes = [
-    {
-        title: "Rural Health Camp - Raypur Village",
-        date: "March 15-17, 2023",
-        location: "Raypur Village, District East",
-        description:
-            "A three-day health camp providing free consultations, basic health screenings, and medicines to over 500 villagers. Services included general medicine, pediatrics, gynecology, and eye care.",
-        beneficiaries: "527 patients",
-        services: [
-            "General Health Checkups",
-            "Pediatric Care",
-            "Gynecology Services",
-            "Eye Examinations",
-            "Free Medications",
-        ],
-        image: "/images/outreach/rural-health-camp.jpg", // Placeholder image path
-    },
-    {
-        title: "School Health Program - City Public School",
-        date: "January 10, 2023",
-        location: "City Public School, Downtown",
-        description:
-            "A comprehensive health education and screening program for students. Our team conducted health checkups, dental examinations, and health education sessions on nutrition, hygiene, and preventive care.",
-        beneficiaries: "320 students",
-        services: [
-            "Health Screenings",
-            "Dental Checkups",
-            "Nutrition Education",
-            "Personal Hygiene Workshops",
-        ],
-        image: "/images/outreach/school-health-program.jpg", // Placeholder image path
-    },
-    {
-        title: "Senior Citizen Wellness Day",
-        date: "December 5, 2022",
-        location: "Community Center, Westside",
-        description:
-            "A special health program dedicated to the elderly, offering free consultations in geriatric care, orthopedics, cardiology, and physiotherapy. The event also included workshops on healthy aging and chronic disease management.",
-        beneficiaries: "175 senior citizens",
-        services: [
-            "Geriatric Consultations",
-            "Cardiovascular Screenings",
-            "Orthopedic Assessments",
-            "Physiotherapy Sessions",
-            "Medication Reviews",
-        ],
-        image: "/images/outreach/senior-wellness.jpg", // Placeholder image path
-    },
-];
+// const pastProgrammes = [
+//     {
+//         title: "Rural Health Camp - Raypur Village",
+//         date: "March 15-17, 2023",
+//         location: "Raypur Village, District East",
+//         description:
+//             "A three-day health camp providing free consultations, basic health screenings, and medicines to over 500 villagers. Services included general medicine, pediatrics, gynecology, and eye care.",
+//         beneficiaries: "527 patients",
+//         services: [
+//             "General Health Checkups",
+//             "Pediatric Care",
+//             "Gynecology Services",
+//             "Eye Examinations",
+//             "Free Medications",
+//         ],
+//         image: "/images/outreach/rural-health-camp.jpg", // Placeholder image path
+//     },
+//     {
+//         title: "School Health Program - City Public School",
+//         date: "January 10, 2023",
+//         location: "City Public School, Downtown",
+//         description:
+//             "A comprehensive health education and screening program for students. Our team conducted health checkups, dental examinations, and health education sessions on nutrition, hygiene, and preventive care.",
+//         beneficiaries: "320 students",
+//         services: [
+//             "Health Screenings",
+//             "Dental Checkups",
+//             "Nutrition Education",
+//             "Personal Hygiene Workshops",
+//         ],
+//         image: "/images/outreach/school-health-program.jpg", // Placeholder image path
+//     },
+//     {
+//         title: "Senior Citizen Wellness Day",
+//         date: "December 5, 2022",
+//         location: "Community Center, Westside",
+//         description:
+//             "A special health program dedicated to the elderly, offering free consultations in geriatric care, orthopedics, cardiology, and physiotherapy. The event also included workshops on healthy aging and chronic disease management.",
+//         beneficiaries: "175 senior citizens",
+//         services: [
+//             "Geriatric Consultations",
+//             "Cardiovascular Screenings",
+//             "Orthopedic Assessments",
+//             "Physiotherapy Sessions",
+//             "Medication Reviews",
+//         ],
+//         image: "/images/outreach/senior-wellness.jpg", // Placeholder image path
+//     },
+// ];
 
 // Types of outreach programmes the hospital conducts
 const programmeTypes = [
@@ -245,9 +245,9 @@ export default function OutreachProgrammes() {
                     <p className="text-lg text-slate-700 dark:text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
                         We welcome collaboration from individuals,
                         organizations, and corporations who share our vision of
-                        accessible and equitable healthcare for all. If you would like to
-                        partner with us, volunteer, or support our outreach
-                        programmes, please get in touch.
+                        accessible and equitable healthcare for all. If you
+                        would like to partner with us, volunteer, or support our
+                        outreach programmes, please get in touch.
                     </p>
                     <div className="flex justify-center gap-6 flex-wrap">
                         {/* <Button variant="default" className="font-medium">
