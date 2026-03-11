@@ -1,7 +1,7 @@
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 /**
@@ -11,16 +11,16 @@ export function cn(...inputs: ClassValue[]) {
 export function getBasePath(path: string): string {
   // In production (GitHub Pages), add the repository name prefix
   if (process.env.NODE_ENV === 'production') {
-    return `https://thebasher21.github.io/hospital-website${path.startsWith('/') ? path : `/${path}`}`;
+    return `http://sadhcare.org${path.startsWith('/') ? path : `/${path}`}`;
   }
-  
+
   // In development, check if we're on the client side
   if (typeof window !== 'undefined') {
     // Client-side: get current url and add path to it
     const currentUrl = window.location.origin;
     return `${currentUrl}${path.startsWith('/') ? path : `/${path}`}`;
   }
-  
+
   // Server-side: use localhost for development
   return `https://c9nz1602-3000.inc1.devtunnels.ms${path.startsWith('/') ? path : `/${path}`}`;
 }
@@ -32,9 +32,9 @@ export function getBasePath(path: string): string {
 export function getBasePathSSR(path: string): string {
   // In production (GitHub Pages), add the repository name prefix
   if (process.env.NODE_ENV === 'production') {
-    return `https://thebasher21.github.io/hospital-website${path.startsWith('/') ? path : `/${path}`}`;
+    return `http://sadhcare.org${path.startsWith('/') ? path : `/${path}`}`;
   }
-  
+
   // In development, check if we're on the client side
   if (typeof window !== 'undefined') {
     // Client-side: get current url and add path to it

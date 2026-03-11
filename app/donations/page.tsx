@@ -154,7 +154,7 @@ const DonationModal = ({
     onClose: () => void;
 }) => {
     const [copyStatus, setCopyStatus] = useState<{ [key: string]: boolean }>(
-        {}
+        {},
     );
 
     if (!isOpen) return null;
@@ -210,7 +210,7 @@ const DonationModal = ({
                                             {key
                                                 .replace(/([A-Z])/g, " $1")
                                                 .replace(/^./, (str) =>
-                                                    str.toUpperCase()
+                                                    str.toUpperCase(),
                                                 )}
                                             :
                                         </p>
@@ -237,7 +237,7 @@ const DonationModal = ({
                                             </Button>
                                         </div>
                                     </div>
-                                )
+                                ),
                             )}
                         </div>
                     </div>
@@ -298,11 +298,11 @@ const DonationModal = ({
                                                 category.name === "Diamond"
                                                     ? "default"
                                                     : category.name ===
-                                                      "Platinum"
-                                                    ? "secondary"
-                                                    : category.name === "Gold"
-                                                    ? "outline"
-                                                    : "secondary"
+                                                        "Platinum"
+                                                      ? "secondary"
+                                                      : category.name === "Gold"
+                                                        ? "outline"
+                                                        : "secondary"
                                             }
                                         >
                                             {category.name}
@@ -471,7 +471,7 @@ export default function Donations() {
             </section>
 
             {/* Our Donors Section */}
-            <section className="bg-gray-100 dark:bg-gray-800/30 py-20 border-y border-gray-200 dark:border-gray-700/30">
+            {/* <section className="bg-gray-100 dark:bg-gray-800/30 py-20 border-y border-gray-200 dark:border-gray-700/30">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center mb-12 text-slate-900 dark:text-white">
                         Our Generous Donors
@@ -517,7 +517,7 @@ export default function Donations() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Corporate Partners Section */}
             <section className="bg-white dark:bg-gray-900/40 py-20">
