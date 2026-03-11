@@ -61,9 +61,9 @@ const pastProgrammes = [
 // Types of outreach programmes the hospital conducts
 const programmeTypes = [
     {
-        title: "Medical Camps",
+        title: "Free Medical Camps",
         description:
-            "Free medical camps in underserved communities providing essential healthcare services, consultations, and medications. These camps bring medical expertise directly to those who need it most.",
+            "Free medical camps for underserved communities providing essential healthcare services, consultations, and medications. These camps bring medical expertise directly to those who need it most.",
         services: [
             "General Health Checkups",
             "Specialist Consultations",
@@ -111,7 +111,6 @@ const programmeTypes = [
             "Comprehensive health programs for corporate organizations, designed to promote employee health and well-being. These include health screenings, fitness programs, and stress management workshops.",
         services: [
             "Executive Health Checkups",
-            "Ergonomic Assessments",
             "Mental Health Workshops",
             "Fitness Programs",
             "Work-Life Balance Seminars",
@@ -136,7 +135,7 @@ export default function OutreachProgrammes() {
         <>
             <PageTitle
                 title="Outreach Programmes"
-                description="At SADH Care Hospital, we are committed to extending healthcare beyond our facilities through various community outreach programmes. We believe that healthcare is a fundamental right and work tirelessly to reach underserved populations."
+                description="At SADH Care Hospital, we are committed to extending healthcare beyond our facilities through various community outreach programmes. We believe that healthcare is a fundamental right and we work tirelessly to reach underserved populations."
             />
 
             {/* Types of Outreach Programmes - First content section (white) */}
@@ -246,14 +245,14 @@ export default function OutreachProgrammes() {
                     <p className="text-lg text-slate-700 dark:text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
                         We welcome collaboration from individuals,
                         organizations, and corporations who share our vision of
-                        accessible healthcare for all. If you would like to
+                        accessible and equitable healthcare for all. If you would like to
                         partner with us, volunteer, or support our outreach
                         programmes, please get in touch.
                     </p>
                     <div className="flex justify-center gap-6 flex-wrap">
-                        <Button variant="default" className="font-medium">
+                        {/* <Button variant="default" className="font-medium">
                             Become a Volunteer
-                        </Button>
+                        </Button> */}
                         <Link href="/donations">
                             <Button
                                 variant="outline"

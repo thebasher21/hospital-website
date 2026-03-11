@@ -41,7 +41,82 @@ export default function Doctors() {
             bio: "",
         },
     ];
-
+    const opdSchedule = [
+        {
+            id: 1,
+            speciality: "Medical Specialist",
+            working_days: [1, 1, 1, 1, 1, 1, 1],
+            timing: "10:00AM to 3:00PM",
+        },
+        {
+            id: 2,
+            speciality: "Gynaecologist",
+            working_days: [1, 1, 1, 1, 1, 1, 1],
+            timing: "10:00AM to 2:00PM",
+        },
+        {
+            id: 3,
+            speciality: "General Surgeon",
+            working_days: [0, 1, 0, 1, 0, 1, 0],
+            timing: "1:00PM to 4:00PM",
+        },
+        // Pediatrics
+        {
+            id: 4,
+            speciality: "Pediatrics",
+            working_days: [1, 1, 1, 1, 1, 0, 1],
+            timing: "10:00AM to 4:00PM (On Wednesday 2:00PM to 4:00PM)",
+        },
+        // Orthopedic
+        {
+            id: 5,
+            speciality: "Orthopedics",
+            working_days: [1, 0, 0, 0, 1, 0, 0],
+            timing: "9:00AM to 12:00PM (On Thursday) & 2:00PM to 5:00PM (On Sunday)",
+        },
+        // Cardiologist
+        {
+            id: 6,
+            speciality: "Cardiologist",
+            working_days: [0, 0, 0, 0, 0, 1, 0],
+            timing: "12:00PM to 2:00PM",
+        },
+        // ENT
+        {
+            id: 7,
+            speciality: "ENT Specialist",
+            working_days: [0, 0, 0, 0, 1, 0, 0],
+            timing: "2:00PM to 4:00PM",
+        },
+        // Dental Surgeon
+        {
+            id: 8,
+            speciality: "Dental Surgeon",
+            working_days: [1, 1, 1, 1, 1, 1, 1],
+            timing: "10:00AM to 6:00PM",
+        },
+        // Oncologist
+        {
+            id: 9,
+            speciality: "Oncologist",
+            working_days: [0, 0, 0, 0, 0, 0, 1],
+            timing: "3:00PM to 5:00PM (Only 2nd and 4th Saturday)",
+        },
+        // Radiologist
+        {
+            id: 10,
+            speciality: "Radiologist",
+            working_days: [0, 1, 1, 0, 1, 0, 1],
+            timing: "10:00AM to 2:00PM",
+        },
+        // General Physician
+        {
+            id: 11,
+            speciality: "General Physician",
+            working_days: [1, 1, 1, 1, 1, 1, 1],
+            timing: "24x7",
+        },
+    ]
     const doctors = [
         {
             id: 1,
@@ -214,7 +289,7 @@ export default function Doctors() {
                 title="Our Doctors"
                 description="SADH has a team of doctors specialized in different fields of medicine, who have a deep desire to promote the welfare of others and help create a better world. Many of the doctors and support staff at SADH are ex-Army doctors and personnel, led by Dr. (Brig) Amitava Banerjee."
             />
-            <section className="bg-white dark:bg-gray-900/40 py-20 border-t border-gray-200 dark:border-gray-700/30">
+            {/* <section className="bg-white dark:bg-gray-900/40 py-20 border-t border-gray-200 dark:border-gray-700/30">
                 <div className="container mx-auto px-4">
                     <h2
                         className="text-3xl font-bold mb-12 text-slate-900 dark:text-white text-center"
@@ -264,14 +339,13 @@ export default function Doctors() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
             <section className="bg-gray-100 dark:bg-gray-800/30 py-20 border-y border-gray-200 dark:border-gray-700/30">
                 <div className="overflow-x-auto mx-20 rounded-xl">
                     <table className="min-w-full table-auto bg-white dark:bg-gray-900/40 shadow-lg">
                         <thead>
                             <tr className="border-b">
-                                <th></th>
-                                <th className="pl-3 pr-6 py-3 text-left text-sm font-semibold text-slate-600 dark:text-slate-400">
+                                {/* <th className="pl-3 pr-6 py-3 text-left text-sm font-semibold text-slate-600 dark:text-slate-400">
                                     <div
                                         className="flex items-center cursor-pointer"
                                         onClick={handleArrowClick}
@@ -286,25 +360,25 @@ export default function Doctors() {
                                             }}
                                         />
                                     </div>
+                                </th> */}
+                                <th className="px-6 py-3 text-left text-sm font-bold text-blue-700 dark:text-slate-400">
+                                    Specialist
                                 </th>
-                                <th className="px-6 py-3 text-left text-sm font-semibold text-slate-600 dark:text-slate-400">
-                                    Speciality
-                                </th>
-                                <th className="px-6 py-3 text-left text-sm font-semibold text-slate-600 dark:text-slate-400">
+                                <th className="px-6 py-3 text-left text-sm font-bold text-blue-700 dark:text-slate-400">
                                     Working Days
                                 </th>
-                                <th className="px-6 py-3 text-left text-sm font-semibold text-slate-600 dark:text-slate-400">
+                                <th className="px-6 py-3 text-left text-sm font-bold text-blue-700 dark:text-slate-400">
                                     Timing
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                            {doctorsData.map((doctor) => (
+                            {opdSchedule.map((doctor) => (
                                 <tr
                                     key={doctor.id}
                                     className="border-t hover:bg-gray-200 dark:hover:bg-gray-800"
                                 >
-                                    <td className="px-1 py-4 flex items-center justify-center">
+                                    {/* <td className="px-1 py-4 flex items-center justify-center">
                                         <Image
                                             src={getBasePath(doctor.image)}
                                             alt={doctor.name}
@@ -315,7 +389,7 @@ export default function Doctors() {
                                     </td>
                                     <td className="pl-3 pr-6 py-4 text-sm font-medium text-slate-900 dark:text-white">
                                         {doctor.name}
-                                    </td>
+                                    </td> */}
                                     <td className="px-6 py-4 text-sm text-slate-900 dark:text-white">
                                         {doctor.speciality}
                                     </td>

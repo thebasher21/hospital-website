@@ -60,7 +60,7 @@ export default function Header() {
             label: "Specialities",
         },
         { name: "header.menu.services", path: "/services", label: "Services" },
-        { name: "header.menu.doctors", path: "/doctors", label: "Doctors" },
+        { name: "header.menu.doctors", path: "/opd-schedule", label: "OPD Schedule" },
         {
             name: "header.menu.outreachProgrammes",
             path: "/outreach-programmes",
