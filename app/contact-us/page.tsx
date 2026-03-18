@@ -16,12 +16,14 @@ export default function ContactUs() {
                 number: ["0124-2671918", "0124-2671919", "+91 98120 08765"],
             },
             { label: "Emergency", number: ["+91 84610 08461"] },
+            { label: "WhatsApp", number: ["+91 84610 08461"] },
         ],
         location: {
             address:
                 "SADH Care Hospital, Ashram Hari Mandir, Pataudi Gurugram, Haryana 122503",
             mapsUrl: "https://maps.app.goo.gl/GBmGMXhWDFMNnJYy6",
         },
+        ipsMail: "ips@sadhcare.org"
     };
 
     return (
@@ -33,132 +35,155 @@ export default function ContactUs() {
 
             <section className="bg-white dark:bg-gray-900/40 py-16">
                 <div className="container mx-auto px-4">
+                    <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+                        Contact Information
+                    </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
                         {/* Contact Information */}
-                        <div className="space-y-8">
-                            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
-                                Contact Information
-                            </h2>
+                        {/* <div className="space-y-8"> */}
 
-                            {/* Email */}
-                            <Card className="border bg-white dark:bg-gray-800/60 transition-colors">
-                                <CardContent className="p-6">
-                                    <div className="flex items-start">
-                                        <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full mr-4">
-                                            <Mail className="h-6 w-6 text-blue-600 dark:text-blue-400" />
-                                        </div>
-                                        <div>
-                                            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
-                                                Email
-                                            </h3>
-                                            <Link
-                                                href={`mailto:${contactInfo.email}`}
-                                                className="text-blue-600 dark:text-blue-400 hover:underline flex items-center"
-                                                aria-label={`Send email to ${contactInfo.email}`}
-                                                tabIndex={0}
-                                            >
-                                                {contactInfo.email}
-                                                <ExternalLink className="h-4 w-4 ml-1" />
-                                            </Link>
-                                        </div>
+                        {/* Email */}
+                        <Card className="border bg-white dark:bg-gray-800/60 transition-colors">
+                            <CardContent className="p-6">
+                                <div className="flex items-start">
+                                    <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full mr-4">
+                                        <Mail className="h-6 w-6 text-blue-600 dark:text-blue-400" />
                                     </div>
-                                </CardContent>
-                            </Card>
-
-                            {/* Phone Numbers */}
-                            <Card className="border bg-white dark:bg-gray-800/60 transition-colors">
-                                <CardContent className="p-6">
-                                    <div className="flex items-start">
-                                        <div className="bg-green-100 dark:bg-green-900/30 p-3 rounded-full mr-4">
-                                            <Phone className="h-6 w-6 text-green-600 dark:text-green-400" />
-                                        </div>
-                                        <div className="w-full">
-                                            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
-                                                Phone Numbers
-                                            </h3>
-                                            <ul className="space-y-3">
-                                                {contactInfo.phones.map(
-                                                    (phone, index) => (
-                                                        <li key={index}>
-                                                            <div className="flex justify-between">
-                                                                <span className="text-slate-600 dark:text-slate-300">
-                                                                    {
-                                                                        phone.label
-                                                                    }
-                                                                    :
-                                                                </span>
-                                                                <ul className="space-y-3">
-                                                                    {phone.number.map(
-                                                                        (
-                                                                            number,
-                                                                            index,
-                                                                        ) => (
-                                                                            <Link
-                                                                                key={
-                                                                                    index
-                                                                                }
-                                                                                href={`tel:${number.replace(
-                                                                                    /[^0-9+]/g,
-                                                                                    "",
-                                                                                )}`}
-                                                                                className="text-green-600 dark:text-green-400 hover:underline flex items-center"
-                                                                                aria-label={`Call ${phone.label} at ${number}`}
-                                                                                tabIndex={
-                                                                                    0
-                                                                                }
-                                                                            >
-                                                                                {
-                                                                                    number
-                                                                                }
-                                                                                <ExternalLink className="h-4 w-4 ml-1" />
-                                                                            </Link>
-                                                                        ),
-                                                                    )}
-                                                                </ul>
-                                                            </div>
-                                                        </li>
-                                                    ),
-                                                )}
-                                            </ul>
-                                        </div>
+                                    <div>
+                                        <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+                                            Email
+                                        </h3>
+                                        <Link
+                                            href={`mailto:${contactInfo.email}`}
+                                            className="text-blue-600 dark:text-blue-400 hover:underline flex items-center"
+                                            aria-label={`Send email to ${contactInfo.email}`}
+                                            tabIndex={0}
+                                        >
+                                            {contactInfo.email}
+                                            <ExternalLink className="h-4 w-4 ml-1" />
+                                        </Link>
                                     </div>
-                                </CardContent>
-                            </Card>
+                                </div>
+                            </CardContent>
+                        </Card>
 
-                            {/* Location */}
-                            <Card className="border bg-white dark:bg-gray-800/60 transition-colors">
-                                <CardContent className="p-6">
-                                    <div className="flex items-start">
-                                        <div className="bg-amber-100 dark:bg-amber-900/30 p-3 rounded-full mr-4">
-                                            <MapPin className="h-6 w-6 text-amber-600 dark:text-amber-400" />
-                                        </div>
-                                        <div>
-                                            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
-                                                Location
-                                            </h3>
-                                            <p className="text-slate-600 dark:text-slate-300 mb-2">
-                                                {contactInfo.location.address}
-                                            </p>
-                                            <Link
-                                                href={
-                                                    contactInfo.location.mapsUrl
-                                                }
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-amber-600 dark:text-amber-400 hover:underline flex items-center"
-                                                aria-label="View on Google Maps"
-                                                tabIndex={0}
-                                            >
-                                                View on Google Maps
-                                                <ExternalLink className="h-4 w-4 ml-1" />
-                                            </Link>
-                                        </div>
+                        {/* Phone Numbers */}
+                        <Card className="border bg-white dark:bg-gray-800/60 transition-colors">
+                            <CardContent className="p-6">
+                                <div className="flex items-start">
+                                    <div className="bg-green-100 dark:bg-green-900/30 p-3 rounded-full mr-4">
+                                        <Phone className="h-6 w-6 text-green-600 dark:text-green-400" />
                                     </div>
-                                </CardContent>
-                            </Card>
-                        </div>
+                                    <div className="w-full">
+                                        <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+                                            Phone Numbers
+                                        </h3>
+                                        <ul className="space-y-3">
+                                            {contactInfo.phones.map(
+                                                (phone, index) => (
+                                                    <li key={index}>
+                                                        <div className="flex justify-between">
+                                                            <span className="text-slate-600 dark:text-slate-300">
+                                                                {
+                                                                    phone.label
+                                                                }
+                                                                :
+                                                            </span>
+                                                            <ul className="space-y-3">
+                                                                {phone.number.map(
+                                                                    (
+                                                                        number,
+                                                                        index,
+                                                                    ) => (
+                                                                        <Link
+                                                                            key={
+                                                                                index
+                                                                            }
+                                                                            href={`tel:${number.replace(
+                                                                                /[^0-9+]/g,
+                                                                                "",
+                                                                            )}`}
+                                                                            className="text-green-600 dark:text-green-400 hover:underline flex items-center"
+                                                                            aria-label={`Call ${phone.label} at ${number}`}
+                                                                            tabIndex={
+                                                                                0
+                                                                            }
+                                                                        >
+                                                                            {
+                                                                                number
+                                                                            }
+                                                                            <ExternalLink className="h-4 w-4 ml-1" />
+                                                                        </Link>
+                                                                    ),
+                                                                )}
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                ),
+                                            )}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
 
-                        {/* Map Preview */}
+                        {/* Location */}
+                        <Card className="border bg-white dark:bg-gray-800/60 transition-colors">
+                            <CardContent className="p-6">
+                                <div className="flex items-start">
+                                    <div className="bg-amber-100 dark:bg-amber-900/30 p-3 rounded-full mr-4">
+                                        <MapPin className="h-6 w-6 text-amber-600 dark:text-amber-400" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+                                            Location
+                                        </h3>
+                                        <p className="text-slate-600 dark:text-slate-300 mb-2">
+                                            {contactInfo.location.address}
+                                        </p>
+                                        <Link
+                                            href={
+                                                contactInfo.location.mapsUrl
+                                            }
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-amber-600 dark:text-amber-400 hover:underline flex items-center"
+                                            aria-label="View on Google Maps"
+                                            tabIndex={0}
+                                        >
+                                            View on Google Maps
+                                            <ExternalLink className="h-4 w-4 ml-1" />
+                                        </Link>
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+
+                        {/* For International Patients */}
+                        <Card className="border bg-white dark:bg-gray-800/60 transition-colors">
+                            <CardContent className="p-6">
+                                <div className="flex items-start">
+                                    <div className="bg-green-100 dark:bg-green-900/30 p-3 rounded-full mr-4">
+                                        <Mail className="h-6 w-6 text-green-600 dark:text-green-400" />
+                                    </div>
+                                    <div className="w-full">
+                                        <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+                                            For International Patients
+                                        </h3>
+                                        <Link
+                                            href={`mailto:${contactInfo.ipsMail}`}
+                                            className="text-blue-600 dark:text-blue-400 hover:underline flex items-center"
+                                            aria-label={`Send email to ${contactInfo.ipsMail}`}
+                                            tabIndex={0}
+                                        >
+                                            {contactInfo.ipsMail}
+                                            <ExternalLink className="h-4 w-4 ml-1" />
+                                        </Link>
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+                        {/* Map Preview
                         <div className="flex flex-col">
                             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
                                 Our Location
@@ -177,6 +202,8 @@ export default function ContactUs() {
                                             "https://maps.googleapis.com/maps/api/staticmap?center=28.320206,76.7888022&zoom=17&size=1000x1000&maptype=roadmap&key=AIzaSyDRtDDCUoohxfXfRBfU-v-yqYMtu2nAWRw"
                                         }
                                         alt="Google Static Map"
+                                        width={100}
+                                        height={100}
                                         className="w-full h-full object-cover transition duration-300 hover:brightness-55"
                                     />
                                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
@@ -187,7 +214,7 @@ export default function ContactUs() {
                                     </div>
                                 </Link>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>
