@@ -251,10 +251,9 @@ export default function Specialities() {
                                             <p
                                                 className="text-slate-600 dark:text-slate-300 leading-relaxed"
                                                 data-i18n-key="specialities.specialty.description"
-                                                data-i18n-params={`{"description":"${specialty.description.replace(
-                                                    /"/g,
-                                                    '\\"'
-                                                )}"}`}
+                                                data-i18n-params={JSON.stringify({
+                                                    description: specialty.description,
+                                                })}
                                             >
                                                 {specialty.description}
                                             </p>
