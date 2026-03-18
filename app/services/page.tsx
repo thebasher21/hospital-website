@@ -220,6 +220,16 @@ const insurances = [
         icon: "/images/insurance/universal_sompo.png",
         link: "https://www.universalsompo.com/health-insurance/",
     },
+    {
+        title: "Manipal Cigna",
+        icon: "/images/insurance/manipal_cigna.png",
+        link: "https://www.manipalcigna.com/",
+    },
+    {
+        title: "Care Health",
+        icon: "/images/insurance/care_health.svg",
+        link: "https://www.careinsurance.com/",
+    },
 ];
 
 export default function ServicesPage() {
@@ -355,11 +365,10 @@ export default function ServicesPage() {
                         {amenities.map((amenity, index) => (
                             <div
                                 key={index}
-                                className={`flex items-center justify-flex-start bg-white dark:bg-gray-800/70 p-4 rounded-lg shadow-sm border ${
-                                    amenity.title === "Cashless Insurance"
-                                        ? "cursor-pointer hover:shadow-md transition-all duration-200 hover:bg-blue-50 dark:hover:bg-gray-700/50 hover:scale-105"
-                                        : ""
-                                }`}
+                                className={`flex items-center justify-flex-start bg-white dark:bg-gray-800/70 p-4 rounded-lg shadow-sm border ${amenity.title === "Cashless Insurance"
+                                    ? "cursor-pointer hover:shadow-md transition-all duration-200 hover:bg-blue-50 dark:hover:bg-gray-700/50 hover:scale-105"
+                                    : ""
+                                    }`}
                                 onClick={
                                     amenity.title === "Cashless Insurance"
                                         ? scrollToInsurances
