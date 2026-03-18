@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import PageTitle from "@/components/PageTitle";
 import { useState } from "react";
 import Link from "next/link";
+import { X } from "lucide-react";
 
 export default function Specialities() {
     // List of specialties with their names, icons, and descriptions
@@ -164,7 +165,7 @@ export default function Specialities() {
             icon: "🦷",
             description:
                 "Involves diagnosis and treatment for the mouth, teeth, gums and jaws including surgical extractions, etc.",
-                treatments: [
+            treatments: [
                 "General and Preventive Dentistry",
                 "Endodontics (RCT)",
                 "Orthodontics (Braces)",
@@ -180,7 +181,7 @@ export default function Specialities() {
             icon: "🦠",
             description:
                 "Specializes in diagnosing and treating kidney diseases, including CKD, AKI, Electrolyte imbalances etc.",
-                treatments: [
+            treatments: [
                 "Dialysis",
                 "Acute Kidney Injury Management",
                 "Chronic Kidney Disease Management",
@@ -189,6 +190,7 @@ export default function Specialities() {
     ];
 
     const [activeCard, setActiveCard] = useState(-1);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleCardClick = (index: number) => {
         setActiveCard(activeCard === index ? -1 : index);
@@ -280,14 +282,13 @@ export default function Specialities() {
                             providing compassionate, patient-centered care using
                             the latest medical technologies and treatments.
                         </p>
-                        <Link href="/doctors">
-                            <Button
-                                variant="default"
-                                className="font-medium cursor-pointer"
-                            >
-                                Meet Our Doctors
-                            </Button>
-                        </Link>
+                        <Button
+                            variant="default"
+                            className="font-medium cursor-pointer"
+                            onClick={() => setIsModalOpen(true)}
+                        >
+                            Meet Our Doctors
+                        </Button>
                     </div>
                 </div>
             </section>
@@ -321,6 +322,32 @@ export default function Specialities() {
                     </div>
                 </div>
             </section>
+
+            {/* Doctors Modal */}
+            {isModalOpen && (
+                <div
+                    className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 md:p-8 animate-in fade-in duration-300"
+                    onClick={() => setIsModalOpen(false)}
+                >
+                    <div
+                        className="relative w-full max-w-5xl bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <button
+                            onClick={() => setIsModalOpen(false)}
+                            className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors flex items-center justify-center"
+                            aria-label="Close modal"
+                        >
+                            <X className="w-5 h-5" />
+                        </button>
+                        <img
+                            src="/images/doctors/doctorSlide.jpg"
+                            alt="Our Doctors Team"
+                            className="w-full h-auto object-cover max-h-[85vh]"
+                        />
+                    </div>
+                </div>
+            )}
         </>
     );
 }
