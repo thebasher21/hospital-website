@@ -109,7 +109,7 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
                                             }}
                                         />
                                         <p
-                                            className="text-lg sm:text-xl font-semibold mb-6 min-h-7 text-white"
+                                            className="text-xl sm:text-2xl font-semibold mb-6 min-h-7 text-white"
                                             data-i18n={`hero.carousel.slides.${index}.description`}
                                             dangerouslySetInnerHTML={{
                                                 __html: slide.description,
@@ -129,9 +129,8 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
                     {slides.map((_, index) => (
                         <button
                             key={index}
-                            className={`w-3 h-3 rounded-full transition-colors ${
-                                current === index ? "bg-white" : "bg-white/50"
-                            }`}
+                            className={`w-3 h-3 rounded-full transition-colors ${current === index ? "bg-white" : "bg-white/50"
+                                }`}
                             onClick={() => api?.scrollTo(index)}
                             aria-label={`Go to slide ${index + 1}`}
                         />
