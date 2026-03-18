@@ -57,7 +57,7 @@ export default function Doctors() {
         {
             id: 3,
             speciality: "General Surgeon",
-            working_days: [0, 1, 0, 1, 0, 1, 0],
+            working_days: [0, 1, 0, 0, 0, 1, 0],
             timing: "1:00PM to 4:00PM",
         },
         // Pediatrics
@@ -115,6 +115,13 @@ export default function Doctors() {
             speciality: "General Physician",
             working_days: [1, 1, 1, 1, 1, 1, 1],
             timing: "24x7",
+        },
+        // Nephrologist
+        {
+            id: 12,
+            speciality: "Nephrologist",
+            working_days: [1, 0, 0, 0, 0, 0, 0],
+            timing: "1:00PM to 4:00PM",
         },
     ];
     // const doctors = [
@@ -404,7 +411,7 @@ export default function Doctors() {
                                                         >
                                                             {
                                                                 workingDayLabels[
-                                                                    index
+                                                                index
                                                                 ]
                                                             }
                                                         </span>
@@ -415,7 +422,7 @@ export default function Doctors() {
                                                         >
                                                             {
                                                                 workingDayLabels[
-                                                                    index
+                                                                index
                                                                 ]
                                                             }
                                                         </span>
