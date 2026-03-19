@@ -5,7 +5,9 @@ import { Button } from "@/components/ui/button";
 import PageTitle from "@/components/PageTitle";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { X } from "lucide-react";
+import { getBasePath } from "@/lib/utils";
 
 export default function Specialities() {
     // List of specialties with their names, icons, and descriptions
@@ -340,9 +342,11 @@ export default function Specialities() {
                         >
                             <X className="w-5 h-5" />
                         </button>
-                        <img
-                            src="/images/doctors/doctorSlide.jpg"
+                        <Image
+                            src={getBasePath("/images/doctors/doctorSlide.jpg")}
                             alt="Our Doctors Team"
+                            width={1920}
+                            height={1080}
                             className="w-full h-auto object-cover max-h-[85vh]"
                         />
                     </div>
