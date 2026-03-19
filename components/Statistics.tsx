@@ -8,27 +8,27 @@ import { getBasePath } from "@/lib/utils";
 const statistics = [
     {
         title: "OPD Patients",
-        count: 113868,
+        count: 132852,
         icon: "medical.png",
     },
     {
         title: "Minor Surgeries",
-        count: 6117,
+        count: 6621,
         icon: "report.png",
     },
     {
         title: "Patients Admitted",
-        count: 5771,
+        count: 6279,
         icon: "patient.png",
     },
     {
         title: "Major Surgeries",
-        count: 1509,
+        count: 1714,
         icon: "doctors.png",
     },
     {
         title: "Babies Born",
-        count: 857,
+        count: 941,
         icon: "baby.png",
     },
 ];
