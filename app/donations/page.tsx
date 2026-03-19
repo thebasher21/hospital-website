@@ -6,8 +6,9 @@ import { Button } from "@/components/ui/button";
 // import { Badge } from "@/components/ui/badge";
 import { X, Copy, CheckCircle } from "lucide-react";
 import PageTitle from "@/components/PageTitle";
-// import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
+import { getBasePath } from "@/lib/utils";
 
 // Sample donors data
 // const donors = [
@@ -410,6 +411,16 @@ export default function Donations() {
             {/* Call to Action Section */}
             <section className="bg-white dark:bg-gray-900/40 py-20">
                 <div className="container mx-auto px-4 text-center">
+                    <div className="relative w-full max-w-5xl mx-auto mb-16 rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50">
+                        <Image 
+                            src={getBasePath("/images/donations/donors.png")} 
+                            alt="Our Generous Donors" 
+                            width={1200}
+                            height={800}
+                            className="w-full h-auto object-contain hover:scale-105 transition-transform duration-700 ease-in-out"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 to-transparent pointer-events-none" />
+                    </div>
                     <h2 className="text-3xl font-bold mb-6 text-slate-900 dark:text-white">
                         Make a Difference Today
                     </h2>

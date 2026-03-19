@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import Image from "next/image";
 import {
     Card,
@@ -10,22 +10,30 @@ import {
 } from "@/components/ui/card";
 import { cn, getBasePath } from "@/lib/utils";
 import PageTitle from "@/components/PageTitle";
+import HeroCarousel from "@/components/HeroCarousel";
+import { CarouselSlide } from "../page";
 
 export default function AboutUs() {
-    const [currentSlide, setCurrentSlide] = useState(0);
+    // const [currentSlide, setCurrentSlide] = useState(0);
 
     // Sample carousel images - replace with actual hospital images
-    const carouselImages = [
+    const carouselImages: CarouselSlide[] = [
         {
-            src: "/images/about/hospital_building.jpeg",
+            image: "/images/infrastructure/hospitalBuilding.jpg",
             alt: "Hospital Building",
         },
-        { src: "/images/about/medical_team.jpeg", alt: "Medical Team" },
         {
-            src: "/images/about/advanced_equipment.jpeg",
+            image: "/images/about/medical_team.jpeg",
+            alt: "Medical Team"
+        },
+        {
+            image: "/images/about/advanced_equipment.jpeg",
             alt: "Advanced Equipment",
         },
-        { src: "/images/about/patient_care.jpeg", alt: "Patient Care" },
+        {
+            image: "/images/about/patient_care.jpeg",
+            alt: "Patient Care"
+        },
     ];
 
     const managementStaff = [
@@ -56,18 +64,18 @@ export default function AboutUs() {
     ];
 
     // Auto-advance carousel
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
-        }, 5000); // Change slide every 5 seconds
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+    //     }, 5000); // Change slide every 5 seconds
 
-        return () => clearInterval(interval);
-    }, [carouselImages.length]);
+    //     return () => clearInterval(interval);
+    // }, [carouselImages.length]);
 
     // Manual carousel navigation
-    const goToSlide = (index: number) => {
-        setCurrentSlide(index);
-    };
+    // const goToSlide = (index: number) => {
+    //     setCurrentSlide(index);
+    // };
 
     return (
         <>
@@ -80,6 +88,9 @@ export default function AboutUs() {
             <section className="bg-white dark:bg-gray-900/40 py-20">
                 <div className="container mx-auto px-4">
                     <div className="relative w-full h-[600px] overflow-hidden rounded-lg shadow-lg mb-12">
+                        <HeroCarousel slides={carouselImages} brightness={1} showOverlay={false} />
+                    </div>
+                    {/* <div className="relative w-full h-[600px] overflow-hidden rounded-lg shadow-lg mb-12">
                         {carouselImages.map((image, index) => (
                             <div
                                 key={index}
@@ -88,10 +99,10 @@ export default function AboutUs() {
                                     index === currentSlide
                                         ? "opacity-100 translate-x-0"
                                         : index ===
-                                          (currentSlide + 1) %
-                                              carouselImages.length
-                                        ? "opacity-0 translate-x-full"
-                                        : "opacity-0 -translate-x-full"
+                                            (currentSlide + 1) %
+                                            carouselImages.length
+                                            ? "opacity-0 translate-x-full"
+                                            : "opacity-0 -translate-x-full"
                                 )}
                             >
                                 <Image
@@ -105,23 +116,23 @@ export default function AboutUs() {
                             </div>
                         ))}
 
-                        {/* Carousel Indicators */}
-                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                            {carouselImages.map((_, index) => (
-                                <button
-                                    key={index}
-                                    onClick={() => goToSlide(index)}
-                                    className={cn(
-                                        "w-3 h-3 rounded-full focus:outline-none",
-                                        index === currentSlide
-                                            ? "bg-white"
-                                            : "bg-white/50"
-                                    )}
-                                    aria-label={`Go to slide ${index + 1}`}
-                                />
-                            ))}
-                        </div>
+                        {/* Carousel Indicators
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                        {carouselImages.map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => goToSlide(index)}
+                                className={cn(
+                                    "w-3 h-3 rounded-full focus:outline-none",
+                                    index === currentSlide
+                                        ? "bg-white"
+                                        : "bg-white/50"
+                                )}
+                                aria-label={`Go to slide ${index + 1}`}
+                            />
+                        ))}
                     </div>
+                </div> */}
 
                     <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800/70 p-8 rounded-lg shadow-sm border">
                         <h2
@@ -235,12 +246,21 @@ export default function AboutUs() {
                                 check-ups and correct medical information.
                             </p>
                         </div>
+                        <div className="relative w-full mb-8">
+                            <Image
+                                src={getBasePath("/images/about/historyAndMilestones.png")}
+                                alt="History and Milestones"
+                                width={1200}
+                                height={800}
+                                className="w-full h-auto object-contain rounded-lg"
+                            />
+                        </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Management Team - Second content section (light gray) */}
-            <section className="bg-gray-100 dark:bg-gray-800/30 py-20 border-y border-gray-200 dark:border-gray-700/30">
+            < section className="bg-gray-100 dark:bg-gray-800/30 py-20 border-y border-gray-200 dark:border-gray-700/30" >
                 <div className="container mx-auto px-4">
                     <h2
                         className="text-3xl font-bold mb-12 text-slate-900 dark:text-white text-center"
@@ -290,10 +310,10 @@ export default function AboutUs() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Mission & Values - Third content section (white) */}
-            <section className="bg-white dark:bg-gray-900/40 py-20 border-t border-gray-200 dark:border-gray-700/30">
+            < section className="bg-white dark:bg-gray-900/40 py-20 border-t border-gray-200 dark:border-gray-700/30" >
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-3xl font-bold mb-12 text-slate-900 dark:text-white">
                         Our Mission & Values
@@ -339,7 +359,7 @@ export default function AboutUs() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
         </>
     );
 }

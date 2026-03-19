@@ -17,10 +17,11 @@ import Link from "next/link";
 import StatisticsComponent from "@/components/Statistics";
 
 // Define the type for carousel slides
-interface CarouselSlide {
-    title: string;
-    subtitle: string;
-    description: string;
+export interface CarouselSlide {
+    title?: string;
+    subtitle?: string;
+    description?: string;
+    alt?: string;
     image: string;
 }
 

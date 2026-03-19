@@ -6,6 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { CalendarIcon, MapPinIcon, UsersIcon, HeartIcon } from "lucide-react";
 import PageTitle from "@/components/PageTitle";
 import Link from "next/link";
+import HeroCarousel from "@/components/HeroCarousel";
+import { CarouselSlide } from "../page";
 
 // Sample data for past outreach programmes
 // const pastProgrammes = [
@@ -120,6 +122,24 @@ const programmeTypes = [
         ),
     },
 ];
+const carouselImages: CarouselSlide[] = [
+    {
+        image: "/images/outreach/outreachPrograms1.png",
+        alt: "Outreach 1",
+    },
+    {
+        image: "/images/outreach/outreachPrograms2.png",
+        alt: "Outreach 2",
+    },
+    {
+        image: "/images/outreach/outreachPrograms.png",
+        alt: "Outreach 3",
+    },
+    {
+        image: "/images/outreach/ayushmanBharat.jpg",
+        alt: "Ayushman Bharat",
+    },
+];
 
 export default function OutreachProgrammes() {
     // Function to render service badges
@@ -141,6 +161,9 @@ export default function OutreachProgrammes() {
             {/* Types of Outreach Programmes - First content section (white) */}
             <section className="bg-white dark:bg-gray-900/40 py-20">
                 <div className="container mx-auto px-4">
+                    <div className="relative w-full h-[600px] overflow-hidden rounded-lg shadow-lg mb-12 bg-slate-100 dark:bg-slate-800">
+                        <HeroCarousel slides={carouselImages} brightness={1} objectFit="contain" showOverlay={false} />
+                    </div>
                     <h2 className="text-3xl font-bold text-center mb-12 text-slate-900 dark:text-white">
                         Our Outreach Initiatives
                     </h2>

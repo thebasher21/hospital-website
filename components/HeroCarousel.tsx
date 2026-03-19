@@ -7,19 +7,16 @@ import {
     CarouselItem,
     type CarouselApi,
 } from "@/components/ui/carousel";
-
-interface CarouselSlide {
-    title: string;
-    subtitle: string;
-    description: string;
-    image: string;
-}
+import { CarouselSlide } from "@/app/page";
 
 interface HeroCarouselProps {
     slides: CarouselSlide[];
+    brightness?: number;
+    objectFit?: "cover" | "contain";
+    showOverlay?: boolean;
 }
 
-export default function HeroCarousel({ slides }: HeroCarouselProps) {
+export default function HeroCarousel({ slides, brightness, objectFit = "cover", showOverlay = true }: HeroCarouselProps) {
     const [api, setApi] = useState<CarouselApi>();
     const [current, setCurrent] = useState(0);
 
@@ -74,21 +71,37 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
     }
 
     return (
-        <Carousel className="w-full" setApi={handleCarouselApi}>
-            <CarouselContent>
+        <Carousel className="w-full h-full" setApi={handleCarouselApi}>
+            <CarouselContent className="h-full">
                 {slides.map((slide, index) => (
-                    <CarouselItem key={index} className="relative">
-                        <div className="relative w-full">
+                    <CarouselItem key={index} className="relative h-full">
+                        <div className="relative w-full h-full">
                             {/* Background Image */}
-                            <div className="absolute inset-0 z-0">
+                            <div className="absolute inset-0 z-0 overflow-hidden">
+                                {objectFit === "contain" && (
+                                    <>
+                                        {/* Liquid Glass Background Effect */}
+                                        <div
+                                            className="absolute inset-[-5%] w-[110%] h-[110%] bg-cover bg-center bg-no-repeat blur-2xl opacity-80"
+                                            style={{
+                                                backgroundImage: `url("${slide.image}")`,
+                                            }}
+                                        />
+                                        <div className="absolute inset-0 bg-white/10 backdrop-blur-md" />
+                                    </>
+                                )}
                                 <div
-                                    className="w-full h-full bg-cover bg-center bg-no-repeat"
+                                    className={`relative w-full h-full bg-center bg-no-repeat ${
+                                        objectFit === "contain" ? "bg-contain" : "bg-cover"
+                                    }`}
                                     style={{
                                         backgroundImage: `url("${slide.image}")`,
-                                        filter: "brightness(0.55)",
+                                        filter: `brightness(${brightness ?? 0.55})`,
                                     }}
                                 />
-                                <div className="absolute inset-0 bg-blue-900/40 mix-blend-multiply" />
+                                {showOverlay && (
+                                    <div className="absolute inset-0 bg-blue-900/40 mix-blend-multiply pointer-events-none" />
+                                )}
                             </div>
 
                             {/* Slide Content */}
@@ -105,14 +118,14 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
                                             className="text-lg sm:text-xl font-semibold text-white"
                                             data-i18n={`hero.carousel.slides.${index}.subtitle`}
                                             dangerouslySetInnerHTML={{
-                                                __html: slide.subtitle,
+                                                __html: slide.subtitle || "",
                                             }}
                                         />
                                         <p
                                             className="text-xl sm:text-2xl font-semibold mb-6 min-h-7 text-white"
                                             data-i18n={`hero.carousel.slides.${index}.description`}
                                             dangerouslySetInnerHTML={{
-                                                __html: slide.description,
+                                                __html: slide.description || "",
                                             }}
                                         />
                                     </div>
