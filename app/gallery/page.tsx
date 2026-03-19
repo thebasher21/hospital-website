@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import PageTitle from "@/components/PageTitle";
 import Image from "next/image";
+import { getBasePath } from "@/lib/utils";
 
 // Sample gallery data
 const galleryItems = [
@@ -197,7 +198,7 @@ const ImageModal = ({
 
                 <div className="relative h-[60vh] w-full">
                     <Image
-                        src={image}
+                        src={getBasePath(image)}
                         alt={title}
                         fill
                         className="object-contain"
@@ -279,7 +280,7 @@ export default function Gallery() {
                             >
                                 <div className="relative h-60 w-full">
                                     <Image
-                                        src={item.image}
+                                        src={getBasePath(item.image)}
                                         alt={item.title}
                                         fill
                                         className="object-cover"

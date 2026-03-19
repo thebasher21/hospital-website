@@ -15,16 +15,16 @@ export default function Footer() {
                     <div>
                         <div className="bg-white dark:bg-gray-800 p-3 rounded-lg inline-block">
                             {/* <div className="relative h-20 w-48"> */}
-                                <Image
-                                    src={getBasePath(
-                                        "/images/logos/hospitalLogo.png"
-                                    )}
-                                    height={100}
-                                    width={200}
-                                    alt="SADH Care Hospital Logo"
-                                    // fill
-                                    className="object-contain"
-                                />
+                            <Image
+                                src={getBasePath(
+                                    "/images/logos/hospitalLogo.png"
+                                )}
+                                height={100}
+                                width={200}
+                                alt="SADH Care Hospital Logo"
+                                // fill
+                                className="object-contain"
+                            />
                             {/* </div> */}
                         </div>
                         <p
@@ -258,7 +258,7 @@ export default function Footer() {
                                 aria-label="Mankind Pharma Logo"
                             >
                                 <Image
-                                    src={"/images/logos/mankind_pharma.png"}
+                                    src={getBasePath("/images/logos/mankind_pharma.png")}
                                     alt="Mankind Pharma Logo"
                                     width={100}
                                     height={100}
@@ -271,7 +271,7 @@ export default function Footer() {
                                 aria-label="DSV Logo"
                             >
                                 <Image
-                                    src={"/images/logos/dsv.png"}
+                                    src={getBasePath("/images/logos/dsv.png")}
                                     alt="DSV Logo"
                                     width={100}
                                     height={100}
@@ -284,7 +284,7 @@ export default function Footer() {
                                 aria-label="Concern India Logo"
                             >
                                 <Image
-                                    src={"/images/logos/concernIndia.png"}
+                                    src={getBasePath("/images/logos/concernIndia.png")}
                                     alt="Concern India Logo"
                                     width={100}
                                     height={100}
@@ -301,7 +301,7 @@ export default function Footer() {
                                     alt="I am Gurgaon Logo"
                                     width={100}
                                     height={100}
-                                />  
+                                />
                             </Link>
                             <Link
                                 href="https://www.avantorsciences.com/in/en/"
@@ -310,7 +310,7 @@ export default function Footer() {
                                 aria-label="Avantor Sciences Logo"
                             >
                                 <Image
-                                    src={"/images/logos/avantorSciences.png"}
+                                    src={getBasePath("/images/logos/avantorSciences.png")}
                                     alt="Avantor Sciences Logo"
                                     width={100}
                                     height={100}
