@@ -34,6 +34,46 @@ export default function AboutUs() {
             image: "/images/about/patient_care.jpeg",
             alt: "Patient Care"
         },
+        {
+            image: "/images/difference/addl1.jpg",
+            alt: "Additional 1"
+        },
+        {
+            image: "/images/difference/addl2.jpg",
+            alt: "Additional 2"
+        },
+        {
+            image: "/images/difference/addl3.jpg",
+            alt: "Additional 3"
+        },
+        {
+            image: "/images/difference/addl4.jpg",
+            alt: "Additional 4"
+        },
+        {
+            image: "/images/difference/addl5.jpg",
+            alt: "Additional 5"
+        },
+        {
+            image: "/images/difference/addl6.jpg",
+            alt: "Additional 6"
+        },
+        {
+            image: "/images/difference/addl7.jpg",
+            alt: "Additional 7"
+        },
+        {
+            image: "/images/difference/addl8.jpg",
+            alt: "Additional 8"
+        },
+        {
+            image: "/images/difference/addl9.jpg",
+            alt: "Additional 9"
+        },
+        {
+            image: "/images/difference/addl10.jpg",
+            alt: "Additional 10"
+        },
     ];
 
     const managementStaff = [
@@ -88,7 +128,7 @@ export default function AboutUs() {
             <section className="bg-white dark:bg-gray-900/40 py-20">
                 <div className="container mx-auto px-4">
                     <div className="relative w-full h-[600px] overflow-hidden rounded-lg shadow-lg mb-12">
-                        <HeroCarousel slides={carouselImages} brightness={1} showOverlay={false} />
+                        <HeroCarousel slides={carouselImages} brightness={1} showOverlay={false} objectFit="contain" />
                     </div>
                     {/* <div className="relative w-full h-[600px] overflow-hidden rounded-lg shadow-lg mb-12">
                         {carouselImages.map((image, index) => (
