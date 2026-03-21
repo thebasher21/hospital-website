@@ -187,7 +187,7 @@ export default function Footer() {
                         </h4>
                         <div className="flex space-x-4">
                             <Link
-                                href="https://www.facebook.com/sadhcare/"
+                                href="https://www.facebook.com/people/SADH-CARE-Hospital/61554860580975/"
                                 target="_blank"
                                 className="text-blue-100 hover:text-white transition-colors dark:text-gray-300 dark:hover:text-white"
                                 aria-label="Facebook"
